@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static rastogi_tags %}
+
+{% block title %}किसान कॉर्नर (Farmer Corner) - Rastogi Traders{% endblock %}
+{% block meta_description %}फसल जानकारी, खाद व उर्वरक प्रबंधन, कीट नियंत्रण सुझाव और उन्नत कृषि परामर्श। Rastogi Traders किसान कॉर्नर।{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="section" style="background: linear-gradient(135deg, #114217, #1b5e20); color: #ffffff; padding: 40px 0;">
+  <div class="container text-center" style="text-align: center;">
+    <div class="hero-badge-pill" style="margin-bottom: 10px;">
+      <span>👨‍🌾</span> <span>कृषि सलाह एवं मार्गदर्शिका</span>
+    </div>
+    <h1 style="font-size: 2.3rem; font-weight: 800; color: #fff; margin-bottom: 8px;">
+      किसान कॉर्नर (Farmer Corner)
+    </h1>
+    <p style="color: #e2e8f0; font-size: 1.05rem; max-width: 700px; margin: 0 auto;">
+      स्थानीय किसान भाइयों के लिए फसलों की समय पर देखभाल, संतुलित खाद प्रबंधन और कीट नियंत्रण से जुड़े उपयोगी सुझाव।
+    </p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+
+    <!-- Section 1: Major Crops Directory -->
+    <div style="margin-bottom: 56px;">
+      <div class="section-header" style="text-align: left; margin-bottom: 24px;">
+        <div class="section-tag">
+          <span>🌾</span> <span>फसल डायरेक्टरी</span>
+        </div>
+        <h2 class="section-title">प्रमुख फसलें (Crop Guidance)</h2>
+        <p class="section-subtitle" style="margin-left: 0;">
+          अपनी फसल चुनें और उसके अनुसार बुवाई, पोषण व सुरक्षा की जानकारी देखें:
+        </p>
+      </div>
+
+      <div class="crop-grid">
+        {% for crop in crop_guides %}
+          <a href="{{ crop.get_absolute_url }}" class="crop-card">
+            <div class="crop-icon-large">{{ crop.icon }}</div>
+            <div class="crop-name">{{ crop.crop_name_hi }}</div>
+            <div class="crop-season-tag">{{ crop.season }}</div>
+            <div style="font-size: 0.8rem; color: var(--color-primary-dark); font-weight: 700; margin-top: 8px;">
+              जानकारी देखें →
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Section 2: Farming Tips & Agronomy Articles -->
+    <div>
+      <div class="section-header" style="text-align: left; margin-bottom: 24px;">
+        <div class="section-tag" style="background: #fef3c7; color: #78350f;">
+          <span>💡</span> <span>सुझाव एवं लेख</span>
+        </div>
+        <h2 class="section-title">किसान सलाह व उपयोगी लेख</h2>
+        <p class="section-subtitle" style="margin-left: 0;">
+          खेती में बेहतर पैदावार और पशुपालन में अधिक लाभ के लिए विशेषज्ञों की सामान्य सलाह
+        </p>
+      </div>
+
+      <!-- Filter by category -->
+      <div class="filter-pills" style="margin-bottom: 24px;">
+        <a href="{% url 'farmers:index' %}" class="filter-pill {% if not selected_cat %}active{% endif %}">
+          सभी विषय (All)
+        </a>
+        {% for cat_key, cat_label in categories %}
+          <a href="?cat={{ cat_key }}" class="filter-pill {% if selected_cat == cat_key %}active{% endif %}">
+            {{ cat_label|slice:":20" }}
+          </a>
+        {% endfor %}
+      </div>
+
+      {% if tips %}
+        <div class="tips-grid">
+          {% for tip in tips %}
+            <div class="tip-card">
+              <span class="tip-cat-tag">{{ tip.get_category_display|slice:":25" }}</span>
+              <h3 class="tip-title">
+                <a href="{{ tip.get_absolute_url }}">{{ tip.title }}</a>
+              </h3>
+              <p class="tip-summary">{{ tip.summary }}</p>
+              <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid var(--color-border);">
+                <span style="font-size: 0.8rem; color: #94a3b8;">📅 {{ tip.published_date|date:"d M Y" }}</span>
+                <a href="{{ tip.get_absolute_url }}" style="color: var(--color-primary-dark); font-weight: 700; font-size: 0.95rem;">
+                  पूरा पढ़ें →
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p style="text-align: center; padding: 40px; background: #fff; border-radius: var(--radius-md);">
+          इस विषय पर लेख तैयार किए जा रहे हैं।
+        </p>
+      {% endif %}
+    </div>
+
+    <!-- Safety Disclaimer Banner -->
+    <div class="safety-alert-box" style="margin-top: 48px;">
+      <span style="font-size: 1.4rem;">⚠️</span>
+      <div>
+        <strong>वैधानिक व सुरक्षा सूचना:</strong> किसान कॉर्नर में दी गई जानकारी सामान्य कृषि ज्ञान और जागरूकता के उद्देश्य से है। किसी भी कीटनाशक अथवा रासायनिक उर्वरक के प्रयोग से पूर्व उसके पैकेट के लेबल पर दिए निर्देशों का पालन करें तथा आवश्यकतानुसार स्थानीय कृषि रक्षा विशेषज्ञ से सलाह अवश्य लें।
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

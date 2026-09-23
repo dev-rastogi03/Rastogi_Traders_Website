@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static rastogi_tags %}
+
+{% block title %}{{ category.name_hi }} ({{ category.name_en }}) - Rastogi Traders{% endblock %}
+{% block meta_description %}{{ category.name_hi }} - {{ category.short_description }} आज का भाव व उपलब्धता WhatsApp पर जानें।{% endblock %}
+
+{% block content %}
+<!-- Category Header -->
+<div class="section" style="background: linear-gradient(135deg, #1b5e20, #2e7d32); color: #ffffff; padding: 36px 0;">
+  <div class="container text-center" style="text-align: center;">
+    <div style="font-size: 3rem; margin-bottom: 6px;">{{ category.icon }}</div>
+    <h1 style="font-size: 2.2rem; font-weight: 800; color: #fff; margin-bottom: 6px;">
+      {{ category.name_hi }}
+    </h1>
+    {% if category.name_en %}
+      <div style="font-size: 1.1rem; color: #fef08a; font-weight: 700; margin-bottom: 8px;">
+        {{ category.name_en }}
+      </div>
+    {% endif %}
+    <p style="color: #e2e8f0; font-size: 1.05rem; max-width: 650px; margin: 0 auto;">
+      {{ category.short_description }}
+    </p>
+  </div>
+</div>
+
+<div class="section" style="padding-top: 32px;">
+  <div class="container">
+
+    <!-- Category Nav Pills -->
+    <div class="filter-pills" style="margin-bottom: 24px;">
+      <a href="{% url 'products:list' %}" class="filter-pill">
+        🌾 सभी उत्पाद (All)
+      </a>
+      <a href="{{ category.get_absolute_url }}" class="filter-pill active">
+        {{ category.icon }} {{ category.name_hi }}
+      </a>
+      {% for other_cat in other_categories %}
+        <a href="{{ other_cat.get_absolute_url }}" class="filter-pill">
+          {{ other_cat.icon }} {{ other_cat.name_hi }}
+        </a>
+      {% endfor %}
+    </div>
+
+    <!-- Products in this category -->
+    {% if products %}
+      <div class="product-grid">
+        {% for prod in products %}
+          <div class="product-card">
+            <div class="product-img-wrapper">
+              <span class="product-status-tag status-{{ prod.availability_status }}">
+                {{ prod.get_availability_status_display|slice:":15" }}
+              </span>
+              <span class="product-brand-tag">{{ prod.brand }}</span>
+              {% if prod.image %}
+                <img src="{{ prod.image.url }}" alt="{{ prod.name }}" loading="lazy">
+              {% else %}
+                <div class="product-placeholder-icon">{{ category.icon }}</div>
+              {% endif %}
+            </div>
+
+            <div class="product-content">
+              <h3 class="product-name">
+                <a href="{{ prod.get_absolute_url }}">{{ prod.name }}</a>
+              </h3>
+              <div class="product-pack-size">
+                📦 पैक: {{ prod.pack_size }}
+              </div>
+              <p class="product-desc-short">{{ prod.short_description }}</p>
+
+              <div class="product-actions">
+                <div class="price-ask-label">
+                  {{ prod.price_label|default:"आज का भाव पूछें" }}
+                </div>
+                <a href="{% whatsapp_product_link prod %}" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block">
+                  <span>📲</span> <span>WhatsApp पर पूछें</span>
+                </a>
+                <a href="{{ prod.get_absolute_url }}" class="btn btn-outline btn-block" style="min-height: 38px; font-size: 0.9rem; padding: 4px 10px;">
+                  पूरा विवरण देखें
+                </a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div style="text-align: center; padding: 60px 16px; background: #fff; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+        <p style="font-size: 1.1rem; color: var(--color-text-muted);">
+          इस श्रेणी में वर्तमान में नए उत्पाद जोड़े जा रहे हैं। भाव व उपलब्धता के लिए सीधे फोन अथवा WhatsApp पर संपर्क करें।
+        </p>
+        <a href="{{ whatsapp_general_url }}" target="_blank" class="btn btn-whatsapp" style="margin-top: 14px;">
+          📲 WhatsApp पर जानकारी लें
+        </a>
+      </div>
+    {% endif %}
+
+    <!-- Safety Note -->
+    <div class="safety-alert-box" style="margin-top: 36px;">
+      <span>⚠️</span>
+      <div>
+        <strong>कृषि सुरक्षा निर्देश:</strong> उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर कृषि विशेषज्ञ से सलाह लें।
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static rastogi_tags %}
+
+{% block title %}दुकान व स्टॉक फोटो गैलरी (Photo Gallery) - Rastogi Traders{% endblock %}
+{% block meta_description %}रस्तोगी ट्रेडर्स की दुकान, काउंटर, उर्वरक, बीज एवं पशु आहार स्टॉक की वास्तविक तस्वीरें।{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="section" style="background: linear-gradient(135deg, #114217, #1b5e20); color: #ffffff; padding: 40px 0;">
+  <div class="container text-center" style="text-align: center;">
+    <div class="hero-badge-pill" style="margin-bottom: 10px;">
+      <span>📸</span> <span>दुकान व स्टॉक दर्शन</span>
+    </div>
+    <h1 style="font-size: 2.3rem; font-weight: 800; color: #fff; margin-bottom: 8px;">हमारी दुकान व स्टॉक गैलरी</h1>
+    <p style="color: #e2e8f0; font-size: 1.05rem; max-width: 650px; margin: 0 auto;">
+      दुकान का दृश्य, काउंटर, उर्वरक, बीज व पशु आहार के स्टॉक की प्रामाणिक तस्वीरें।
+    </p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+
+    <!-- Gallery Category Filter Pills -->
+    <div class="filter-pills" style="margin-bottom: 24px;">
+      <a href="{% url 'core:gallery' %}" class="filter-pill {% if current_cat == 'all' or not current_cat %}active{% endif %}">
+        सभी तस्वीरें (All)
+      </a>
+      {% for cat_key, cat_label in categories %}
+        <a href="?cat={{ cat_key }}" class="filter-pill {% if current_cat == cat_key %}active{% endif %}">
+          {{ cat_label|slice:":25" }}
+        </a>
+      {% endfor %}
+    </div>
+
+    <!-- Gallery Grid with Lightbox -->
+    {% if gallery_images %}
+      <div class="gallery-grid">
+        {% for img in gallery_images %}
+          <div class="gallery-item" data-caption="{{ img.title }} {% if img.caption %}- {{ img.caption }}{% endif %}">
+            {% if img.image %}
+              <img src="{{ img.image.url }}" alt="{{ img.title }}" loading="lazy">
+            {% else %}
+              <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; background: #e2e8f0;">📸</div>
+            {% endif %}
+            <div class="gallery-overlay">
+              <div style="font-weight: 700;">{{ img.title }}</div>
+              {% if img.caption %}
+                <div style="font-size: 0.75rem; opacity: 0.9; margin-top: 2px;">{{ img.caption }}</div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <p style="text-align: center; font-size: 0.85rem; color: #64748b; margin-top: 20px;">
+        💡 फोटो को बड़ा करके देखने के लिए उस पर क्लिक/टैप करें।
+      </p>
+    {% else %}
+      <div style="text-align: center; padding: 60px 16px; background: #fff; border-radius: var(--radius-md);">
+        <p style="font-size: 1.1rem; color: var(--color-text-muted);">
+          इस श्रेणी में तस्वीरें शीघ्र अपलोड की जा रही हैं।
+        </p>
+      </div>
+    {% endif %}
+
+    <!-- Shop Visit Banner -->
+    <div style="margin-top: 48px; background: #f1f6ed; border: 1px solid #dcfce7; border-radius: var(--radius-lg); padding: 28px; text-align: center;">
+      <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 8px;">
+        हमारी दुकान पर पधारें
+      </h3>
+      <p style="font-size: 1rem; color: var(--color-text-muted); margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        दुकान पर आकर असली व ताज़ा स्टॉक की स्वयं जाँच करें। उचित मूल्य और सही मार्गदर्शन।
+      </p>
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="{{ profile.google_maps_directions_url|default:'#' }}" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+          📍 दुकान का रास्ता देखें (Google Maps)
+        </a>
+        <a href="{{ phone_call_url }}" class="btn btn-call btn-lg">
+          📞 फोन करें: {{ profile.phone_primary|default:"+91 9876543210" }}
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

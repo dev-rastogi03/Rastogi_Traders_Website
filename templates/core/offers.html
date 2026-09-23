@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static rastogi_tags %}
+
+{% block title %}आज के खास ऑफर (Special Offers) - Rastogi Traders{% endblock %}
+{% block meta_description %}रस्तोगी ट्रेडर्स के वर्तमान मौसमी ऑफर, छूट और बंडल डिस्काउंट। आज का भाव व ऑफर WhatsApp पर जानें।{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="section" style="background: linear-gradient(135deg, #b45309, #d97706); color: #ffffff; padding: 40px 0;">
+  <div class="container text-center" style="text-align: center;">
+    <div class="hero-badge-pill" style="background: rgba(255,255,255,0.2); color: #fef08a; margin-bottom: 10px;">
+      <span>🔥</span> <span>सीमित समय छूट एवं बचत</span>
+    </div>
+    <h1 style="font-size: 2.3rem; font-weight: 800; color: #fff; margin-bottom: 8px;">आज के खास ऑफर</h1>
+    <p style="color: #fef3c7; font-size: 1.05rem; max-width: 650px; margin: 0 auto;">
+      उर्वरक, कीटनाशक एवं पशु आहार पर वर्तमान मौसमी लाभ और विशेष बचत के अवसर।
+    </p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    {% if offers %}
+      <div class="offer-grid">
+        {% for offer in offers %}
+          <div class="offer-card">
+            <span class="offer-badge">{{ offer.badge_text|default:"सीमित समय ऑफर" }}</span>
+            <h2 class="offer-title">{{ offer.title }}</h2>
+
+            {% if offer.deal_highlight %}
+              <div style="font-weight: 800; color: #b45309; font-size: 1.15rem; margin-bottom: 10px;">
+                🎁 {{ offer.deal_highlight }}
+              </div>
+            {% endif %}
+
+            {% if offer.image %}
+              <div style="margin-bottom: 16px; border-radius: var(--radius-sm); overflow: hidden; max-height: 220px;">
+                <img src="{{ offer.image.url }}" alt="{{ offer.title }}" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+            {% endif %}
+
+            <p class="offer-desc">{{ offer.description }}</p>
+
+            <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 16px;">
+              {% if offer.valid_until %}
+                ⏰ ऑफर वैधता: <strong>{{ offer.valid_until|date:"d M Y" }}</strong> तक
+              {% else %}
+                ⏰ ऑफर वैधता: स्टॉक रहने तक
+              {% endif %}
+            </div>
+
+            <div style="margin-top: auto; display: flex; gap: 10px; flex-wrap: wrap;">
+              <a href="{% whatsapp_offer_link offer %}" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block">
+                <span>📲</span> <span>WhatsApp पर इस ऑफर का भाव पूछें</span>
+              </a>
+              <a href="{{ phone_call_url }}" class="btn btn-call btn-block" style="min-height: 42px; font-size: 0.95rem;">
+                <span>📞</span> <span>फोन करके जानकारी लें</span>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div style="text-align: center; padding: 60px 16px; background: #fff; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+        <div style="font-size: 3.5rem; margin-bottom: 12px;">🎁</div>
+        <h3 style="font-size: 1.4rem; color: var(--color-primary-dark); margin-bottom: 8px;">वर्तमान में कोई नया ऑफर सक्रिय नहीं है</h3>
+        <p style="color: var(--color-text-muted); margin-bottom: 20px;">
+          उत्पाद की उपलब्धता और आज के विशेष भाव के लिए सीधे WhatsApp पर पूछें।
+        </p>
+        <a href="{{ whatsapp_general_url }}" target="_blank" class="btn btn-whatsapp btn-lg">
+          📲 WhatsApp पर आज का भाव पूछें
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

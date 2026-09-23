@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static rastogi_tags %}
+
+{% block title %}{{ tip.title }} - किसान सलाह | Rastogi Traders{% endblock %}
+{% block meta_description %}{{ tip.summary|slice:":150" }} - Rastogi Traders किसान कॉर्नर।{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<div style="background: #f1f5f9; padding: 12px 0; border-bottom: 1px solid var(--color-border);">
+  <div class="container" style="font-size: 0.9rem; color: var(--color-text-muted);">
+    <a href="{% url 'core:home' %}" style="color: var(--color-primary-dark); font-weight: 600;">होम</a>
+    <span style="margin: 0 6px;">/</span>
+    <a href="{% url 'farmers:index' %}" style="color: var(--color-primary-dark); font-weight: 600;">किसान कॉर्नर</a>
+    <span style="margin: 0 6px;">/</span>
+    <span style="font-weight: 700; color: var(--color-text-main);">{{ tip.title|truncatewords:6 }}</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container" style="max-width: 860px;">
+    <article style="background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 32px 24px; box-shadow: var(--shadow-sm);">
+      <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 12px; flex-wrap: wrap;">
+        <span class="tip-cat-tag">{{ tip.get_category_display }}</span>
+        <span style="font-size: 0.85rem; color: #64748b;">📅 {{ tip.published_date|date:"d F Y" }}</span>
+      </div>
+
+      <h1 style="font-size: 2.2rem; font-weight: 800; color: var(--color-primary-dark); line-height: 1.3; margin-bottom: 16px;">
+        {{ tip.title }}
+      </h1>
+
+      <div style="font-size: 1.1rem; font-weight: 600; color: var(--color-text-muted); margin-bottom: 24px; border-left: 4px solid var(--color-primary); padding-left: 14px; line-height: 1.6;">
+        {{ tip.summary }}
+      </div>
+
+      {% if tip.featured_image %}
+        <div style="margin-bottom: 24px; border-radius: var(--radius-md); overflow: hidden;">
+          <img src="{{ tip.featured_image.url }}" alt="{{ tip.title }}" style="width: 100%; max-height: 400px; object-fit: cover;">
+        </div>
+      {% endif %}
+
+      <div style="font-size: 1.05rem; line-height: 1.8; color: var(--color-text-main); white-space: pre-line; margin-bottom: 32px;">
+        {{ tip.content }}
+      </div>
+
+      <!-- Legal & Safety Note -->
+      <div class="safety-alert-box">
+        <span style="font-size: 1.4rem;">⚠️</span>
+        <div>
+          <strong>सुरक्षा व वैधानिक सूचना:</strong><br>
+          {{ tip.safety_note|default:"उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर नजदीकी कृषि विशेषज्ञ से संपर्क करें।" }}
+        </div>
+      </div>
+
+      <!-- CTA Box -->
+      <div style="margin-top: 32px; background: #fdf8f4; border: 1px solid #fed7aa; border-radius: var(--radius-md); padding: 20px; text-align: center;">
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: #78350f; margin-bottom: 6px;">
+          इस विषय में उत्पाद व सलाह के लिए संपर्क करें
+        </h3>
+        <p style="font-size: 0.95rem; color: #92400e; margin-bottom: 16px;">
+          रस्तोगी ट्रेडर्स आपकी खेती में हर कदम पर सही मार्गदर्शन देने के लिए उपलब्ध है।
+        </p>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <a href="{{ whatsapp_general_url }}" target="_blank" rel="noopener" class="btn btn-whatsapp">
+            📲 WhatsApp पर पूछें
+          </a>
+          <a href="{{ phone_call_url }}" class="btn btn-call">
+            📞 फोन करें
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Related Tips -->
+    {% if related_tips %}
+      <div style="margin-top: 40px;">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 16px;">
+          अन्य उपयोगी सुझाव
+        </h2>
+        <div class="tips-grid">
+          {% for rel_tip in related_tips %}
+            <div class="tip-card">
+              <h3 class="tip-title"><a href="{{ rel_tip.get_absolute_url }}">{{ rel_tip.title }}</a></h3>
+              <p class="tip-summary">{{ rel_tip.summary|truncatewords:15 }}</p>
+              <a href="{{ rel_tip.get_absolute_url }}" style="color: var(--color-primary-dark); font-weight: 700; margin-top: auto;">
+                पढ़ें →
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+</div>
+{% endblock %}

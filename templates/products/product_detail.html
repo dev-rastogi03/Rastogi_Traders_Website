@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% load static rastogi_tags %}
+
+{% block title %}{{ product.name }} ({{ product.brand }}) - Rastogi Traders{% endblock %}
+{% block meta_description %}{{ product.name }} - {{ product.short_description|slice:":150" }} आज का भाव व उपलब्धता के लिए संपर्क करें।{% endblock %}
+
+{% block floating_whatsapp %}{% whatsapp_product_link product %}{% endblock %}
+{% block mobile_bar_whatsapp %}{% whatsapp_product_link product %}{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb Navigation -->
+<div style="background: #f1f5f9; padding: 12px 0; border-bottom: 1px solid var(--color-border);">
+  <div class="container" style="font-size: 0.9rem; color: var(--color-text-muted);">
+    <a href="{% url 'core:home' %}" style="color: var(--color-primary-dark); font-weight: 600;">होम</a>
+    <span style="margin: 0 6px;">/</span>
+    <a href="{% url 'products:list' %}" style="color: var(--color-primary-dark); font-weight: 600;">उत्पाद</a>
+    <span style="margin: 0 6px;">/</span>
+    <a href="{{ product.category.get_absolute_url }}" style="color: var(--color-primary-dark); font-weight: 600;">{{ product.category.name_hi }}</a>
+    <span style="margin: 0 6px;">/</span>
+    <span style="font-weight: 700; color: var(--color-text-main);">{{ product.name }}</span>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="product-detail-layout">
+
+      <!-- Left: Product Image Box -->
+      <div>
+        <div class="product-detail-img-box">
+          {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" style="max-height: 380px; max-width: 100%; object-fit: contain;">
+          {% else %}
+            <div style="font-size: 6rem; color: var(--color-primary);">{{ product.category.icon|default:"🌾" }}</div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Right: Product Information & CTAs -->
+      <div>
+        <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 8px; flex-wrap: wrap;">
+          <span class="product-status-tag status-{{ product.availability_status }}" style="position: static; font-size: 0.85rem; padding: 4px 12px;">
+            {{ product.get_availability_status_display }}
+          </span>
+          <span style="background: #f1f5f9; color: var(--color-text-main); font-weight: 700; font-size: 0.85rem; padding: 4px 12px; border-radius: var(--radius-full);">
+            ब्रांड: {{ product.brand }}
+          </span>
+        </div>
+
+        <h1 style="font-size: 2.1rem; font-weight: 800; color: var(--color-primary-dark); line-height: 1.25; margin-bottom: 12px;">
+          {{ product.name }}
+        </h1>
+
+        <div style="font-size: 1.05rem; color: var(--color-text-muted); margin-bottom: 20px; line-height: 1.6;">
+          {{ product.short_description }}
+        </div>
+
+        <!-- Specifications Table -->
+        <table class="product-spec-table">
+          <tbody>
+            <tr>
+              <th>श्रेणी (Category)</th>
+              <td>{{ product.category.icon }} {{ product.category.name_hi }}</td>
+            </tr>
+            <tr>
+              <th>कंपनी / ब्रांड</th>
+              <td>{{ product.brand }}</td>
+            </tr>
+            <tr>
+              <th>उपलब्ध पैकिंग</th>
+              <td>{{ product.pack_size }}</td>
+            </tr>
+            {% if product.suitable_crops %}
+              <tr>
+                <th>उपयुक्त फसलें</th>
+                <td>{{ product.suitable_crops }}</td>
+              </tr>
+            {% endif %}
+            <tr>
+              <th>मूल्य (Price)</th>
+              <td style="color: var(--color-accent-gold-dark); font-size: 1.15rem;">
+                {% if product.price %}
+                  ₹ {{ product.price }} <span style="font-size: 0.85rem; font-weight: normal; color: #64748b;">(अंतिम भाव के लिए संपर्क करें)</span>
+                {% else %}
+                  {{ product.price_label|default:"आज का भाव पूछें" }}
+                {% endif %}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- High-Impact Direct Conversion CTAs -->
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;">
+          <a href="{% whatsapp_product_link product %}" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg btn-block" id="product-whatsapp-enquiry-btn">
+            <span style="font-size: 1.4rem;">📲</span> 
+            <span>इस उत्पाद की जानकारी WhatsApp पर लें</span>
+          </a>
+          <a href="{{ phone_call_url }}" class="btn btn-call btn-lg btn-block" id="product-call-enquiry-btn">
+            <span style="font-size: 1.4rem;">📞</span> 
+            <span>फोन करके पूछें: {{ profile.phone_primary|default:"+91 9876543210" }}</span>
+          </a>
+        </div>
+
+        <!-- Safety Precaution Box -->
+        <div class="safety-alert-box">
+          <span style="font-size: 1.3rem;">⚠️</span>
+          <div>
+            <strong>महत्वपूर्ण सुरक्षा निर्देश:</strong><br>
+            {{ product.safety_precaution|default:"उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर कृषि विशेषज्ञ से सलाह लें।" }}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Detailed Information if present -->
+    {% if product.detailed_description %}
+      <div style="margin-top: 48px; background: #ffffff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 28px;">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 14px;">
+          📖 विस्तृत जानकारी एवं उपयोग विधि
+        </h2>
+        <div style="font-size: 1rem; line-height: 1.7; color: var(--color-text-main); white-space: pre-line;">
+          {{ product.detailed_description }}
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- Related Products -->
+    {% if related_products %}
+      <div style="margin-top: 56px;">
+        <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 20px;">
+          इसी श्रेणी के अन्य उत्पाद
+        </h2>
+        <div class="product-grid">
+          {% for rel_prod in related_products %}
+            <div class="product-card">
+              <div class="product-img-wrapper">
+                <span class="product-status-tag status-{{ rel_prod.availability_status }}">
+                  {{ rel_prod.get_availability_status_display|slice:":15" }}
+                </span>
+                {% if rel_prod.image %}
+                  <img src="{{ rel_prod.image.url }}" alt="{{ rel_prod.name }}" loading="lazy">
+                {% else %}
+                  <div class="product-placeholder-icon">{{ rel_prod.category.icon|default:"🌾" }}</div>
+                {% endif %}
+              </div>
+              <div class="product-content">
+                <h3 class="product-name">
+                  <a href="{{ rel_prod.get_absolute_url }}">{{ rel_prod.name }}</a>
+                </h3>
+                <div class="product-pack-size">📦 {{ rel_prod.pack_size }}</div>
+                <div class="product-actions" style="margin-top: auto;">
+                  <a href="{% whatsapp_product_link rel_prod %}" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block" style="min-height: 40px; font-size: 0.92rem;">
+                    📲 WhatsApp पर पूछें
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+</div>
+{% endblock %}

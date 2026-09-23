@@ -1,0 +1,570 @@
+{% extends 'base.html' %}
+{% load static rastogi_tags %}
+
+{% block content %}
+<!-- =========================================================================
+     1. HERO SECTION
+     ========================================================================= -->
+<section class="hero-section">
+  <div class="container hero-grid">
+    <div class="hero-text-content">
+      <div class="hero-badge-pill">
+        <span>🌾</span> <span>स्थानीय कृषि सेवा केंद्र</span>
+      </div>
+      <h1 class="hero-title">
+        {{ profile.business_name|default:"Rastogi Traders | रस्तोगी ट्रेडर्स" }}
+      </h1>
+      <div class="hero-tagline">
+        {{ profile.tagline|default:"किसानों की खेती का भरोसेमंद साथी" }}
+      </div>
+      <p class="hero-desc">
+        {{ profile.hero_supporting_text|default:"उर्वरक (खाद), कीटनाशक, फसल सुरक्षा और पशु आहार की उपलब्धता व आज के भाव की जानकारी के लिए हमसे सीधे संपर्क करें।" }}
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="{{ whatsapp_general_url }}" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg" id="hero-whatsapp-cta">
+          <span>📲</span> <span>WhatsApp पर पूछें</span>
+        </a>
+        <a href="{{ phone_call_url }}" class="btn btn-call btn-lg" id="hero-phone-cta">
+          <span>📞</span> <span>अभी फोन करें</span>
+        </a>
+      </div>
+
+      <div style="font-size: 0.9rem; color: #fef08a; display: flex; align-items: center; gap: 8px;">
+        <span>✓</span> <span>दुकान पर असली व उच्च गुणवत्ता वाले उत्पाद उपलब्ध</span>
+      </div>
+    </div>
+
+    <!-- Right Side Value Card -->
+    <div class="hero-visual-card">
+      <div style="text-align: center; margin-bottom: 16px;">
+        <span style="font-size: 0.95rem; font-weight: 700; color: #fef08a; text-transform: uppercase; letter-spacing: 0.05em;">
+          प्रमुख सेवाएँ व उत्पाद
+        </span>
+      </div>
+      <div class="hero-features-list">
+        <div class="hero-feature-item">
+          <span class="icon">🌾</span>
+          <span class="title">उर्वरक (खाद)</span>
+          <div style="font-size: 0.75rem; color: #64748b; margin-top: 2px;">यूरिया, डीएपी, एनपीके</div>
+        </div>
+        <div class="hero-feature-item">
+          <span class="icon">🌱</span>
+          <span class="title">फसल सुरक्षा</span>
+          <div style="font-size: 0.75rem; color: #64748b; margin-top: 2px;">कीटनाशक व फफूंदनाशक</div>
+        </div>
+        <div class="hero-feature-item">
+          <span class="icon">🐄</span>
+          <span class="title">पशु आहार</span>
+          <div style="font-size: 0.75rem; color: #64748b; margin-top: 2px;">दुधारू पशुओं के लिए पोषण</div>
+        </div>
+        <div class="hero-feature-item">
+          <span class="icon">🌻</span>
+          <span class="title">उन्नत बीज</span>
+          <div style="font-size: 0.75rem; color: #64748b; margin-top: 2px;">उच्च अंकुरण व पैदावार</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     2. QUICK ACTION BAR (4 Large Touch Buttons)
+     ========================================================================= -->
+<section class="quick-action-section">
+  <div class="container">
+    <div class="quick-action-grid">
+      <!-- WhatsApp Tile -->
+      <a href="{{ whatsapp_general_url }}" target="_blank" rel="noopener" class="action-tile tile-whatsapp" id="quick-action-whatsapp">
+        <div class="action-tile-icon">📲</div>
+        <div class="action-tile-text">
+          <div class="title">WhatsApp</div>
+          <div class="subtitle">जानकारी लें</div>
+        </div>
+      </a>
+
+      <!-- Call Tile -->
+      <a href="{{ phone_call_url }}" class="action-tile tile-call" id="quick-action-call">
+        <div class="action-tile-icon">📞</div>
+        <div class="action-tile-text">
+          <div class="title">फोन करें</div>
+          <div class="subtitle">अभी बात करें</div>
+        </div>
+      </a>
+
+      <!-- Location Tile -->
+      <a href="{{ profile.google_maps_directions_url|default:'#contact-section' }}" target="_blank" rel="noopener" class="action-tile tile-location" id="quick-action-location">
+        <div class="action-tile-icon">📍</div>
+        <div class="action-tile-text">
+          <div class="title">दुकान का पता</div>
+          <div class="subtitle">रास्ता देखें</div>
+        </div>
+      </a>
+
+      <!-- Catalog Tile -->
+      <a href="{% url 'products:list' %}" class="action-tile tile-catalog" id="quick-action-products">
+        <div class="action-tile-icon">🌾</div>
+        <div class="action-tile-text">
+          <div class="title">उत्पाद सूची</div>
+          <div class="subtitle">उत्पाद देखें</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     3. PRODUCT CATEGORIES (हमारे उत्पाद)
+     ========================================================================= -->
+<section class="section" id="categories-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">
+        <span>🌾</span> <span>श्रेणियाँ</span>
+      </div>
+      <h2 class="section-title">हमारे उत्पाद</h2>
+      <p class="section-subtitle">
+        खेती और पशुपालन की हर जरूरत के लिए प्रमाणित और भरोसेमंद उत्पाद
+      </p>
+    </div>
+
+    <div class="category-grid">
+      {% for cat in categories %}
+        <div class="category-card">
+          <div class="category-top">
+            <div class="category-icon-box">{{ cat.icon }}</div>
+            <span class="category-badge-pill">{{ cat.badge_text|default:"उपलब्ध" }}</span>
+          </div>
+          <h3 class="category-title">{{ cat.name_hi }}</h3>
+          {% if cat.name_en %}
+            <div style="font-size: 0.85rem; color: #64748b; margin-top: -6px; margin-bottom: 8px; font-weight: 600;">
+              {{ cat.name_en }}
+            </div>
+          {% endif %}
+          <p class="category-desc">{{ cat.short_description }}</p>
+          <a href="{{ cat.get_absolute_url }}" class="btn btn-outline btn-block">
+            {{ cat.name_hi }} देखें →
+          </a>
+        </div>
+      {% empty %}
+        <p style="text-align: center; grid-column: 1 / -1;">श्रेणियाँ शीघ्र जोड़ी जा रही हैं।</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     4. FEATURED PRODUCTS (प्रमुख उत्पाद)
+     ========================================================================= -->
+<section class="section section-alt" id="featured-products-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">
+        <span>⭐</span> <span>लोकप्रिय स्टॉक</span>
+      </div>
+      <h2 class="section-title">दुकान पर उपलब्ध प्रमुख उत्पाद</h2>
+      <p class="section-subtitle">
+        भाव एवं उपलब्धता की तुरंत जानकारी के लिए नीचे दिए गए WhatsApp बटन पर टैप करें
+      </p>
+    </div>
+
+    <div class="product-grid">
+      {% for prod in featured_products %}
+        <div class="product-card">
+          <div class="product-img-wrapper">
+            <span class="product-status-tag status-{{ prod.availability_status }}">
+              {{ prod.get_availability_status_display|slice:":15" }}
+            </span>
+            <span class="product-brand-tag">{{ prod.brand }}</span>
+            {% if prod.image %}
+              <img src="{{ prod.image.url }}" alt="{{ prod.name }}" loading="lazy">
+            {% else %}
+              <div class="product-placeholder-icon">{{ prod.category.icon|default:"🌾" }}</div>
+            {% endif %}
+          </div>
+
+          <div class="product-content">
+            <h3 class="product-name">
+              <a href="{{ prod.get_absolute_url }}">{{ prod.name }}</a>
+            </h3>
+            <div class="product-pack-size">
+              📦 पैक: {{ prod.pack_size }}
+            </div>
+            <p class="product-desc-short">{{ prod.short_description }}</p>
+
+            <div class="product-actions">
+              <div class="price-ask-label">
+                {{ prod.price_label|default:"आज का भाव पूछें" }}
+              </div>
+              <a href="{% whatsapp_product_link prod %}" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block">
+                <span>📲</span> <span>WhatsApp पर पूछें</span>
+              </a>
+              <a href="{{ prod.get_absolute_url }}" class="btn btn-outline btn-block" style="min-height: 40px; font-size: 0.9rem; padding: 6px 12px;">
+                पूरा विवरण देखें
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div style="text-align: center; margin-top: 36px;">
+      <a href="{% url 'products:list' %}" class="btn btn-primary btn-lg">
+        🌾 सभी उत्पाद कैटलॉग देखें (View All) →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     5. SPECIAL OFFERS (आज के खास ऑफर)
+     ========================================================================= -->
+{% if active_offers %}
+<section class="section" id="offers-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" style="background: #fef3c7; color: #b45309;">
+        <span>🔥</span> <span>विशेष बचत</span>
+      </div>
+      <h2 class="section-title">आज के खास ऑफर</h2>
+      <p class="section-subtitle">
+        मौसमी खेती के अनुसार विशेष ऑफर व छूट की जानकारी
+      </p>
+    </div>
+
+    <div class="offer-grid">
+      {% for offer in active_offers %}
+        <div class="offer-card">
+          <span class="offer-badge">{{ offer.badge_text|default:"सीमित समय ऑफर" }}</span>
+          <h3 class="offer-title">{{ offer.title }}</h3>
+          {% if offer.deal_highlight %}
+            <div style="font-weight: 700; color: #b45309; font-size: 1.05rem; margin-bottom: 8px;">
+              🎁 {{ offer.deal_highlight }}
+            </div>
+          {% endif %}
+          <p class="offer-desc">{{ offer.description }}</p>
+
+          <div style="margin-top: auto; display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="{% whatsapp_offer_link offer %}" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block">
+              <span>📲</span> <span>WhatsApp पर जानकारी लें</span>
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- =========================================================================
+     6. FARMER CORNER PREVIEW (किसान कॉर्नर)
+     ========================================================================= -->
+<section class="section section-soil" id="farmer-corner-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" style="background: #fef3c7; color: #78350f;">
+        <span>👨‍🌾</span> <span>किसान सलाह केंद्र</span>
+      </div>
+      <h2 class="section-title">किसान कॉर्नर (Crop & Farming Guidance)</h2>
+      <p class="section-subtitle">
+        प्रमुख फसलों की देखरेख, खाद प्रबंधन और सामान्य कृषि सुझाव
+      </p>
+    </div>
+
+    <!-- Crops Grid -->
+    <div class="crop-grid" style="margin-bottom: 36px;">
+      {% for crop in crop_guides %}
+        <a href="{{ crop.get_absolute_url }}" class="crop-card">
+          <div class="crop-icon-large">{{ crop.icon }}</div>
+          <div class="crop-name">{{ crop.crop_name_hi }}</div>
+          <div class="crop-season-tag">{{ crop.season }}</div>
+        </a>
+      {% endfor %}
+    </div>
+
+    <!-- Recent Agronomy Tips -->
+    <div class="tips-grid">
+      {% for tip in recent_tips %}
+        <div class="tip-card">
+          <span class="tip-cat-tag">{{ tip.get_category_display|slice:":25" }}</span>
+          <h3 class="tip-title">
+            <a href="{{ tip.get_absolute_url }}">{{ tip.title }}</a>
+          </h3>
+          <p class="tip-summary">{{ tip.summary|truncatewords:22 }}</p>
+          <a href="{{ tip.get_absolute_url }}" style="color: var(--color-primary-dark); font-weight: 700; margin-top: auto;">
+            पूरी सलाह पढ़ें →
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div style="text-align: center; margin-top: 32px;">
+      <a href="{% url 'farmers:index' %}" class="btn btn-outline btn-lg">
+        👨‍🌾 किसान कॉर्नर के सभी लेख व फसल जानकारी देखें →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     7. TRUST SECTION ("क्यों जुड़ें हमसे?")
+     ========================================================================= -->
+<section class="section" id="trust-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">
+        <span>🛡️</span> <span>हमारा संकल्प</span>
+      </div>
+      <h2 class="section-title">क्यों जुड़ें हमसे?</h2>
+      <p class="section-subtitle">
+        रस्तोगी ट्रेडर्स — स्थानीय किसानों की सेवा में सदैव समर्पित
+      </p>
+    </div>
+
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="trust-check-icon">✓</div>
+        <h3 class="trust-card-title">{{ profile.trust_point_1_title|default:"स्थानीय एवं भरोसेमंद सेवा" }}</h3>
+        <p class="trust-card-desc">{{ profile.trust_point_1_desc|default:"स्थानीय किसानों और ग्राहकों के लिए आसान और विश्वसनीय संपर्क।" }}</p>
+      </div>
+
+      <div class="trust-card">
+        <div class="trust-check-icon">✓</div>
+        <h3 class="trust-card-title">{{ profile.trust_point_2_title|default:"विभिन्न कृषि उत्पाद" }}</h3>
+        <p class="trust-card-desc">{{ profile.trust_point_2_desc|default:"उर्वरक, फसल सुरक्षा उत्पाद और पशु आहार एक ही छत के नीचे।" }}</p>
+      </div>
+
+      <div class="trust-card">
+        <div class="trust-check-icon">✓</div>
+        <h3 class="trust-card-title">{{ profile.trust_point_3_title|default:"आसान संपर्क सुविधा" }}</h3>
+        <p class="trust-card-desc">{{ profile.trust_point_3_desc|default:"फोन और WhatsApp के माध्यम से सीधे आज का भाव और उत्पाद उपलब्धता पूछें।" }}</p>
+      </div>
+
+      <div class="trust-card">
+        <div class="trust-check-icon">✓</div>
+        <h3 class="trust-card-title">{{ profile.trust_point_4_title|default:"दुकान पर सीधी उपलब्धता" }}</h3>
+        <p class="trust-card-desc">{{ profile.trust_point_4_desc|default:"असली कंपनियों के स्टॉक की दुकान पर सीधी जाँच और खरीद की सुविधा।" }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+     8. CUSTOMER REVIEWS (ग्राहकों की राय)
+     ========================================================================= -->
+{% if reviews %}
+<section class="section section-alt" id="reviews-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" style="background: #fef3c7; color: #b45309;">
+        <span>⭐</span> <span>ग्राहक अनुभव</span>
+      </div>
+      <h2 class="section-title">हमारे ग्राहकों की राय</h2>
+      <p class="section-subtitle">
+        स्थानीय किसान भाइयों और पशुपालकों का हमारे प्रति विश्वास
+      </p>
+    </div>
+
+    <div class="review-grid">
+      {% for review in reviews %}
+        <div class="review-card">
+          <div class="review-stars">
+            {% for i in review.rating|star_range %}★{% endfor %}{% for i in review.rating|remaining_stars %}☆{% endfor %}
+          </div>
+          <p class="review-text">“{{ review.review_text }}”</p>
+          <div class="review-author">
+            <div class="author-avatar">{{ review.customer_name|slice:":1" }}</div>
+            <div>
+              <div class="author-name">{{ review.customer_name }}</div>
+              <div class="author-location">📍 {{ review.village_location }}</div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- =========================================================================
+     9. SHOP GALLERY PREVIEW (हमारी दुकान)
+     ========================================================================= -->
+{% if gallery_images %}
+<section class="section" id="gallery-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">
+        <span>📸</span> <span>दुकान दर्शन</span>
+      </div>
+      <h2 class="section-title">हमारी दुकान व स्टॉक गैलरी</h2>
+      <p class="section-subtitle">
+        दुकान, काउंटर एवं उपलब्ध कृषि व पशु आहार स्टॉक की झलक
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+      {% for img in gallery_images %}
+        <div class="gallery-item" data-caption="{{ img.title }} - {{ img.caption }}">
+          {% if img.image %}
+            <img src="{{ img.image.url }}" alt="{{ img.title }}" loading="lazy">
+          {% else %}
+            <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem; background: #e2e8f0;">📸</div>
+          {% endif %}
+          <div class="gallery-overlay">{{ img.title }}</div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div style="text-align: center; margin-top: 24px;">
+      <a href="{% url 'core:gallery' %}" class="btn btn-outline btn-lg">
+        📸 संपूर्ण फोटो गैलरी देखें (View Gallery) →
+      </a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- =========================================================================
+     10. CONTACT & STORE LOCATION (हमसे संपर्क करें)
+     ========================================================================= -->
+<section class="section section-alt" id="contact-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">
+        <span>📍</span> <span>दुकान तक पहुँचें</span>
+      </div>
+      <h2 class="section-title">हमसे संपर्क करें व दुकान पर आएँ</h2>
+      <p class="section-subtitle">
+        किसी भी उत्पाद, भाव या उपलब्धता के लिए सीधे फोन/WhatsApp करें अथवा दुकान पर पधारें
+      </p>
+    </div>
+
+    <div class="contact-layout-grid">
+      <!-- Store Info & Map -->
+      <div class="contact-info-card">
+        <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 20px;">
+          🌾 Rastogi Traders
+        </h3>
+
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div class="info-text">
+            <div class="label">दुकान का पता:</div>
+            <div class="value">{{ profile.address|default:"मुख्य बाजार, कृषि सेवा केंद्र के पास" }}</div>
+            {% if profile.landmark %}
+              <div style="font-size: 0.85rem; color: #64748b; margin-top: 2px;">लैंडमार्क: {{ profile.landmark }}</div>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div class="info-text">
+            <div class="label">फोन नंबर (कॉल करें):</div>
+            <div class="value">
+              <a href="{{ phone_call_url }}" style="color: var(--color-primary-dark);">
+                {{ profile.phone_primary|default:"+91 9876543210" }}
+              </a>
+              {% if profile.phone_secondary %}
+                <span style="font-size: 0.9rem; color: #64748b;"> / {{ profile.phone_secondary }}</span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">📲</div>
+          <div class="info-text">
+            <div class="label">WhatsApp नंबर:</div>
+            <div class="value">
+              <a href="{{ whatsapp_general_url }}" target="_blank" rel="noopener" style="color: #15803d;">
+                {{ profile.whatsapp_number|default:"+91 9876543210" }}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">⏰</div>
+          <div class="info-text">
+            <div class="label">दुकान खुलने का समय:</div>
+            <div class="value">{{ profile.opening_hours|default:"सुबह 8:00 बजे से शाम 8:00 बजे तक" }}</div>
+            {% if profile.sunday_hours %}
+              <div style="font-size: 0.85rem; color: #64748b;">{{ profile.sunday_hours }}</div>
+            {% endif %}
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap;">
+          <a href="{{ phone_call_url }}" class="btn btn-call" style="flex: 1;">
+            📞 फोन करें
+          </a>
+          <a href="{{ whatsapp_general_url }}" target="_blank" rel="noopener" class="btn btn-whatsapp" style="flex: 1;">
+            📲 WhatsApp
+          </a>
+        </div>
+
+        <!-- Google Maps -->
+        {% if profile.google_maps_embed_url %}
+          <div class="map-container">
+            <iframe src="{{ profile.google_maps_embed_url }}" allowfullscreen="" loading="lazy" title="Rastogi Traders Location Map"></iframe>
+          </div>
+        {% endif %}
+
+        <div style="margin-top: 14px; text-align: center;">
+          <a href="{{ profile.google_maps_directions_url|default:'#' }}" target="_blank" rel="noopener" class="btn btn-outline btn-block">
+            📍 गूगल मैप्स पर दुकान का रास्ता देखें →
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Message Form -->
+      <div class="contact-form-card">
+        <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 8px;">
+          ✉️ ऑनलाइन पूछताछ संदेश भेजें
+        </h3>
+        <p style="font-size: 0.92rem; color: var(--color-text-muted); margin-bottom: 20px;">
+          अपना नाम, मोबाइल नंबर और उत्पाद की जानकारी लिखकर भेजें, हम आपको फोन करेंगे।
+        </p>
+
+        <form method="POST" action="{% url 'core:home' %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label class="form-label" for="contact-name-input">आपका नाम (Full Name) *</label>
+            {{ contact_form.name }}
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-phone-input">मोबाइल नंबर (Phone Number) *</label>
+            {{ contact_form.phone }}
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-village-input">गाँव / कस्बा (Village / Town)</label>
+            {{ contact_form.village }}
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-category-input">किस उत्पाद में रुचि है?</label>
+            {{ contact_form.interested_category }}
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-message-input">आपका संदेश या पूछताछ *</label>
+            {{ contact_form.message }}
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg" id="submit-contact-form-btn">
+            संदेश भेजें (Submit Enquiry) ➔
+          </button>
+        </form>
+
+        <div class="safety-alert-box">
+          <span>ℹ️</span>
+          <span>हम आपके फोन नंबर का उपयोग केवल कृषि उत्पाद एवं भाव की जानकारी देने के लिए करते हैं।</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

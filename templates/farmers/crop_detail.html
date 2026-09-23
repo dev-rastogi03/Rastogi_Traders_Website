@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+{% load static rastogi_tags %}
+
+{% block title %}{{ crop.crop_name_hi }} की खेती एवं खाद प्रबंधन - Rastogi Traders{% endblock %}
+{% block meta_description %}{{ crop.crop_name_hi }} - {{ crop.summary|slice:":150" }} उपयुक्त उर्वरक व फसल सुरक्षा उत्पाद।{% endblock %}
+
+{% block floating_whatsapp %}{% whatsapp_crop_link crop %}{% endblock %}
+{% block mobile_bar_whatsapp %}{% whatsapp_crop_link crop %}{% endblock %}
+
+{% block content %}
+<!-- Breadcrumb -->
+<div style="background: #f1f5f9; padding: 12px 0; border-bottom: 1px solid var(--color-border);">
+  <div class="container" style="font-size: 0.9rem; color: var(--color-text-muted);">
+    <a href="{% url 'core:home' %}" style="color: var(--color-primary-dark); font-weight: 600;">होम</a>
+    <span style="margin: 0 6px;">/</span>
+    <a href="{% url 'farmers:index' %}" style="color: var(--color-primary-dark); font-weight: 600;">किसान कॉर्नर</a>
+    <span style="margin: 0 6px;">/</span>
+    <span style="font-weight: 700; color: var(--color-text-main);">{{ crop.crop_name_hi }}</span>
+  </div>
+</div>
+
+<!-- Header -->
+<div class="section" style="background: linear-gradient(135deg, #1b5e20, #2e7d32); color: #ffffff; padding: 40px 0;">
+  <div class="container">
+    <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+      <div style="font-size: 4rem; background: rgba(255,255,255,0.15); width: 80px; height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center;">
+        {{ crop.icon }}
+      </div>
+      <div>
+        <h1 style="font-size: 2.3rem; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 4px;">
+          {{ crop.crop_name_hi }}
+        </h1>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 6px;">
+          <span style="background: #fef08a; color: #78350f; font-weight: 700; font-size: 0.85rem; padding: 3px 10px; border-radius: var(--radius-full);">
+            🌾 सीजन: {{ crop.season }}
+          </span>
+          <span style="background: rgba(255,255,255,0.2); color: #fff; font-weight: 600; font-size: 0.85rem; padding: 3px 10px; border-radius: var(--radius-full);">
+            📅 बुवाई समय: {{ crop.sowing_time }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr; gap: 32px;">
+
+      <!-- Summary Block -->
+      <div style="background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm);">
+        <h2 style="font-size: 1.3rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 10px;">
+          🌱 संक्षिप्त परिचय (Crop Overview)
+        </h2>
+        <p style="font-size: 1.05rem; line-height: 1.65; color: var(--color-text-main);">
+          {{ crop.summary }}
+        </p>
+      </div>
+
+      <!-- Soil Preparation -->
+      {% if crop.soil_preparation %}
+        <div style="background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm);">
+          <h2 style="font-size: 1.3rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 10px;">
+            🚜 खेत की तैयारी व बुवाई
+          </h2>
+          <div style="font-size: 1rem; line-height: 1.7; color: var(--color-text-main); white-space: pre-line;">
+            {{ crop.soil_preparation }}
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- Fertilizer Schedule -->
+      {% if crop.fertilizer_schedule %}
+        <div style="background: #fdf8f4; border: 1px solid #fed7aa; border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm);">
+          <h2 style="font-size: 1.3rem; font-weight: 800; color: #78350f; margin-bottom: 10px;">
+            🌾 संतुलित उर्वरक एवं पोषण प्रबंधन
+          </h2>
+          <div style="font-size: 1rem; line-height: 1.7; color: var(--color-text-main); white-space: pre-line;">
+            {{ crop.fertilizer_schedule }}
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- Irrigation Info -->
+      {% if crop.irrigation_info %}
+        <div style="background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm);">
+          <h2 style="font-size: 1.3rem; font-weight: 800; color: #0369a1; margin-bottom: 10px;">
+            💧 सिंचाई प्रबंधन के मुख्य चरण
+          </h2>
+          <div style="font-size: 1rem; line-height: 1.7; color: var(--color-text-main); white-space: pre-line;">
+            {{ crop.irrigation_info }}
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- Pest & Disease Overview -->
+      {% if crop.pest_management_tips %}
+        <div style="background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm);">
+          <h2 style="font-size: 1.3rem; font-weight: 800; color: #b91c1c; margin-bottom: 10px;">
+            🛡️ कीट व रोग नियंत्रण के सामान्य सुझाव
+          </h2>
+          <div style="font-size: 1rem; line-height: 1.7; color: var(--color-text-main); white-space: pre-line;">
+            {{ crop.pest_management_tips }}
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- Direct Consultation Box -->
+      <div style="background: #dcfce7; border: 1px solid #86efac; border-radius: var(--radius-lg); padding: 24px; text-align: center;">
+        <h3 style="font-size: 1.4rem; font-weight: 800; color: #14532d; margin-bottom: 8px;">
+          {{ crop.crop_name_hi }} की फसल के लिए खाद व दवा की जानकारी चाहिए?
+        </h3>
+        <p style="font-size: 1rem; color: #166534; margin-bottom: 18px;">
+          रस्तोगी ट्रेडर्स से सीधे WhatsApp अथवा फोन पर संपर्क करके सही उत्पाद और आज का भाव जानें।
+        </p>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <a href="{% whatsapp_crop_link crop %}" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+            <span>📲</span> <span>WhatsApp पर परामर्श लें</span>
+          </a>
+          <a href="{{ phone_call_url }}" class="btn btn-call btn-lg">
+            <span>📞</span> <span>फोन करें: {{ profile.phone_primary|default:"+91 9876543210" }}</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Recommended Products -->
+      {% if recommended_products %}
+        <div style="margin-top: 24px;">
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 16px;">
+            🌾 {{ crop.crop_name_hi }} के लिए उपयुक्त उत्पाद
+          </h2>
+          <div class="product-grid">
+            {% for prod in recommended_products %}
+              <div class="product-card">
+                <div class="product-img-wrapper">
+                  <span class="product-status-tag status-{{ prod.availability_status }}">
+                    {{ prod.get_availability_status_display|slice:":15" }}
+                  </span>
+                  {% if prod.image %}
+                    <img src="{{ prod.image.url }}" alt="{{ prod.name }}" loading="lazy">
+                  {% else %}
+                    <div class="product-placeholder-icon">{{ prod.category.icon }}</div>
+                  {% endif %}
+                </div>
+                <div class="product-content">
+                  <h3 class="product-name"><a href="{{ prod.get_absolute_url }}">{{ prod.name }}</a></h3>
+                  <div class="product-pack-size">📦 {{ prod.pack_size }}</div>
+                  <div class="product-actions" style="margin-top: auto;">
+                    <a href="{% whatsapp_product_link prod %}" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block" style="min-height: 40px; font-size: 0.92rem;">
+                      📲 WhatsApp पर पूछें
+                    </a>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+{% endblock %}

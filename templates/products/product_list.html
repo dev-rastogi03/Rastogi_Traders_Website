@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static rastogi_tags %}
+
+{% block title %}हमारे कृषि उत्पाद (Product Catalogue) - Rastogi Traders{% endblock %}
+{% block meta_description %}उर्वरक (यूरिया, डीएपी, एनपीके), कीटनाशक, फसल सुरक्षा उत्पाद और उत्तम पशु आहार की सूची एवं आज का भाव।{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="section" style="background: linear-gradient(135deg, #1b5e20, #2e7d32); color: #ffffff; padding: 36px 0;">
+  <div class="container text-center" style="text-align: center;">
+    <div class="hero-badge-pill" style="margin-bottom: 10px;">
+      <span>🌾</span> <span>संपूर्ण उत्पाद सूची</span>
+    </div>
+    <h1 style="font-size: 2.2rem; font-weight: 800; color: #fff; margin-bottom: 8px;">हमारे कृषि उत्पाद</h1>
+    <p style="color: #e2e8f0; font-size: 1.05rem; max-width: 650px; margin: 0 auto;">
+      उर्वरक, कीटनाशक एवं पशु आहार के असली व गुणवत्तापूर्ण उत्पाद। आज का भाव व उपलब्धता तुरंत जानें।
+    </p>
+  </div>
+</div>
+
+<div class="section" style="padding-top: 32px;">
+  <div class="container">
+
+    <!-- Search & Filter Bar -->
+    <div class="filter-search-box">
+      <form method="GET" action="{% url 'products:list' %}" style="margin-bottom: 16px;">
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <input 
+            type="text" 
+            name="q" 
+            id="live-search-input"
+            class="form-control" 
+            placeholder="🔍 उत्पाद, ब्रांड या फसल खोजें (उदा. DAP, यूरिया, पशु आहार)..." 
+            value="{{ search_query }}"
+            style="flex: 1; min-width: 240px;"
+          >
+          {% if selected_category %}
+            <input type="hidden" name="category" value="{{ selected_category }}">
+          {% endif %}
+          <button type="submit" class="btn btn-primary" style="padding: 10px 24px;">
+            खोजें (Search)
+          </button>
+          {% if search_query or selected_category %}
+            <a href="{% url 'products:list' %}" class="btn btn-outline" style="padding: 10px 16px;">
+              ✕ फ़िल्टर हटाएं
+            </a>
+          {% endif %}
+        </div>
+      </form>
+
+      <!-- Category Filter Pills -->
+      <div class="filter-pills">
+        <a href="{% url 'products:list' %}" class="filter-pill {% if not selected_category %}active{% endif %}">
+          🌾 सभी उत्पाद (All)
+        </a>
+        {% for cat in categories %}
+          <a href="?category={{ cat.slug }}{% if search_query %}&q={{ search_query }}{% endif %}" class="filter-pill {% if selected_category == cat.slug %}active{% endif %}">
+            {{ cat.icon }} {{ cat.name_hi }}
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    {% if products %}
+      <div class="product-grid">
+        {% for prod in products %}
+          <div class="product-card product-card-item" data-title="{{ prod.name }}" data-brand="{{ prod.brand }}" data-category="{{ prod.category.name_hi }}">
+            <div class="product-img-wrapper">
+              <span class="product-status-tag status-{{ prod.availability_status }}">
+                {{ prod.get_availability_status_display|slice:":15" }}
+              </span>
+              <span class="product-brand-tag">{{ prod.brand }}</span>
+              {% if prod.image %}
+                <img src="{{ prod.image.url }}" alt="{{ prod.name }}" loading="lazy">
+              {% else %}
+                <div class="product-placeholder-icon">{{ prod.category.icon|default:"🌾" }}</div>
+              {% endif %}
+            </div>
+
+            <div class="product-content">
+              <h3 class="product-name">
+                <a href="{{ prod.get_absolute_url }}">{{ prod.name }}</a>
+              </h3>
+              <div class="product-pack-size">
+                📦 पैक: {{ prod.pack_size }}
+              </div>
+              <p class="product-desc-short">{{ prod.short_description }}</p>
+
+              <div class="product-actions">
+                <div class="price-ask-label">
+                  {{ prod.price_label|default:"आज का भाव पूछें" }}
+                </div>
+                <a href="{% whatsapp_product_link prod %}" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block">
+                  <span>📲</span> <span>WhatsApp पर पूछें</span>
+                </a>
+                <a href="{{ prod.get_absolute_url }}" class="btn btn-outline btn-block" style="min-height: 38px; font-size: 0.9rem; padding: 4px 10px;">
+                  पूरा विवरण देखें
+                </a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- Pagination if needed -->
+      {% if is_paginated %}
+        <div style="display: flex; justify-content: center; gap: 8px; margin-top: 36px; flex-wrap: wrap;">
+          {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}{% if selected_category %}&category={{ selected_category }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="btn btn-outline">
+              ← पिछला
+            </a>
+          {% endif %}
+          <span class="btn" style="background: #e2e8f0; color: #334155; cursor: default;">
+            पेज {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
+          </span>
+          {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}{% if selected_category %}&category={{ selected_category }}{% endif %}{% if search_query %}&q={{ search_query }}{% endif %}" class="btn btn-outline">
+              अगला →
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+
+    {% else %}
+      <div style="text-align: center; padding: 60px 16px; background: #fff; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+        <div style="font-size: 3.5rem; margin-bottom: 12px;">🔍</div>
+        <h3 style="font-size: 1.4rem; color: var(--color-primary-dark); margin-bottom: 8px;">कोई उत्पाद नहीं मिला</h3>
+        <p style="color: var(--color-text-muted); margin-bottom: 20px;">
+          आपके खोजे गए शब्द '{{ search_query }}' से संबंधित उत्पाद उपलब्ध नहीं हैं।
+        </p>
+        <a href="{% url 'products:list' %}" class="btn btn-primary">
+          🌾 सभी उत्पाद देखें
+        </a>
+      </div>
+    {% endif %}
+
+    <!-- Notice Box -->
+    <div class="safety-alert-box" style="margin-top: 36px;">
+      <span style="font-size: 1.2rem;">⚠️</span>
+      <div>
+        <strong>कृषि सुरक्षा व उपयोग निर्देश:</strong> किसी भी उर्वरक, कीटनाशक अथवा बीज के इस्तेमाल से पहले उसके पैकेट व लेबल पर दिए निर्देशों को ध्यानपूर्वक पढ़ें। विशेषज्ञ सलाह के लिए नजदीकी कृषि अधिकारी या हमारी दुकान से संपर्क करें।
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

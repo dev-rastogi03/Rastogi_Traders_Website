@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}पेज नहीं मिला (404) - Rastogi Traders{% endblock %}
+
+{% block content %}
+<div class="section" style="text-align: center; padding: 80px 16px;">
+  <div class="container" style="max-width: 600px;">
+    <div style="font-size: 5rem; margin-bottom: 12px;">🌾</div>
+    <h1 style="font-size: 2.2rem; color: var(--color-primary-dark); margin-bottom: 12px;">अरे! यह पेज नहीं मिला।</h1>
+    <p style="font-size: 1.1rem; color: var(--color-text-muted); margin-bottom: 28px;">
+      आप जिस पेज को ढूँढ रहे हैं वह उपलब्ध नहीं है या हटा दिया गया है। कृपया नीचे दिए गए बटनों से मुख्य पृष्ठ पर जाएँ या हमसे संपर्क करें।
+    </p>
+    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+      <a href="{% url 'core:home' %}" class="btn btn-primary btn-lg">🏠 मुख्य पृष्ठ (Home) पर जाएँ</a>
+      <a href="{% url 'products:list' %}" class="btn btn-outline btn-lg">🌾 सभी उत्पाद देखें</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

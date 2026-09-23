@@ -1,0 +1,274 @@
+{% load static rastogi_tags %}
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Primary SEO Meta -->
+  <title>{% block title %}{{ profile.business_name|default:"Rastogi Traders | रस्तोगी ट्रेडर्स" }} - {{ profile.tagline|default:"किसानों की खेती का भरोसेमंद साथी" }}{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{{ profile.business_name }} - उच्च गुणवत्ता वाले उर्वरक (खाद), कीटनाशक, फसल सुरक्षा उत्पाद और पौष्टिक पशु आहार। आज का भाव व उपलब्धता WhatsApp पर जानें।{% endblock %}">
+  <meta name="keywords" content="Rastogi Traders, रस्तोगी ट्रेडर्स, खाद, उर्वरक, यूरिया, डीएपी, कीटनाशक, पशु आहार, बीज, खेती, किसान, fertilizer shop, cattle feed">
+  <meta name="author" content="{{ profile.business_name }}">
+  <link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+  <!-- Open Graph / WhatsApp Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% block og_title %}{{ profile.business_name }} - {{ profile.tagline }}{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}{{ profile.about_short_text|default:'उर्वरक, कीटनाशक एवं पशु आहार के लिए भरोसेमंद स्थानीय दुकान।' }}{% endblock %}">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+  <meta property="og:site_name" content="{{ profile.business_name }}">
+
+  <!-- Google Fonts for High Legibility Devanagari & Latin -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  {% block extra_css %}{% endblock %}
+
+  <!-- Schema.org LocalBusiness Structured Data for Google Local SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "{{ profile.business_name|default:'Rastogi Traders' }}",
+    "alternateName": "रस्तोगी ट्रेडर्स",
+    "description": "{{ profile.tagline|default:'विश्वसनीय कृषि उत्पाद एवं परामर्श केंद्र' }}",
+    "url": "{{ request.scheme }}://{{ request.get_host }}",
+    "telephone": "{{ profile.phone_primary|default:'+919876543210' }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ profile.address|default:'Main Market' }}",
+      "addressCountry": "IN"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "08:00",
+        "closes": "20:00"
+      }
+    ],
+    "priceRange": "₹₹",
+    "currenciesAccepted": "INR",
+    "paymentAccepted": "Cash, UPI, PhonePe, Paytm"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Top Notification & Status Bar -->
+  <div class="top-notice-bar">
+    <div class="container top-notice-content">
+      <div id="live-shop-status" class="shop-status-badge">
+        <span class="status-dot"></span> {{ profile.opening_hours|default:"सुबह 8:00 बजे से शाम 8:00 बजे तक सेवा में तत्पर" }}
+      </div>
+      <div class="top-contact-links">
+        <a href="{{ phone_call_url }}" aria-label="Direct Phone Call">
+          📞 <strong>{{ profile.phone_primary|default:"+91 9876543210" }}</strong>
+        </a>
+        <a href="{{ profile.google_maps_directions_url|default:'#' }}" target="_blank" rel="noopener" class="d-none-mobile">
+          📍 दुकान का रास्ता देखें
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Site Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <!-- Brand Identity -->
+      <a href="{% url 'core:home' %}" class="brand-logo-link" aria-label="Rastogi Traders Homepage">
+        <div class="brand-icon">🌾</div>
+        <div class="brand-text-block">
+          <div class="brand-title">Rastogi Traders</div>
+          <span class="brand-tagline">रस्तोगी ट्रेडर्स • कृषि उत्पाद</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="{% url 'core:home' %}" class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+          होम
+        </a>
+        <a href="{% url 'products:list' %}" class="nav-link {% if 'products' in request.path %}active{% endif %}">
+          हमारे उत्पाद
+        </a>
+        <a href="{% url 'farmers:index' %}" class="nav-link {% if 'farmer-corner' in request.path %}active{% endif %}">
+          🌾 किसान कॉर्नर
+        </a>
+        <a href="{% url 'core:offers' %}" class="nav-link {% if request.resolver_match.url_name == 'offers' %}active{% endif %}">
+          🔥 आज के ऑफर
+        </a>
+        <a href="{% url 'core:gallery' %}" class="nav-link {% if request.resolver_match.url_name == 'gallery' %}active{% endif %}">
+          📸 गैलरी
+        </a>
+        <a href="{% url 'core:about' %}" class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">
+          हमारे बारे में
+        </a>
+        <a href="{% url 'core:contact' %}" class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
+          संपर्क करें
+        </a>
+      </nav>
+
+      <!-- Header Action CTAs -->
+      <div class="nav-actions">
+        <a href="{{ whatsapp_general_url }}" target="_blank" rel="noopener" class="btn-nav-whatsapp" id="header-whatsapp-btn">
+          <span>📲</span> <span>WhatsApp</span>
+        </a>
+        <button type="button" class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Open Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay & Menu -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Menu">
+    <div class="drawer-header">
+      <div class="brand-logo-link">
+        <div class="brand-icon" style="width: 36px; height: 36px; font-size: 1.3rem;">🌾</div>
+        <div class="brand-text-block">
+          <div class="brand-title" style="font-size: 1.15rem;">रस्तोगी ट्रेडर्स</div>
+        </div>
+      </div>
+      <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close menu">✕</button>
+    </div>
+
+    <div class="drawer-links">
+      <a href="{% url 'core:home' %}" class="drawer-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+        <span>🏠</span> <span>होम (Home)</span>
+      </a>
+      <a href="{% url 'products:list' %}" class="drawer-link {% if 'products' in request.path %}active{% endif %}">
+        <span>🌾</span> <span>सभी उत्पाद (Products)</span>
+      </a>
+      <a href="{% url 'farmers:index' %}" class="drawer-link {% if 'farmer-corner' in request.path %}active{% endif %}">
+        <span>👨‍🌾</span> <span>किसान कॉर्नर (Farmer Corner)</span>
+      </a>
+      <a href="{% url 'core:offers' %}" class="drawer-link {% if request.resolver_match.url_name == 'offers' %}active{% endif %}">
+        <span>🔥</span> <span>आज के ऑफर (Special Offers)</span>
+      </a>
+      <a href="{% url 'core:gallery' %}" class="drawer-link {% if request.resolver_match.url_name == 'gallery' %}active{% endif %}">
+        <span>📸</span> <span>दुकान गैलरी (Photo Gallery)</span>
+      </a>
+      <a href="{% url 'core:about' %}" class="drawer-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">
+        <span>ℹ️</span> <span>हमारे बारे में (About Us)</span>
+      </a>
+      <a href="{% url 'core:contact' %}" class="drawer-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
+        <span>📍</span> <span>संपर्क व दुकान का पता (Contact)</span>
+      </a>
+    </div>
+
+    <div class="drawer-contact-box">
+      <a href="{{ phone_call_url }}" class="btn btn-call btn-block btn-lg" style="margin-bottom: 10px;">
+        📞 फोन करें: {{ profile.phone_primary|default:"+91 9876543210" }}
+      </a>
+      <a href="{{ whatsapp_general_url }}" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block btn-lg">
+        📲 WhatsApp पर पूछें
+      </a>
+    </div>
+  </aside>
+
+  <!-- Flash Messages Notifications -->
+  {% if messages %}
+    <div class="container" style="padding-top: 16px;">
+      {% for message in messages %}
+        <div class="alert-message {% if message.tags == 'success' %}alert-success{% else %}alert-error{% endif %}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <!-- Main Body Content -->
+  <main id="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>🌾 {{ profile.business_name|default:"Rastogi Traders | रस्तोगी ट्रेडर्स" }}</h3>
+          <p class="footer-tagline">{{ profile.hero_subtitle|default:"उर्वरक • कीटनाशक • पशु आहार" }}</p>
+          <p class="footer-desc">{{ profile.about_short_text|default:"स्थानीय किसानों और पशुपालकों के लिए असली और गुणवत्तापूर्ण उत्पादों का विश्वसनीय केंद्र।" }}</p>
+          <div style="margin-top: 16px;">
+            <a href="{{ profile.google_maps_directions_url|default:'#' }}" target="_blank" rel="noopener" class="btn btn-outline" style="color: #fff; border-color: rgba(255,255,255,0.4); font-size: 0.9rem; padding: 6px 14px; min-height: 40px;">
+              📍 गूगल मैप्स पर दुकान देखें
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">महत्वपूर्ण लिंक</h4>
+          <ul class="footer-links">
+            <li><a href="{% url 'core:home' %}">🏠 होम</a></li>
+            <li><a href="{% url 'products:list' %}">🌾 हमारे सभी उत्पाद</a></li>
+            <li><a href="{% url 'farmers:index' %}">👨‍🌾 किसान कॉर्नर व फसल सलाह</a></li>
+            <li><a href="{% url 'core:offers' %}">🔥 आज के खास ऑफर</a></li>
+            <li><a href="{% url 'core:gallery' %}">📸 दुकान व स्टॉक फोटो</a></li>
+            <li><a href="{% url 'core:about' %}">ℹ️ हमारे बारे में</a></li>
+            <li><a href="{% url 'core:contact' %}">📍 संपर्क करें</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">संपर्क व दुकान का पता</h4>
+          <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 8px;">
+            📍 <strong>पता:</strong> {{ profile.address|default:"मुख्य बाजार, कृषि सेवा केंद्र के पास" }}
+          </p>
+          <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 8px;">
+            📞 <strong>फोन:</strong> <a href="{{ phone_call_url }}" style="color: #fef3c7; font-weight: 700;">{{ profile.phone_primary|default:"+91 9876543210" }}</a>
+          </p>
+          <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 8px;">
+            📲 <strong>WhatsApp:</strong> <a href="{{ whatsapp_general_url }}" target="_blank" rel="noopener" style="color: #86efac; font-weight: 700;">{{ profile.whatsapp_number|default:"+91 9876543210" }}</a>
+          </p>
+          <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 8px;">
+            ⏰ <strong>समय:</strong> {{ profile.opening_hours|default:"सुबह 8:00 बजे से शाम 8:00 बजे तक" }}
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 {{ profile.business_name|default:"Rastogi Traders" }}. सर्वाधिकार सुरक्षित। (All Rights Reserved).</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Persistent Floating WhatsApp Button -->
+  <a href="{% block floating_whatsapp %}{{ whatsapp_general_url }}{% endblock %}" target="_blank" rel="noopener" class="floating-whatsapp-btn" aria-label="Direct WhatsApp Message" title="WhatsApp पर पूछें">
+    💬
+  </a>
+
+  <!-- Mobile Sticky Bottom Quick Action Bar -->
+  <nav class="mobile-bottom-bar" aria-label="Mobile Bottom Navigation">
+    <a href="{% url 'core:home' %}" class="mobile-nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+      <span class="icon">🏠</span>
+      <span>होम</span>
+    </a>
+    <a href="{% url 'products:list' %}" class="mobile-nav-item {% if 'products' in request.path %}active{% endif %}">
+      <span class="icon">🌾</span>
+      <span>उत्पाद</span>
+    </a>
+    <a href="{{ phone_call_url }}" class="mobile-nav-item item-call">
+      <span class="icon">📞</span>
+      <span>फोन करें</span>
+    </a>
+    <a href="{% block mobile_bar_whatsapp %}{{ whatsapp_general_url }}{% endblock %}" target="_blank" rel="noopener" class="mobile-nav-item item-whatsapp">
+      <span class="icon">📲</span>
+      <span>WhatsApp</span>
+    </a>
+  </nav>
+
+  <!-- Main JavaScript File -->
+  <script src="{% static 'js/main.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

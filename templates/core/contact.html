@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% load static rastogi_tags %}
+
+{% block title %}हमसे संपर्क करें व दुकान का पता - Rastogi Traders{% endblock %}
+{% block meta_description %}रस्तोगी ट्रेडर्स - फोन नंबर, WhatsApp, दुकान का पता, गूगल मैप्स दिशा-निर्देश और ऑनलाइन पूछताछ।{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="section" style="background: linear-gradient(135deg, #114217, #1b5e20); color: #ffffff; padding: 40px 0;">
+  <div class="container text-center" style="text-align: center;">
+    <div class="hero-badge-pill" style="margin-bottom: 10px;">
+      <span>📍</span> <span>संपर्क व स्थान</span>
+    </div>
+    <h1 style="font-size: 2.3rem; font-weight: 800; color: #fff; margin-bottom: 8px;">हमसे संपर्क करें</h1>
+    <p style="color: #e2e8f0; font-size: 1.05rem; max-width: 650px; margin: 0 auto;">
+      उर्वरक, कीटनाशक, बीज और पशु आहार की उपलब्धता व भाव के लिए कभी भी संपर्क करें।
+    </p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+    <div class="contact-layout-grid">
+
+      <!-- Left Column: Business Details & Map -->
+      <div class="contact-info-card">
+        <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 20px;">
+          🌾 {{ profile.business_name|default:"Rastogi Traders | रस्तोगी ट्रेडर्स" }}
+        </h2>
+
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div class="info-text">
+            <div class="label">दुकान का पूरा पता:</div>
+            <div class="value">{{ profile.address|default:"मुख्य बाजार, कृषि सेवा केंद्र के पास" }}</div>
+            {% if profile.landmark %}
+              <div style="font-size: 0.88rem; color: #64748b; margin-top: 2px;">लैंडमार्क: {{ profile.landmark }}</div>
+            {% endif %}
+            <div style="font-size: 0.88rem; color: #64748b;">{{ profile.city_district }}, {{ profile.state_pincode }}</div>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div class="info-text">
+            <div class="label">फोन नंबर (कॉल करें):</div>
+            <div class="value">
+              <a href="{{ phone_call_url }}" style="color: var(--color-primary-dark); font-size: 1.2rem;">
+                {{ profile.phone_primary|default:"+91 9876543210" }}
+              </a>
+              {% if profile.phone_secondary %}
+                <div style="font-size: 0.95rem; color: #475569; margin-top: 2px;">
+                  अतिरिक्त नंबर: {{ profile.phone_secondary }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon" style="background: #dcfce7; color: #15803d;">📲</div>
+          <div class="info-text">
+            <div class="label">WhatsApp नंबर:</div>
+            <div class="value">
+              <a href="{{ whatsapp_general_url }}" target="_blank" rel="noopener" style="color: #15803d; font-size: 1.2rem;">
+                {{ profile.whatsapp_number|default:"+91 9876543210" }}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {% if profile.email %}
+          <div class="info-item">
+            <div class="info-icon">✉️</div>
+            <div class="info-text">
+              <div class="label">ईमेल:</div>
+              <div class="value">{{ profile.email }}</div>
+            </div>
+          </div>
+        {% endif %}
+
+        <div class="info-item">
+          <div class="info-icon">⏰</div>
+          <div class="info-text">
+            <div class="label">दुकान खुलने का समय:</div>
+            <div class="value">{{ profile.opening_hours|default:"सुबह 8:00 बजे से शाम 8:00 बजे तक" }}</div>
+            {% if profile.sunday_hours %}
+              <div style="font-size: 0.88rem; color: #64748b; margin-top: 2px;">{{ profile.sunday_hours }}</div>
+            {% endif %}
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap;">
+          <a href="{{ phone_call_url }}" class="btn btn-call btn-lg" style="flex: 1;">
+            📞 अभी फोन करें
+          </a>
+          <a href="{{ whatsapp_general_url }}" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg" style="flex: 1;">
+            📲 WhatsApp करें
+          </a>
+        </div>
+
+        <!-- Google Maps Embed -->
+        {% if profile.google_maps_embed_url %}
+          <div class="map-container" style="margin-top: 24px;">
+            <iframe src="{{ profile.google_maps_embed_url }}" allowfullscreen="" loading="lazy" title="Rastogi Traders Location Map"></iframe>
+          </div>
+        {% endif %}
+
+        <div style="margin-top: 14px; text-align: center;">
+          <a href="{{ profile.google_maps_directions_url|default:'#' }}" target="_blank" rel="noopener" class="btn btn-outline btn-block">
+            📍 गूगल मैप्स पर दुकान का रास्ता देखें →
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Online Enquiry Form -->
+      <div class="contact-form-card">
+        <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 8px;">
+          ✉️ ऑनलाइन पूछताछ फॉर्म
+        </h2>
+        <p style="font-size: 0.95rem; color: var(--color-text-muted); margin-bottom: 24px;">
+          फॉर्म में अपना नाम, नंबर और सवाल लिखकर भेजें। रस्तोगी ट्रेडर्स की टीम जल्द ही आपसे संपर्क करेगी।
+        </p>
+
+        <form method="POST" action="{% url 'core:contact' %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label class="form-label" for="contact-name-input">आपका शुभ नाम (Full Name) *</label>
+            {{ form.name }}
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-phone-input">मोबाइल फोन नंबर (Mobile Number) *</label>
+            {{ form.phone }}
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-village-input">गाँव / कस्बा / डाकघर (Village / Town)</label>
+            {{ form.village }}
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-category-input">आवश्यक उत्पाद / विषय चुनें</label>
+            {{ form.interested_category }}
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-message-input">आपका संदेश या सवाल *</label>
+            {{ form.message }}
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-lg" id="contact-page-submit-btn">
+            संदेश भेजें (Send Message) ➔
+          </button>
+        </form>
+
+        <div class="safety-alert-box">
+          <span>🛡️</span>
+          <div>
+            <strong>गोपनीयता का भरोसा:</strong> आपकी जानकारी सुरक्षित है। हम इसका उपयोग केवल आपको उत्पाद व भाव की जानकारी देने हेतु करते हैं।
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
