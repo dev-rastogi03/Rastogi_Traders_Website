@@ -1,11 +1,38 @@
+import time
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import HttpResponse
+from django.core.cache import cache
 from django.views.generic import View, TemplateView
 from .models import BusinessProfile, Offer, Review, GalleryImage, ContactMessage
 from .forms import ContactForm
 from products.models import Category, Product
 from farmers.models import CropGuide, FarmerTip
+
+
+def is_rate_limited(request, action='contact', max_requests=5, window_seconds=600):
+    """
+    Lightweight rate limiter using client IP.
+    Allows up to `max_requests` within `window_seconds` (default 5 requests per 10 mins).
+    """
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0].strip()
+    else:
+        ip = request.META.get('REMOTE_ADDR', '127.0.0.1')
+
+    cache_key = f"rl_{action}_{ip}"
+    current_timestamps = cache.get(cache_key, [])
+    now = time.time()
+
+    valid_timestamps = [t for t in current_timestamps if now - t < window_seconds]
+
+    if len(valid_timestamps) >= max_requests:
+        return True
+
+    valid_timestamps.append(now)
+    cache.set(cache_key, valid_timestamps, timeout=window_seconds)
+    return False
 
 
 class HomeView(View):
@@ -38,13 +65,18 @@ class HomeView(View):
         return render(request, 'core/index.html', context)
 
     def post(self, request):
+        if is_rate_limited(request, action='home_contact', max_requests=5, window_seconds=600):
+            messages.error(request, "सुरक्षा चेतावनी: आपने हाल ही में कई संदेश भेजे हैं। कृपया 10 मिनट बाद पुनः प्रयास करें या सीधे कॉल करें।")
+            return redirect('core:home')
+
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, "धन्यवाद! आपका संदेश सफलतापूर्वक भेज दिया गया है। हम शीघ्र ही आपसे संपर्क करेंगे।")
             return redirect('core:home')
         else:
-            messages.error(request, "कृपया फॉर्म में सही जानकारी भरें।")
+            first_error = next(iter(form.errors.values()))[0] if form.errors else "कृपया फॉर्म में सही जानकारी भरें।"
+            messages.error(request, f"त्रुटि: {first_error}")
             return redirect('core:home')
 
 
@@ -90,11 +122,18 @@ class ContactView(View):
         return render(request, 'core/contact.html', {'form': form})
 
     def post(self, request):
+        if is_rate_limited(request, action='page_contact', max_requests=5, window_seconds=600):
+            messages.error(request, "सुरक्षा चेतावनी: आपने हाल ही में कई संदेश भेजे हैं। कृपया 10 मिनट बाद पुनः प्रयास करें या सीधे दिए गए नंबर पर फोन करें।")
+            return redirect('core:contact')
+
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, "धन्यवाद! आपकी पूछताछ रस्तोगी ट्रेडर्स को प्राप्त हो गई है। हमारी टीम जल्द ही आपसे फोन पर संपर्क करेगी।")
             return redirect('core:contact')
+        else:
+            first_error = next(iter(form.errors.values()))[0] if form.errors else "कृपया फॉर्म में सही जानकारी भरें।"
+            messages.error(request, f"त्रुटि: {first_error}")
         return render(request, 'core/contact.html', {'form': form})
 
 
