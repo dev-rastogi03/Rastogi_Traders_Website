@@ -26,6 +26,15 @@ ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS if host.strip()]
 CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', 'http://localhost:8000,http://127.0.0.1:8000').split(',')
 CSRF_TRUSTED_ORIGINS = [origin.strip() for origin in CSRF_TRUSTED_ORIGINS if origin.strip()]
 
+# Automatic Render deployment hostname and CSRF detection
+RENDER_EXTERNAL_HOSTNAME = os.getenv('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    if RENDER_EXTERNAL_HOSTNAME not in ALLOWED_HOSTS:
+        ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+    render_https_origin = f"https://{RENDER_EXTERNAL_HOSTNAME}"
+    if render_https_origin not in CSRF_TRUSTED_ORIGINS:
+        CSRF_TRUSTED_ORIGINS.append(render_https_origin)
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -144,6 +153,7 @@ DEFAULT_GOOGLE_MAPS_URL = os.getenv('GOOGLE_MAPS_URL', 'https://maps.google.com'
 
 # Security Headers & Cookie Flags (Activated when DEBUG is False)
 if not DEBUG:
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
     X_FRAME_OPTIONS = 'DENY'
