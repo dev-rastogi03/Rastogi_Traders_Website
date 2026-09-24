@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}नियम एवं शर्तें (Terms & Conditions) - {{ profile.business_name|default:"Rastogi Traders" }}{% endblock %}
+{% block meta_description %}रस्तोगी ट्रेडर्स वेबसाइट उपयोग के नियम, शर्तें, मूल्य व स्टॉक अस्वीकरण (Disclaimer) और कानूनी दिशानिर्देश।{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="section" style="background: linear-gradient(135deg, #114217, #1b5e20); color: #ffffff; padding: 40px 0;">
+  <div class="container text-center" style="text-align: center;">
+    <div class="hero-badge-pill" style="margin-bottom: 10px; background: rgba(255,255,255,0.15); color: #fff;">
+      <span>📜</span> <span>वेबसाइट उपयोग नियमावली</span>
+    </div>
+    <h1 style="font-size: 2.2rem; font-weight: 800; color: #fff; margin-bottom: 8px;">
+      नियम एवं शर्तें (Terms & Conditions)
+    </h1>
+    <p style="color: #e2e8f0; font-size: 1rem; max-width: 720px; margin: 0 auto;">
+      {{ profile.business_name|default:"Rastogi Traders" }} की आधिकारिक वेबसाइट का उपयोग करने से पहले कृपया इन नियमों को ध्यानपूर्वक पढ़ें।
+    </p>
+  </div>
+</div>
+
+<div class="section" style="padding: 48px 0; background: #fdfdfd;">
+  <div class="container">
+    <div style="max-width: 900px; margin: 0 auto; background: #ffffff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 36px 28px; box-shadow: var(--shadow-sm); line-height: 1.8;">
+
+      <div style="background: var(--color-primary-subtle); border-left: 4px solid var(--color-primary); padding: 14px 18px; border-radius: var(--radius-sm); margin-bottom: 28px; font-size: 0.95rem;">
+        <strong>लागू होने की तिथि:</strong> 01 जनवरी 2026 | 
+        <strong>व्यवसाय प्रकार:</strong> खुदरा एवं थोक कृषि उत्पाद, पशु आहार एवं उर्वरक सेवा केंद्र
+      </div>
+
+      <!-- 1. General Agreement -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 12px; border-bottom: 2px solid var(--color-border-subtle); padding-bottom: 6px;">
+          1. सामान्य स्वीकृति (General Acceptance)
+        </h2>
+        <p style="color: var(--color-text-main); margin-bottom: 10px;">
+          इस वेबसाइट का उपयोग करके आप इन नियमों और शर्तों से पूरी तरह सहमत होते हैं। यदि आप इन शर्तों से सहमत नहीं हैं, तो कृपया वेबसाइट का उपयोग न करें।
+        </p>
+        <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+          यह वेबसाइट स्थानीय किसानों, पशुपालकों और ग्राहकों की सुविधा हेतु उत्पाद सूची, संपर्क माध्यम और कृषि परामर्श प्रदान करने के लिए बनाई गई है।
+        </p>
+      </section>
+
+      <!-- 2. Product Catalog & Price Disclaimer -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 12px; border-bottom: 2px solid var(--color-border-subtle); padding-bottom: 6px;">
+          2. उत्पाद कैटलॉग, भाव एवं उपलब्धता अस्वीकरण (Pricing & Availability Disclaimer)
+        </h2>
+        <ul style="padding-left: 24px; color: var(--color-text-main);">
+          <li style="margin-bottom: 8px;">
+            <strong>सांकेतिक मूल्य (Indicative Rates):</strong> वेबसाइट पर प्रदर्शित उत्पाद मूल्य और विशेष ऑफर सांकेतिक हो सकते हैं। कृषि मंडी, कंपनी एमआरपी और मौसमी उतार-चढ़ाव के कारण वास्तविक दर दुकान के काउंटर पर खरीद के समय लागू होगी।
+          </li>
+          <li style="margin-bottom: 8px;">
+            <strong>स्टॉक उपलब्धता (Stock Status):</strong> 'उपलब्ध' या 'सीमित स्टॉक' का लेबल वास्तविक समय की दुकान पर बिक्री पर निर्भर करता है। बड़ी मात्रा में खरीदारी से पहले कृपया फोन या WhatsApp पर पुष्टि करें।
+          </li>
+          <li style="margin-bottom: 8px;">
+            <strong>ऑर्डर प्रक्रिया:</strong> यह एक ई-कॉमर्स ऑटो-पेमेंट पोर्टल नहीं है। वास्तविक बिक्री, बिलिंग और डिलीवरी का समझौता दुकान के भौतिक काउंटर अथवा फोन/व्हाट्सऐप पर तय शर्तों के अनुसार ही होता है।
+          </li>
+        </ul>
+      </section>
+
+      <!-- 3. Agricultural Advisory Disclaimer -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 12px; border-bottom: 2px solid var(--color-border-subtle); padding-bottom: 6px;">
+          3. कृषि सलाह एवं फसल सुरक्षा अस्वीकरण (Agricultural Advisory Disclaimer)
+        </h2>
+        <div style="background: #fffbeb; border: 1px solid #fde68a; padding: 16px; border-radius: var(--radius-sm); margin-bottom: 14px;">
+          <strong style="color: #92400e; font-size: 1rem;">⚠️ महत्वपूर्ण कृषि चेतावनी:</strong>
+          <p style="color: #78350f; font-size: 0.95rem; margin-top: 6px; margin-bottom: 0;">
+            किसान कॉर्नर व ब्लॉग में दी गई फसल सलाह, उर्वरक खुराक और कीटनाशक छिड़काव की सिफारिशें सामान्य वैज्ञानिक जानकारी पर आधारित हैं। मिट्टी की संरचना, फसल की स्थिति व मौसम के अनुसार खुराक में भिन्नता हो सकती है। किसी भी रसायन का उपयोग करते समय हमेशा निर्माता कंपनी के पैकेजिंग लेबल पर छपे निर्देशों का कड़ाई से पालन करें।
+          </p>
+        </div>
+      </section>
+
+      <!-- 4. Intellectual Property & Brand Names -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 12px; border-bottom: 2px solid var(--color-border-subtle); padding-bottom: 6px;">
+          4. बौद्धिक संपदा एवं ट्रेडमार्क (Intellectual Property)
+        </h2>
+        <p style="color: var(--color-text-main); margin-bottom: 10px;">
+          वेबसाइट पर उल्लिखित सभी ब्रांड नाम, ट्रेडमार्क और लोगो (जैसे IFFCO, Bayer, Syngenta, Godrej, आदि) उनके संबंधित स्वामियों और विनिर्माताओं की संपत्ति हैं। इनका उपयोग केवल ग्राहकों की पहचान और उत्पाद विवरण के लिए किया गया है।
+        </p>
+        <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+          {{ profile.business_name|default:"Rastogi Traders" }} के लोगो, मूल टेक्स्ट सामग्री और वेबसाइट लेआउट के सभी कॉपीराइट अधिकार सुरक्षित हैं।
+        </p>
+      </section>
+
+      <!-- 5. User Conduct & Form Submissions -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 12px; border-bottom: 2px solid var(--color-border-subtle); padding-bottom: 6px;">
+          5. वेबसाइट उपयोगकर्ता आचरण (User Conduct)
+        </h2>
+        <p style="color: var(--color-text-main); margin-bottom: 8px;">
+          उपयोगकर्ता सहमत हैं कि वे वेबसाइट के संपर्क फॉर्म या संचार माध्यमों का उपयोग किसी भी प्रकार के स्पैम, भ्रामक जानकारी या अवैध गतिविधियों के लिए नहीं करेंगे।
+        </p>
+      </section>
+
+      <!-- 6. Governing Law & Jurisdiction -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 12px; border-bottom: 2px solid var(--color-border-subtle); padding-bottom: 6px;">
+          6. लागू कानून एवं क्षेत्राधिकार (Governing Law & Jurisdiction)
+        </h2>
+        <p style="color: var(--color-text-main); margin-bottom: 10px;">
+          ये नियम और शर्तें भारत के कानूनों के अनुसार शासित और व्याख्यायित की जाएँगी। इस वेबसाइट या व्यापार से संबंधित किसी भी विवाद का निपटारा स्थानीय न्यायालय ({{ profile.city_district|default:"सीतापुर" }}, उत्तर प्रदेश, भारत) के अनन्य क्षेत्राधिकार के अंतर्गत होगा।
+        </p>
+      </section>
+
+      <!-- 7. Contact Details -->
+      <section style="margin-bottom: 16px;">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 12px; border-bottom: 2px solid var(--color-border-subtle); padding-bottom: 6px;">
+          7. संपर्क सूत्र (Contact Information)
+        </h2>
+        <p style="color: var(--color-text-main); margin-bottom: 6px;">
+          यदि आपके पास इन नियमों और शर्तों से संबंधित कोई प्रश्न है, तो कृपया हमसे संपर्क करें:
+        </p>
+        <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 4px;">
+          🏢 <strong>{{ profile.business_name|default:"Rastogi Traders" }}</strong> | 📍 {{ profile.address|default:"मुख्य बाजार" }}, {{ profile.city_district|default:"सीतापुर" }}
+        </p>
+        <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+          📞 <strong>फोन:</strong> <a href="{{ phone_call_url }}" style="color: var(--color-primary-dark); font-weight: 700;">{{ profile.phone_primary|default:"+91 9876543210" }}</a> | 📲 <strong>WhatsApp:</strong> <a href="{{ whatsapp_general_url }}" target="_blank" rel="noopener" style="color: #15803d; font-weight: 700;">{{ profile.whatsapp_number|default:"+91 9876543210" }}</a>
+        </p>
+      </section>
+
+      <!-- Navigation back -->
+      <div style="margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--color-border); display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="{% url 'core:home' %}" class="btn btn-outline" style="font-size: 0.95rem;">
+          🏠 मुख्य पृष्ठ पर वापस जाएँ
+        </a>
+        <a href="{% url 'core:privacy' %}" class="btn btn-outline" style="font-size: 0.95rem;">
+          🔒 गोपनीयता नीति (Privacy Policy)
+        </a>
+        <a href="{% url 'core:cookies' %}" class="btn btn-outline" style="font-size: 0.95rem;">
+          🍪 कुकीज़ नीति (Cookies Policy)
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

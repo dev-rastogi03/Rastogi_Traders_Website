@@ -98,6 +98,18 @@ class ContactView(View):
         return render(request, 'core/contact.html', {'form': form})
 
 
+class PrivacyPolicyView(TemplateView):
+    template_name = 'core/privacy_policy.html'
+
+
+class TermsConditionsView(TemplateView):
+    template_name = 'core/terms_conditions.html'
+
+
+class CookiesPolicyView(TemplateView):
+    template_name = 'core/cookies_policy.html'
+
+
 def robots_txt(request):
     lines = [
         "User-agent: *",

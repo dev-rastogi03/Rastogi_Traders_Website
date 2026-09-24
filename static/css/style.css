@@ -1532,12 +1532,184 @@ button, input, select, textarea {
   transform: translateX(4px);
 }
 
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 20px;
+.footer-legal-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px 0;
   text-align: center;
-  font-size: 0.85rem;
+}
+
+.footer-legal-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.88rem;
+}
+
+.footer-legal-links a {
+  color: #cbd5e1;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.footer-legal-links a:hover {
+  color: #86efac;
+  text-decoration: underline;
+}
+
+.footer-legal-links .divider {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.75rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 20px;
+  font-size: 0.88rem;
   color: #94a3b8;
+}
+
+.footer-bottom-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom-flex {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
+.copyright-text {
+  margin: 0;
+  color: #94a3b8;
+}
+
+/* Professional Developer Credit Box */
+.developer-credit-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  transition: all 0.3s ease;
+}
+
+.developer-credit-box:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(254, 240, 138, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.credit-label {
+  color: #94a3b8;
+}
+
+.developer-credit-link {
+  color: #fef08a !important;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.developer-credit-link:hover {
+  color: #ffffff !important;
+  text-decoration: underline;
+}
+
+.developer-credit-name {
+  color: #fef08a;
+  font-weight: 700;
+}
+
+/* DPDP Act 2023 Cookie & Privacy Banner */
+.dpdp-cookie-banner {
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  right: 20px;
+  max-width: 620px;
+  margin: 0 auto;
+  background: rgba(15, 46, 20, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  z-index: 1000;
+  animation: slideUpFade 0.4s ease-out;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 992px) {
+  .dpdp-cookie-banner {
+    bottom: 24px;
+    left: 24px;
+    margin: 0;
+    right: auto;
+  }
+}
+
+.dpdp-banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.dpdp-banner-text {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 240px;
+}
+
+.dpdp-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.dpdp-banner-text p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #e2e8f0;
+  line-height: 1.5;
+}
+
+.dpdp-banner-text a {
+  color: #86efac;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.dpdp-banner-text a:hover {
+  color: #ffffff;
 }
 
 /* --------------------------------------------------------------------------

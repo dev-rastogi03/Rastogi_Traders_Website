@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLiveShopStatus();
   initGalleryLightbox();
   initLiveProductFilter();
+  initDPDPCookieBanner();
 });
 
 /**
@@ -174,3 +175,33 @@ function initLiveProductFilter() {
     }, 200);
   });
 }
+
+/**
+ * 5. DPDP Act 2023 Cookie & Privacy Banner Consent Manager
+ */
+function initDPDPCookieBanner() {
+  const banner = document.getElementById('dpdp-cookie-banner');
+  const acceptBtn = document.getElementById('dpdp-accept-btn');
+  if (!banner || !acceptBtn) return;
+
+  const CONSENT_KEY = 'rastogi_dpdp_consent_accepted';
+  const hasAccepted = localStorage.getItem(CONSENT_KEY);
+
+  if (!hasAccepted) {
+    // Show banner after brief delay for smooth entrance
+    setTimeout(() => {
+      banner.style.display = 'block';
+    }, 600);
+  }
+
+  acceptBtn.addEventListener('click', () => {
+    localStorage.setItem(CONSENT_KEY, 'true');
+    banner.style.opacity = '0';
+    banner.style.transform = 'translateY(20px)';
+    banner.style.transition = 'all 0.3s ease';
+    setTimeout(() => {
+      banner.style.display = 'none';
+    }, 300);
+  });
+}
+

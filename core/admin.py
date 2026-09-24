@@ -57,6 +57,14 @@ class BusinessProfileAdmin(admin.ModelAdmin):
             "fields": ("facebook_url", "instagram_url", "youtube_url"),
             "classes": ("collapse",)
         }),
+        ("वेबसाइट डेवलपर क्रेडिट (Website Developer Credits)", {
+            "fields": (
+                "developer_credit_enabled",
+                ("developer_credit_name", "developer_credit_role"),
+                "developer_credit_url",
+            ),
+            "description": "यहाँ से आप फुटर में प्रदर्शित होने वाले वेबसाइट डेवलपर का नाम, टाइटल और पोर्टफोलियो/सोशल लिंक आसानी से बदल सकते हैं।"
+        }),
     )
 
     def has_add_permission(self, request):

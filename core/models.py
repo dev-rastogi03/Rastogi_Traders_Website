@@ -165,6 +165,28 @@ class BusinessProfile(models.Model):
     instagram_url = models.URLField(blank=True, verbose_name="इंस्टाग्राम लिंक (Instagram URL)")
     youtube_url = models.URLField(blank=True, verbose_name="यूट्यूब लिंक (YouTube URL)")
 
+    # Developer / Creator Credits (Configurable in Admin)
+    developer_credit_enabled = models.BooleanField(
+        default=True, 
+        verbose_name="फुटर में क्रेडिट दिखाएँ? (Show Developer Credit in Footer)"
+    )
+    developer_credit_name = models.CharField(
+        max_length=150, 
+        default="Dev Rastogi", 
+        verbose_name="डेवलपर का नाम / ब्रांड (Developer Name / Brand)"
+    )
+    developer_credit_role = models.CharField(
+        max_length=150, 
+        default="वेबसाइट डिज़ाइन एवं तकनीकी विकास (Website Design & Development)", 
+        verbose_name="भूमिका / पद (Role / Title)"
+    )
+    developer_credit_url = models.URLField(
+        max_length=500, 
+        blank=True, 
+        default="", 
+        verbose_name="डेवलपर लिंक / पोर्टफोलियो URL (Developer Link / Portfolio URL - Optional)"
+    )
+
     logo = models.ImageField(upload_to="profile/", blank=True, null=True, verbose_name="दुकान का लोगो (Logo)")
     hero_banner = models.ImageField(upload_to="profile/", blank=True, null=True, verbose_name="हीरो बैनर फोटो (Hero Banner Image)")
 

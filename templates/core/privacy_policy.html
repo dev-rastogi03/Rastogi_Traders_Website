@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}गोपनीयता नीति (Privacy Policy & DPDP Act Compliance) - {{ profile.business_name|default:"Rastogi Traders" }}{% endblock %}
+{% block meta_description %}रस्तोगी ट्रेडर्स की गोपनीयता नीति और डिजिटल व्यक्तिगत डेटा संरक्षण (DPDP) अधिनियम, 2023 के अंतर्गत डेटा सुरक्षा व किसान बंधुओं के अधिकारों का विवरण।{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="section" style="background: linear-gradient(135deg, #114217, #1b5e20); color: #ffffff; padding: 40px 0;">
+  <div class="container text-center" style="text-align: center;">
+    <div class="hero-badge-pill" style="margin-bottom: 10px; background: rgba(255,255,255,0.15); color: #fff;">
+      <span>🔒</span> <span>डेटा सुरक्षा एवं निजता संरक्षण</span>
+    </div>
+    <h1 style="font-size: 2.2rem; font-weight: 800; color: #fff; margin-bottom: 8px;">
+      गोपनीयता नीति (Privacy Policy)
+    </h1>
+    <p style="color: #e2e8f0; font-size: 1rem; max-width: 720px; margin: 0 auto;">
+      भारत के <strong>डिजिटल व्यक्तिगत डेटा संरक्षण अधिनियम, 2023 (DPDP Act, 2023)</strong> के अनुसार आपके व्यक्तिगत डेटा की सुरक्षा के लिए हमारी प्रतिबद्धता।
+    </p>
+  </div>
+</div>
+
+<div class="section" style="padding: 48px 0; background: #fdfdfd;">
+  <div class="container">
+    <div style="max-width: 900px; margin: 0 auto; background: #ffffff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 36px 28px; box-shadow: var(--shadow-sm); line-height: 1.8;">
+
+      <!-- Effective Date Notice -->
+      <div style="background: var(--color-primary-subtle); border-left: 4px solid var(--color-primary); padding: 14px 18px; border-radius: var(--radius-sm); margin-bottom: 28px; font-size: 0.95rem;">
+        <strong>प्रभावी तिथि (Effective Date):</strong> 01 जनवरी 2026 | 
+        <strong>अंतिम अद्यतन (Last Updated):</strong> वर्तमान सत्र (2026) | 
+        <strong>लागू कानून:</strong> भारतीय डिजिटल व्यक्तिगत डेटा संरक्षण अधिनियम (DPDP Act 2023)
+      </div>
+
+      <!-- Section 1: Introduction -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 12px; border-bottom: 2px solid var(--color-border-subtle); padding-bottom: 6px;">
+          1. प्रस्तावना एवं हमारा उद्देश्य (Introduction & Purpose)
+        </h2>
+        <p style="color: var(--color-text-main); margin-bottom: 12px;">
+          <strong>{{ profile.business_name|default:"Rastogi Traders (रस्तोगी ट्रेडर्स)" }}</strong> ("हम", "हमारी दुकान" या "व्यवसाय") अपने ग्राहकों, किसान भाइयों और वेबसाइट आगंतुकों ("आप" या "डेटा प्रिंसिपल") की व्यक्तिगत जानकारी की गोपनीयता और सुरक्षा का पूरा सम्मान करता है।
+        </p>
+        <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+          यह वेबसाइट एक <em>सूचनात्मक एवं संपर्क कैटलॉग (Informational & Contact Catalog)</em> है जिसका उद्देश्य किसानों को उर्वरक, बीज, कीटनाशक व पशु आहार की जानकारी, आज के भाव व फसल सलाह प्रदान करना है। हम किसी भी प्रकार का अनधिकृत डेटा संग्रहण या डेटा का वाणिज्यिक विक्रय नहीं करते हैं।
+        </p>
+      </section>
+
+      <!-- Section 2: Data Collection -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 12px; border-bottom: 2px solid var(--color-border-subtle); padding-bottom: 6px;">
+          2. हम कौन सी जानकारी एकत्र करते हैं? (Information We Collect)
+        </h2>
+        <p style="color: var(--color-text-main); margin-bottom: 10px;">
+          हम केवल वही न्यूनतम डेटा एकत्र करते हैं जो आपके अनुरोध और परामर्श के लिए आवश्यक है:
+        </p>
+        <ul style="padding-left: 24px; color: var(--color-text-main); margin-bottom: 12px;">
+          <li style="margin-bottom: 8px;">
+            <strong>संपर्क एवं पूछताछ फॉर्म (Contact Enquiries):</strong> जब आप हमारी वेबसाइट के पूछताछ फॉर्म को भरते हैं, तब आपका नाम, मोबाइल फोन नंबर, गाँव/स्थान और आपकी रुचि का विषय।
+          </li>
+          <li style="margin-bottom: 8px;">
+            <strong>WhatsApp / फोन कॉल संचार:</strong> जब आप सीधे WhatsApp या फोन बटन पर क्लिक करते हैं, तो आपकी बातचीत सीधे हमारे अधिकृत नंबर पर होती है।
+          </li>
+          <li style="margin-bottom: 8px;">
+            <strong>तकनीकी लॉग्स (Technical Logs):</strong> वेबसाइट की सुरक्षा और प्रदर्शन के लिए मानक सर्वर लॉग्स (जैसे IP पता, ब्राउज़र प्रकार, अनुरोध का समय) स्वतः व्हाइटनॉइज़/सर्वर द्वारा प्रक्रिया में आते हैं।
+          </li>
+        </ul>
+        <div style="background: #f8fafc; border: 1px dashed #cbd5e1; padding: 12px 16px; border-radius: var(--radius-sm); font-size: 0.9rem; color: #334155;">
+          ℹ️ <strong>वित्तीय डेटा (No Financial Data):</strong> हमारी वेबसाइट पर कोई ऑनलाइन भुगतान गेटवे, क्रेडिट/डेबिट कार्ड नंबर या बैंक क्रेडेंशियल एकत्र या संग्रहित नहीं किए जाते हैं।
+        </div>
+      </section>
+
+      <!-- Section 3: Purpose of Data Usage -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 12px; border-bottom: 2px solid var(--color-border-subtle); padding-bottom: 6px;">
+          3. जानकारी के उपयोग का उद्देश्य (Purpose Limitation - DPDP 2023)
+        </h2>
+        <p style="color: var(--color-text-main); margin-bottom: 8px;">
+          DPDP अधिनियम 2023 के 'उद्देश्य सीमा' (Purpose Limitation) सिद्धांत के तहत, आपके द्वारा दी गई जानकारी का उपयोग केवल निम्नलिखित वैधानिक कारणों के लिए किया जाता है:
+        </p>
+        <ul style="padding-left: 24px; color: var(--color-text-main);">
+          <li style="margin-bottom: 6px;">आपके द्वारा पूछे गए उत्पाद, आज के भाव व स्टॉक की उपलब्धता का उत्तर देने हेतु।</li>
+          <li style="margin-bottom: 6px;">किसान कॉर्नर के माध्यम से फसल सुरक्षा परामर्श या सलाह प्रदान करने हेतु।</li>
+          <li style="margin-bottom: 6px;">दुकान का पता, रास्ता या कार्य समय संबंधी सहायता हेतु।</li>
+          <li style="margin-bottom: 6px;">वेबसाइट की तकनीकी सुरक्षा व स्पैम रोकथाम सुनिश्चित करने हेतु।</li>
+        </ul>
+      </section>
+
+      <!-- Section 4: Data Protection & Sharing -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 12px; border-bottom: 2px solid var(--color-border-subtle); padding-bottom: 6px;">
+          4. डेटा की सुरक्षा व गोपनीयता (Data Security & Zero-Sale Policy)
+        </h2>
+        <p style="color: var(--color-text-main); margin-bottom: 10px;">
+          <strong>हम आपके व्यक्तिगत डेटा को किसी भी तीसरे पक्ष (Third Parties), टेलीमार्केटर्स या विज्ञापनदाताओं को नहीं बेचते, किराए पर नहीं देते और न ही व्यापार करते हैं।</strong>
+        </p>
+        <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+          आपकी जानकारी केवल हमारे अधिकृत संचालकों (Admin Portal) द्वारा सुरक्षित रूप से देखी जाती है और सुरक्षित एन्क्रिप्शन (HTTPS / SSL) के माध्यम से प्रेषित होती है।
+        </p>
+      </section>
+
+      <!-- Section 5: DPDP Act Rights -->
+      <section style="margin-bottom: 32px;">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 12px; border-bottom: 2px solid var(--color-border-subtle); padding-bottom: 6px;">
+          5. आपके अधिकार (Your Rights under DPDP Act, 2023)
+        </h2>
+        <p style="color: var(--color-text-main); margin-bottom: 10px;">
+          DPDP अधिनियम 2023 के अंतर्गत प्रत्येक डेटा प्रिंसिपल (नागरिक/उपयोगकर्ता) को निम्नलिखित अधिकार प्राप्त हैं:
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 12px;">
+          <div style="background: #f8fafc; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 14px;">
+            <strong style="color: var(--color-primary-dark);">1. जानकारी प्राप्त करने का अधिकार (Right to Access)</strong>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-top: 4px;">आप यह जानने का अधिकार रखते हैं कि आपकी कौन सी जानकारी हमारे पास दर्ज है।</p>
+          </div>
+          <div style="background: #f8fafc; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 14px;">
+            <strong style="color: var(--color-primary-dark);">2. सुधार एवं हटाने का अधिकार (Right to Correction & Erasure)</strong>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-top: 4px;">आप किसी भी समय अपने गलत विवरण को सुधारने या अपने पूछताछ संदेश को डेटाबेस से स्थायी रूप से हटाने का अनुरोध कर सकते हैं।</p>
+          </div>
+          <div style="background: #f8fafc; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 14px;">
+            <strong style="color: var(--color-primary-dark);">3. सहमति वापस लेने का अधिकार (Right to Withdraw Consent)</strong>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-top: 4px;">आप हमें दिए गए किसी भी संपर्क सहमति को कभी भी वापस ले सकते हैं।</p>
+          </div>
+          <div style="background: #f8fafc; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 14px;">
+            <strong style="color: var(--color-primary-dark);">4. शिकायत निवारण का अधिकार (Right to Grievance Redressal)</strong>
+            <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-top: 4px;">निजता से जुड़ी किसी भी समस्या के समाधान के लिए हमारे शिकायत निवारण अधिकारी से सीधे संपर्क कर सकते हैं।</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Grievance Officer & Contact -->
+      <section style="margin-bottom: 16px;">
+        <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 12px; border-bottom: 2px solid var(--color-border-subtle); padding-bottom: 6px;">
+          6. शिकायत निवारण एवं संपर्क अधिकारी (Grievance Redressal Officer)
+        </h2>
+        <p style="color: var(--color-text-main); margin-bottom: 12px;">
+          DPDP अधिनियम, 2023 की धारा के अनुपालन में, डेटा सुरक्षा या निजता संबंधी किसी भी प्रश्न, अनुरोध या शिकायत के लिए आप सीधे हमारे अधिकृत प्रबंधक से संपर्क कर सकते हैं:
+        </p>
+
+        <div style="background: var(--color-primary-subtle); border-radius: var(--radius-md); padding: 20px; border: 1px solid #bbf7d0;">
+          <h4 style="color: var(--color-primary-dark); font-size: 1.1rem; font-weight: 800; margin-bottom: 8px;">
+            🏢 {{ profile.business_name|default:"Rastogi Traders" }} - डेटा शिकायत सेल
+          </h4>
+          <p style="margin-bottom: 6px; font-size: 0.95rem;">
+            👤 <strong>अधिकृत अधिकारी:</strong> {{ profile.owner_name|default:"श्री रमेश रस्तोगी / प्रबंधक" }}
+          </p>
+          <p style="margin-bottom: 6px; font-size: 0.95rem;">
+            📍 <strong>पता:</strong> {{ profile.address|default:"मुख्य बाजार, कृषि सेवा केंद्र के पास" }}, {{ profile.city_district|default:"सीतापुर" }}, {{ profile.state_pincode|default:"उत्तर प्रदेश" }}
+          </p>
+          <p style="margin-bottom: 6px; font-size: 0.95rem;">
+            📞 <strong>फोन संपर्क:</strong> <a href="{{ phone_call_url }}" style="color: var(--color-primary-dark); font-weight: 700;">{{ profile.phone_primary|default:"+91 9876543210" }}</a>
+          </p>
+          {% if profile.email %}
+          <p style="margin-bottom: 6px; font-size: 0.95rem;">
+            ✉️ <strong>ईमेल:</strong> <a href="mailto:{{ profile.email }}" style="color: var(--color-primary-dark); font-weight: 700;">{{ profile.email }}</a>
+          </p>
+          {% endif %}
+          <p style="margin-bottom: 0; font-size: 0.95rem;">
+            📲 <strong>WhatsApp:</strong> <a href="{{ whatsapp_general_url }}" target="_blank" rel="noopener" style="color: #15803d; font-weight: 700;">{{ profile.whatsapp_number|default:"+91 9876543210" }}</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Navigation back -->
+      <div style="margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--color-border); display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="{% url 'core:home' %}" class="btn btn-outline" style="font-size: 0.95rem;">
+          🏠 मुख्य पृष्ठ पर वापस जाएँ
+        </a>
+        <a href="{% url 'core:terms' %}" class="btn btn-outline" style="font-size: 0.95rem;">
+          📜 नियम एवं शर्तें (Terms & Conditions)
+        </a>
+        <a href="{% url 'core:cookies' %}" class="btn btn-outline" style="font-size: 0.95rem;">
+          🍪 कुकीज़ नीति (Cookies Policy)
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
