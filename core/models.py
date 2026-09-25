@@ -211,8 +211,17 @@ class BusinessProfile(models.Model):
 
     @property
     def clean_phone_primary(self):
-        """Returns clean digits for tel: links"""
-        return ''.join(filter(str.isdigit, self.phone_primary))
+        """Returns international format (+91...) for tel: links so Android and iOS dialers parse correctly"""
+        digits = ''.join(filter(str.isdigit, self.phone_primary or ''))
+        if not digits:
+            return ""
+        if digits.startswith('91') and len(digits) == 12:
+            return f"+{digits}"
+        elif len(digits) == 10:
+            return f"+91{digits}"
+        elif self.phone_primary and self.phone_primary.strip().startswith('+'):
+            return f"+{digits}"
+        return f"+{digits}"
 
 
 class Offer(models.Model):

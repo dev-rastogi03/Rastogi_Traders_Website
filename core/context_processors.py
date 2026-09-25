@@ -23,7 +23,18 @@ def global_site_context(request):
     whatsapp_general_url = f"https://wa.me/{whatsapp_number}?text={encoded_msg}"
 
     # Pre-generate phone call link
-    primary_phone = profile.clean_phone_primary if profile else settings.DEFAULT_BUSINESS_PHONE.replace(' ', '')
+    if profile and profile.clean_phone_primary:
+        primary_phone = profile.clean_phone_primary
+    else:
+        raw_phone = getattr(settings, 'DEFAULT_BUSINESS_PHONE', '+919927394762').strip()
+        digits = ''.join(filter(str.isdigit, raw_phone))
+        if digits.startswith('91') and len(digits) == 12:
+            primary_phone = f"+{digits}"
+        elif len(digits) == 10:
+            primary_phone = f"+91{digits}"
+        else:
+            primary_phone = f"+{digits}" if digits else ""
+
     phone_call_url = f"tel:{primary_phone}"
 
     return {
