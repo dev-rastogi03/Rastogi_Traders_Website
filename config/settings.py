@@ -42,11 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    # Cloudinary permanent media storage
-    'cloudinary_storage',
     'django.contrib.staticfiles',
-    'cloudinary',
     'django.contrib.sitemaps',
+
+    # Cloudinary permanent media storage
+    'cloudinary',
+    'cloudinary_storage',
 
     # Custom Domain Apps
     'core.apps.CoreConfig',
@@ -133,10 +134,14 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Storage Engines (Cloudinary for permanent media when CLOUDINARY_URL is provided, WhiteNoise for static files)
 CLOUDINARY_URL = os.getenv('CLOUDINARY_URL')
 
+# Compatibility attributes for django-cloudinary-storage
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" if not DEBUG else "django.contrib.staticfiles.storage.StaticFilesStorage"
+
 if CLOUDINARY_URL:
     CLOUDINARY_STORAGE = {
         'CLOUDINARY_URL': CLOUDINARY_URL,
     }
+    DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
     STORAGES = {
         "default": {
             "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
@@ -146,6 +151,7 @@ if CLOUDINARY_URL:
         },
     }
 else:
+    DEFAULT_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
     STORAGES = {
         "default": {
             "BACKEND": "django.core.files.storage.FileSystemStorage",
