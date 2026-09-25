@@ -6,7 +6,7 @@ logger = logging.getLogger(__name__)
 
 
 def auto_load_seed_data(sender, **kwargs):
-    """Automatically populate database with seed data if fresh database"""
+    """Automatically populate database with seed data and upload bundled media to Cloudinary"""
     try:
         from core.models import BusinessProfile
         from products.models import Product
@@ -17,6 +17,16 @@ def auto_load_seed_data(sender, **kwargs):
             logger.info("Seed data loaded successfully!")
     except Exception as e:
         logger.warning("Auto seed data load skipped or encountered error: %s", e)
+
+    try:
+        import os
+        from django.conf import settings
+        if getattr(settings, 'CLOUDINARY_URL', None) or os.getenv('CLOUDINARY_URL'):
+            from django.core.management import call_command
+            logger.info("Syncing bundled local media files to Cloudinary...")
+            call_command('sync_media_to_cloudinary')
+    except Exception as e:
+        logger.warning("Cloudinary sync on post_migrate encountered: %s", e)
 
 
 class CoreConfig(AppConfig):
