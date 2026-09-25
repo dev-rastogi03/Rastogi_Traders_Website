@@ -1,0 +1,1582 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$qf0ofA26nVV8a5oxdG0qhe$QtmBFklhQSFKlIMG22DpE2PlO37JWx2wftyHoiDPlVo=",
+    "last_login": "2026-09-22T17:47:25.453Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@rastogitraders.in",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-09-21T17:34:48.760Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "3iwuym25i2a1ib6fhjwtumkbtw5mdd1a",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHDwwFcuu83EGBAqgaS0q6M_65NutDtPefcF_NhW6vfRl78TOzCBDv9bjGkR247oHtot85Tb-syR74r_KCDT53y83q4fwc1jPqtAZ0yAGQQo0EHgGQsolY66ZxczhGSLQVNOSMKQyohgVRkpYxOCsneH7NdNsU:1x94BD:Q1Uu5tDGKlktwa1vQL6JB-ec1fxZ7Zd-BviILo-VO00",
+    "expire_date": "2026-10-06T17:21:19.801Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "6o039dyxkrimaevsomxz9fx2f84kzvjw",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHDwwFcuu83EGBAqgaS0q6M_65NutDtPefcF_NhW6vfRl78TOzCBDv9bjGkR247oHtot85Tb-syR74r_KCDT53y83q4fwc1jPqtAZ0yAGQQo0EHgGQsolY66ZxczhGSLQVNOSMKQyohgVRkpYxOCsneH7NdNsU:1x94GK:jUztaNCVL7_87TPSkRwkbw0iylKj1-ywG3tseUDG1l8",
+    "expire_date": "2026-10-06T17:26:36.418Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "70evdjit1km1uybr74ej8n59pe23uyu6",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHDwwFcuu83EGBAqgaS0q6M_65NutDtPefcF_NhW6vfRl78TOzCBDv9bjGkR247oHtot85Tb-syR74r_KCDT53y83q4fwc1jPqtAZ0yAGQQo0EHgGQsolY66ZxczhGSLQVNOSMKQyohgVRkpYxOCsneH7NdNsU:1x94Qk:uRGeEIartw8fZ6tgpUb0qMTHhGZLpT82ESFkhpLZ9lc",
+    "expire_date": "2026-10-06T17:37:22.786Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "g7dl410b8qdl1umddikj4dzcx6bfgg2d",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHDwwFcuu83EGBAqgaS0q6M_65NutDtPefcF_NhW6vfRl78TOzCBDv9bjGkR247oHtot85Tb-syR74r_KCDT53y83q4fwc1jPqtAZ0yAGQQo0EHgGQsolY66ZxczhGSLQVNOSMKQyohgVRkpYxOCsneH7NdNsU:1x94GY:D2vFQivnjc4Mo0WNIp968yuaVepxDLYEARlSY6VtYss",
+    "expire_date": "2026-10-06T17:26:50.802Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "hqi5q5z8smc3zge739iskvc3yq2oeddv",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHDwwFcuu83EGBAqgaS0q6M_65NutDtPefcF_NhW6vfRl78TOzCBDv9bjGkR247oHtot85Tb-syR74r_KCDT53y83q4fwc1jPqtAZ0yAGQQo0EHgGQsolY66ZxczhGSLQVNOSMKQyohgVRkpYxOCsneH7NdNsU:1x94HD:llIga6eorrPaWA7_29JKVnsEvsr_CyufrnndMhemwOM",
+    "expire_date": "2026-10-06T17:27:31.292Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "im2608no20z0b8zu9421hr1bhfv2l4ao",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHDwwFcuu83EGBAqgaS0q6M_65NutDtPefcF_NhW6vfRl78TOzCBDv9bjGkR247oHtot85Tb-syR74r_KCDT53y83q4fwc1jPqtAZ0yAGQQo0EHgGQsolY66ZxczhGSLQVNOSMKQyohgVRkpYxOCsneH7NdNsU:1x94Eb:jP_BpzoF1-GJlE30WWNOWxHYRK_QDUdwMJIGlxVlm00",
+    "expire_date": "2026-10-06T17:24:49.252Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "jysjhitvwyfocid3wm7e5qwj0bkvncgd",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHDwwFcuu83EGBAqgaS0q6M_65NutDtPefcF_NhW6vfRl78TOzCBDv9bjGkR247oHtot85Tb-syR74r_KCDT53y83q4fwc1jPqtAZ0yAGQQo0EHgGQsolY66ZxczhGSLQVNOSMKQyohgVRkpYxOCsneH7NdNsU:1x94aT:myRVxOw1X_bh24vwWQojaQDil9nDeTBawUg-7g4KsR4",
+    "expire_date": "2026-10-06T17:47:25.464Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "kf5x05sghcmjggr6nmuehtvwt7e8xz3q",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHDwwFcuu83EGBAqgaS0q6M_65NutDtPefcF_NhW6vfRl78TOzCBDv9bjGkR247oHtot85Tb-syR74r_KCDT53y83q4fwc1jPqtAZ0yAGQQo0EHgGQsolY66ZxczhGSLQVNOSMKQyohgVRkpYxOCsneH7NdNsU:1x94EN:kypaFlC82PcdT1slFqvF5OdjMg0FJAg0GDUeSx36jPw",
+    "expire_date": "2026-10-06T17:24:35.995Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "mteczndrq4j810v7kckrwng9hcndwhc0",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHDwwFcuu83EGBAqgaS0q6M_65NutDtPefcF_NhW6vfRl78TOzCBDv9bjGkR247oHtot85Tb-syR74r_KCDT53y83q4fwc1jPqtAZ0yAGQQo0EHgGQsolY66ZxczhGSLQVNOSMKQyohgVRkpYxOCsneH7NdNsU:1x94Ep:DCjUoDNb28VikCU85txgNnDPzm_U_MNnyouISyG0HVs",
+    "expire_date": "2026-10-06T17:25:03.280Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "p81r3jzwymx58a4x0oiosty8yp9rf1go",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHDwwFcuu83EGBAqgaS0q6M_65NutDtPefcF_NhW6vfRl78TOzCBDv9bjGkR247oHtot85Tb-syR74r_KCDT53y83q4fwc1jPqtAZ0yAGQQo0EHgGQsolY66ZxczhGSLQVNOSMKQyohgVRkpYxOCsneH7NdNsU:1x94NA:-JkAce9s7k9acdYI57t59-_UG9-58cZxHQPaAFxh1aI",
+    "expire_date": "2026-10-06T17:33:40.535Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "qu808sjaodbua1wc2a410dmv5a81zgbj",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHDwwFcuu83EGBAqgaS0q6M_65NutDtPefcF_NhW6vfRl78TOzCBDv9bjGkR247oHtot85Tb-syR74r_KCDT53y83q4fwc1jPqtAZ0yAGQQo0EHgGQsolY66ZxczhGSLQVNOSMKQyohgVRkpYxOCsneH7NdNsU:1x94NP:XOsr5NDVc5x0yK5NmuCktMRFbZz-whKD_uc4LjNg7Uk",
+    "expire_date": "2026-10-06T17:33:55.126Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "txhlrh6b0viak9qic8wbxw6y35jj3bqx",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHDwwFcuu83EGBAqgaS0q6M_65NutDtPefcF_NhW6vfRl78TOzCBDv9bjGkR247oHtot85Tb-syR74r_KCDT53y83q4fwc1jPqtAZ0yAGQQo0EHgGQsolY66ZxczhGSLQVNOSMKQyohgVRkpYxOCsneH7NdNsU:1x8i2t:3zqm1zuJy2zx8gVYEpsgqawwT6bRvPIVztgXRo6Iw1Q",
+    "expire_date": "2026-10-05T17:43:15.210Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "v0uw6d6gs7prr3uzkp47055nwro4c75u",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHDwwFcuu83EGBAqgaS0q6M_65NutDtPefcF_NhW6vfRl78TOzCBDv9bjGkR247oHtot85Tb-syR74r_KCDT53y83q4fwc1jPqtAZ0yAGQQo0EHgGQsolY66ZxczhGSLQVNOSMKQyohgVRkpYxOCsneH7NdNsU:1x94OX:tChYrNZCysXyZWad9YSFmLk1ijSryoCrJiWj_sEx0KA",
+    "expire_date": "2026-10-06T17:35:05.557Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "xe5zp32c0ss78yvi84ve3h6vzq41fab8",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHDwwFcuu83EGBAqgaS0q6M_65NutDtPefcF_NhW6vfRl78TOzCBDv9bjGkR247oHtot85Tb-syR74r_KCDT53y83q4fwc1jPqtAZ0yAGQQo0EHgGQsolY66ZxczhGSLQVNOSMKQyohgVRkpYxOCsneH7NdNsU:1x94Ng:3gaY-XFKWJT6Dx0plUbplxgxthV1gMgXp-4GKfEbu94",
+    "expire_date": "2026-10-06T17:34:12.614Z"
+  }
+},
+{
+  "model": "core.businessprofile",
+  "pk": 1,
+  "fields": {
+    "business_name": "Rastogi Traders | रस्तोगी ट्रेडर्स",
+    "tagline": "किसानों की खेती का भरोसेमंद साथी",
+    "hero_subtitle": "उर्वरक • कीटनाशक • पशु आहार • उन्नत बीज",
+    "hero_supporting_text": "उच्च गुणवत्ता वाले रासायनिक व जैविक उर्वरक, प्रमाणित कीटनाशक, फसल सुरक्षा दवाइयाँ और पौष्टिक पशु आहार के लिए हमसे सीधे संपर्क करें।",
+    "owner_name": "रस्तोगी परिवार",
+    "phone_primary": "+91 9927394762",
+    "phone_secondary": "+91 9528550401",
+    "whatsapp_number": "+919927394762",
+    "email": "Rastogitraders31@gmail.com",
+    "address": "पुरानी चुंगी ,श्याम नगर, सेलेटैक्स कार्यालय के सामने, निकत हरीश अनेजा द्वार",
+    "landmark": "पुरानी चुंगी",
+    "city_district": "बदायूं",
+    "state_pincode": "उत्तर प्रदेश - 243601",
+    "opening_hours": "सुबह 8:00 बजे से शाम 7:30 बजे तक (सोमवार - शनिवार)",
+    "sunday_hours": "रविवार: सुबह 8:00 बजे से दोपहर 7:00 बजे तक",
+    "google_maps_directions_url": "https://maps.app.goo.gl/SK23nppce2k6xGqz5",
+    "google_maps_embed_url": "pb=!1m18!1m12!1m3!1d740.2772304625748!2d79.13037904814406!3d28.043670201890816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3975457586fa34d7%3A0xa1777abc45f3569f!2sRASTOGI%20TRADERS!5e0!3m2!1sen!2sin!4v1790069167178!5m2!1sen!2sin\"",
+    "about_story": "Rastogi Traders एक स्थानीय कृषि उत्पाद एवं पशु सेवा प्रतिष्ठान है, जहाँ क्षेत्र के किसान भाइयों और डेयरी पशुपालकों के लिए उच्च गुणवत्ता वाले उर्वरक (खाद), प्रमाणित फसल सुरक्षा उत्पाद (कीटनाशक, फफूंदनाशक), उन्नत बीज और पौष्टिक पशु आहार उपलब्ध कराए जाते हैं।\r\n\r\nहमारा मुख्य उद्देश्य हर किसान तक असली और मानक गुणवत्ता वाले उत्पाद पहुँचाना, उन्हें उचित मूल्य पर उपलब्ध कराना और सही उपयोग की सामान्य जानकारी देना है। कई वर्षों के अटूट विश्वास, निष्पक्ष व्यवहार और त्वरित सेवा के दम पर रस्तोगी ट्रेडर्स आज क्षेत्र के हजारों किसानों की पहली पसंद बन चुका है।",
+    "about_short_text": "असली खाद, प्रमाणित कीटनाशक और पौष्टिक पशु आहार का विश्वसनीय स्थानीय केंद्र।",
+    "trust_point_1_title": "स्थानीय एवं भरोसेमंद सेवा",
+    "trust_point_1_desc": "स्थानीय किसानों और ग्राहकों के लिए आसान और विश्वसनीय संपर्क।",
+    "trust_point_2_title": "विभिन्न कृषि उत्पाद",
+    "trust_point_2_desc": "उर्वरक, फसल सुरक्षा उत्पाद (कीटनाशक) और पौष्टिक पशु आहार एक ही छत के नीचे।",
+    "trust_point_3_title": "आसान संपर्क सुविधा",
+    "trust_point_3_desc": "फोन और WhatsApp के माध्यम से आज का भाव और उत्पाद उपलब्धता तुरंत जानें।",
+    "trust_point_4_title": "दुकान पर सीधी उपलब्धता",
+    "trust_point_4_desc": "असली और ब्रांडेड कंपनियों के स्टॉक की दुकान पर सीधी जाँच और खरीद।",
+    "owner_1_name": "श्री दीपक रस्तोगी",
+    "owner_1_role": "संस्थापक एवं मुख्य संचालक (Founder & Proprietor)",
+    "owner_1_desc": "कृषि व्यापार एवं बीज-खाद परामर्श में 25+ वर्षों का अटूट अनुभव।",
+    "owner_1_photo": "profile/team/WhatsApp_Image_2026-09-22_at_3_ZCvaj3F.06.39_PM.jpeg",
+    "owner_2_name": "श्री देव रस्तोगी",
+    "owner_2_role": "प्रबंधक एवं ग्राहक सेवा प्रमुख (Store Manager)",
+    "owner_2_desc": "उत्पाद उपलब्धता, स्टॉक प्रबंधन एवं किसान बंधुओं को त्वरित सेवा।",
+    "owner_2_photo": "profile/team/Photo_1_9RRm3p3.png",
+    "facebook_url": "",
+    "instagram_url": "",
+    "youtube_url": "",
+    "developer_credit_enabled": true,
+    "developer_credit_name": "Dev Rastogi",
+    "developer_credit_role": "वेबसाइट डिज़ाइन एवं तकनीकी विकास (Website Design & Development)",
+    "developer_credit_url": "",
+    "logo": "",
+    "hero_banner": "",
+    "updated_at": "2026-09-22T17:14:31.483Z"
+  }
+},
+{
+  "model": "core.offer",
+  "pk": 1,
+  "fields": {
+    "title": "मौसमी बुवाई विशेष बचत: जिंक + सल्फर कॉम्बो ऑफर",
+    "badge_text": "सीमित समय ऑफर",
+    "description": "गेहूँ एवं सरसों बुवाई के अवसर पर जिंक सल्फेट और बेंटोनाइट सल्फर के कॉम्बो पैक पर विशेष छूट। दुकान पर उपलब्धता की जाँच तुरंत करें।",
+    "deal_highlight": "कॉम्बो पैक पर आकर्षक बचत",
+    "image": "",
+    "valid_from": "2026-09-21",
+    "valid_until": "2026-10-21",
+    "is_active": true,
+    "display_order": 1,
+    "created_at": "2026-09-21T17:34:31.839Z"
+  }
+},
+{
+  "model": "core.offer",
+  "pk": 2,
+  "fields": {
+    "title": "पशु आहार 5 बोरी खरीद पर विशेष छूट व उपहार",
+    "badge_text": "डेयरी किसान विशेष",
+    "description": "Apna Pashu Aahar या Talwaar Chowker की 10 या अधिक बोरियों की एकमुश्त खरीद पर विशेष थोक दर व उपहार।",
+    "deal_highlight": "थोक भाव व आसान डिलीवरी परामर्श",
+    "image": "",
+    "valid_from": "2026-09-21",
+    "valid_until": "2026-11-05",
+    "is_active": true,
+    "display_order": 2,
+    "created_at": "2026-09-21T17:34:31.848Z"
+  }
+},
+{
+  "model": "core.review",
+  "pk": 1,
+  "fields": {
+    "customer_name": "रामेश्वर सिंह",
+    "village_location": "गाँव: रायपुर, सीतापुर",
+    "rating": 5,
+    "review_text": "रस्तोगी ट्रेडर्स से पिछले 4 सालों से खाद और दवा ले रहा हूँ। यहाँ कभी नकली सामान नहीं मिला और हर खाद का भाव भी एकदम सही रहता है।",
+    "customer_photo": "",
+    "is_approved": true,
+    "display_order": 1,
+    "created_at": "2026-09-21T17:34:31.859Z"
+  }
+},
+{
+  "model": "core.review",
+  "pk": 2,
+  "fields": {
+    "customer_name": "वीरेंद्र यादव (डेयरी संचालक)",
+    "village_location": "गाँव: पिपरिया, लखीमपुर रोड",
+    "rating": 5,
+    "review_text": "इनकी दुकान का गोदरेज पशु आहार खिलाने से मेरी 8 भैंसों का दूध और फैट दोनों बढ़ गया। समय पर माल मिल जाता है।",
+    "customer_photo": "",
+    "is_approved": true,
+    "display_order": 2,
+    "created_at": "2026-09-21T17:34:31.867Z"
+  }
+},
+{
+  "model": "core.review",
+  "pk": 3,
+  "fields": {
+    "customer_name": "हिमांशु सक्सेना (किसान)",
+    "village_location": "गाँव: खुनक",
+    "rating": 5,
+    "review_text": "WhatsApp पर आज का भाव पूछने पर तुरंत जवाब आ जाता है। दुकान पर जाने से पहले ही पता चल जाता है कि स्टॉक उपलब्ध है या नहीं। बहुत बढ़िया सुविधा।",
+    "customer_photo": "reviews/WhatsApp_Image_2026-09-23_at_1.29.11_AM.jpeg",
+    "is_approved": true,
+    "display_order": 1,
+    "created_at": "2026-09-21T17:34:31.876Z"
+  }
+},
+{
+  "model": "core.galleryimage",
+  "pk": 1,
+  "fields": {
+    "title": "Team of experts",
+    "category": "cattle_feed",
+    "image": "gallery/WhatsApp_Image_2026-09-23_at_12_wkdKeCr.53.00_PM.jpeg",
+    "caption": "Cattle Field Department",
+    "is_featured": true,
+    "display_order": 1,
+    "created_at": "2026-09-21T17:34:31.888Z"
+  }
+},
+{
+  "model": "core.galleryimage",
+  "pk": 2,
+  "fields": {
+    "title": "पशु आहार भंडार कक्ष",
+    "category": "cattle_feed",
+    "image": "",
+    "caption": "गोदरेज एवं कपिला पशु आहार बोरियां",
+    "is_featured": true,
+    "display_order": 2,
+    "created_at": "2026-09-21T17:34:31.897Z"
+  }
+},
+{
+  "model": "core.galleryimage",
+  "pk": 3,
+  "fields": {
+    "title": "प्रमाणित बीज एवं कीटनाशक शेल्फ",
+    "category": "stock",
+    "image": "",
+    "caption": "सीलबंद और ऑरिजिनल फसल सुरक्षा उत्पाद",
+    "is_featured": true,
+    "display_order": 3,
+    "created_at": "2026-09-21T17:34:31.906Z"
+  }
+},
+{
+  "model": "core.galleryimage",
+  "pk": 4,
+  "fields": {
+    "title": "लहलहाती गेहूँ की फसल",
+    "category": "farmers",
+    "image": "",
+    "caption": "हमारे नियमित किसान भाई के खेत का दृश्य",
+    "is_featured": true,
+    "display_order": 4,
+    "created_at": "2026-09-21T17:34:31.914Z"
+  }
+},
+{
+  "model": "core.galleryimage",
+  "pk": 5,
+  "fields": {
+    "title": "दुकान का मुख्य प्रवेश द्वार",
+    "category": "shop",
+    "image": "",
+    "caption": "मंडी रोड पर मुख्य प्रवेश व पार्किंग सुविधा",
+    "is_featured": true,
+    "display_order": 5,
+    "created_at": "2026-09-21T17:34:31.922Z"
+  }
+},
+{
+  "model": "core.galleryimage",
+  "pk": 6,
+  "fields": {
+    "title": "दुधारू पशु व डेयरी पोषण",
+    "category": "cattle_feed",
+    "image": "",
+    "caption": "संतुलित आहार से स्वस्थ पशु",
+    "is_featured": true,
+    "display_order": 6,
+    "created_at": "2026-09-21T17:34:31.932Z"
+  }
+},
+{
+  "model": "core.contactmessage",
+  "pk": 1,
+  "fields": {
+    "name": "Dev Rastogi",
+    "phone": "09528550401",
+    "village": "Ghaziabad",
+    "interested_category": "उन्नत बीज (Seeds)",
+    "message": "Pioneer 45S46 available hai kya? Kya rate mil sakta hai bhaiya ji",
+    "is_read": false,
+    "created_at": "2026-09-22T09:43:17.790Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 1,
+  "fields": {
+    "name_hi": "उर्वरक (खाद)",
+    "name_en": "Fertilizers",
+    "slug": "fertilizers",
+    "icon": "🌾",
+    "short_description": "फसल की आवश्यकतानुसार डीएपी, यूरिया, एनपीके, पोटाश, जिंक एवं माइक्रोन्यूट्रिएंट्स।",
+    "badge_text": "100% असली व प्रमाणित",
+    "image": "",
+    "display_order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "products.category",
+  "pk": 2,
+  "fields": {
+    "name_hi": "कीटनाशक एवं फसल सुरक्षा",
+    "name_en": "Pesticides & Crop Protection",
+    "slug": "pesticides",
+    "icon": "🌱",
+    "short_description": "कीट, फफूंद एवं खरपतवार नियंत्रण हेतु शीर्ष कंपनियों के प्रमाणित सुरक्षा उत्पाद।",
+    "badge_text": "ब्रांडेड सुरक्षा उत्पाद",
+    "image": "",
+    "display_order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "products.category",
+  "pk": 3,
+  "fields": {
+    "name_hi": "पशु आहार एवं पोषण",
+    "name_en": "Cattle Feed & Nutrition",
+    "slug": "cattle-feed",
+    "icon": "🐄",
+    "short_description": "दुधारू गाय-भैंस के बेहतर स्वास्थ्य, दूध व फैट वृद्धि के लिए पौष्टिक एवं संतुलित पशु आहार।",
+    "badge_text": "दूध व फैट वृद्धि",
+    "image": "",
+    "display_order": 3,
+    "is_active": true
+  }
+},
+{
+  "model": "products.category",
+  "pk": 4,
+  "fields": {
+    "name_hi": "उन्नत हाइब्रिड बीज",
+    "name_en": "Hybrid Seeds",
+    "slug": "seeds",
+    "icon": "🌻",
+    "short_description": "गेहूँ, धान, सरसों, मक्का, बाजरा एवं सब्जियों के उच्च अंकुरण व पैदावार वाले बीज।",
+    "badge_text": "उच्च अंकुरण क्षमता",
+    "image": "",
+    "display_order": 4,
+    "is_active": true
+  }
+},
+{
+  "model": "products.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "इफको डीएपी (IFFCO DAP 18-46-0)",
+    "slug": "iffco-dap-fertilizer",
+    "brand": "IFFCO (इफको)",
+    "pack_size": "50 kg बोरी",
+    "short_description": "जड़ों के मजबूत विकास और पौधों की शुरुआती वृद्धि के लिए 18% नाइट्रोजन और 46% फास्फोरस युक्त उत्तम उर्वरक।",
+    "detailed_description": "इफको डीएपी (डाई-अमोनियम फास्फेट) भारतीय किसानों का सबसे पसंदीदा फास्फेटिक उर्वरक है।\nमुख्य विशेषताएँ:\n- जड़ों का तेजी से और गहरा फैलाव।\n- कल्ले फूटने में अत्यधिक सहायक।\n- बुवाई के समय बेसल डोज के रूप में उपयुक्त।\nउपयोग विधि: बुवाई के समय खेत में आखिरी जुताई के दौरान अथवा सीड-ड्रिल के माध्यम से बीज के साथ उचित दूरी पर डालें।",
+    "suitable_crops": "गेहूँ, धान, गन्ना, आलू, सरसों, मक्का, दलहन एवं तिलहन",
+    "image": "",
+    "availability_status": "in_stock",
+    "is_featured": true,
+    "price_label": "आज का सरकारी/दुकान भाव पूछें",
+    "price": null,
+    "safety_precaution": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर कृषि विशेषज्ञ से सलाह लें।",
+    "display_order": 0,
+    "created_at": "2026-09-21T17:34:31.615Z",
+    "updated_at": "2026-09-21T17:34:31.615Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "name": "नीम लेपित यूरिया (Neem Coated Urea)",
+    "slug": "neem-coated-urea",
+    "brand": "IFFCO / KRIBHCO",
+    "pack_size": "45 kg बोरी",
+    "short_description": "46% नाइट्रोजन युक्त नीम कोटेड यूरिया जो पौधों को हरा-भरा रखने और वानस्पतिक बढ़वार के लिए आवश्यक है।",
+    "detailed_description": "नीम लेपित यूरिया से नाइट्रोजन धीरे-धीरे मिट्टी में घुलती है जिससे फसल को लम्बे समय तक पोषण मिलता है और बर्बादी कम होती है।\nफसल के पहले और दूसरे पानी पर टॉप ड्रेसिंग के रूप में उपयोग करें।",
+    "suitable_crops": "सभी प्रमुख खाद्यान्न फसलें, गन्ना, सब्जियाँ व बागवानी",
+    "image": "",
+    "availability_status": "in_stock",
+    "is_featured": true,
+    "price_label": "आज का भाव पूछें",
+    "price": null,
+    "safety_precaution": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर कृषि विशेषज्ञ से सलाह लें।",
+    "display_order": 0,
+    "created_at": "2026-09-21T17:34:31.627Z",
+    "updated_at": "2026-09-21T17:34:31.627Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 3,
+  "fields": {
+    "category": 1,
+    "name": "इफको एनपीके (IFFCO NPK 12:32:16)",
+    "slug": "iffco-npk-12-32-16",
+    "brand": "IFFCO (इफको)",
+    "pack_size": "50 kg बोरी",
+    "short_description": "नाइट्रोजन, फास्फोरस और पोटाश का संतुलित कॉम्प्लेक्स उर्वरक जो फसल को सर्वांगीण शक्ति प्रदान करता है।",
+    "detailed_description": "दाने की चमक, वजन और रोग प्रतिरोधक क्षमता बढ़ाने में विशेष रूप से उपयोगी।",
+    "suitable_crops": "गेहूँ, आलू, गन्ना, तिलहन एवं सब्जियाँ",
+    "image": "",
+    "availability_status": "in_stock",
+    "is_featured": true,
+    "price_label": "आज का भाव पूछें",
+    "price": null,
+    "safety_precaution": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर कृषि विशेषज्ञ से सलाह लें।",
+    "display_order": 0,
+    "created_at": "2026-09-21T17:34:31.638Z",
+    "updated_at": "2026-09-21T17:34:31.638Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 4,
+  "fields": {
+    "category": 1,
+    "name": "जिंक सल्फेट 33% (Zinc Sulphate Monohydrate)",
+    "slug": "zinc-sulphate-33",
+    "brand": "उत्तम / दयाल / इफको",
+    "pack_size": "4 kg / 5 kg बैग",
+    "short_description": "फसलों में खैरा रोग और पत्तियों के पीलेपन को दूर करने हेतु उच्च गुणवत्ता वाला जिंक व सल्फर पोषण।",
+    "detailed_description": "धान और गेहूँ की फसल में जिंक की कमी को पूरा करके बढ़वार तेज करता है।",
+    "suitable_crops": "धान, गेहूँ, मक्का, गन्ना",
+    "image": "",
+    "availability_status": "in_stock",
+    "is_featured": false,
+    "price_label": "आज का भाव पूछें",
+    "price": null,
+    "safety_precaution": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर कृषि विशेषज्ञ से सलाह लें।",
+    "display_order": 0,
+    "created_at": "2026-09-21T17:34:31.651Z",
+    "updated_at": "2026-09-21T17:34:31.651Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 5,
+  "fields": {
+    "category": 2,
+    "name": "कोराजन कीटनाशक (Coragen Insecticide)",
+    "slug": "fmc-coragen-insecticide",
+    "brand": "FMC",
+    "pack_size": "150 ml / 60 ml बोतल",
+    "short_description": "गन्ने के कंसुआ (Top Borer) और तना छेदक कीटों के रोकथाम के लिए प्रसिद्ध और प्रभावी कीटनाशक।",
+    "detailed_description": "कोराजन फसलों में इल्ली व तना छेदक कीटों के लंबे समय तक नियंत्रण के लिए जाना जाता है।\nसुरक्षा चेतावनी: पैकेट पर दिए निर्देशानुसार पानी की सही मात्रा के साथ ड्रेंचिंग या छिड़काव करें। सुरक्षा दस्ताने और मास्क का प्रयोग करें।",
+    "suitable_crops": "गन्ना, धान, मक्का, सब्जियाँ",
+    "image": "",
+    "availability_status": "in_stock",
+    "is_featured": true,
+    "price_label": "आज का भाव पूछें",
+    "price": null,
+    "safety_precaution": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर कृषि विशेषज्ञ से सलाह लें।",
+    "display_order": 0,
+    "created_at": "2026-09-21T17:34:31.662Z",
+    "updated_at": "2026-09-21T17:34:31.662Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 6,
+  "fields": {
+    "category": 2,
+    "name": "कॉन्फिडोर (Confidor - Imidacloprid 17.8% SL)",
+    "slug": "bayer-confidor",
+    "brand": "Bayer (बायर)",
+    "pack_size": "100 ml / 250 ml / 500 ml",
+    "short_description": "माहू (Aphids), तेला, हरा फुदका व रस चूसक कीटों के प्रभावी नियंत्रण हेतु सिस्टेमिक कीटनाशक।",
+    "detailed_description": "रस चूसक कीटों पर त्वरित असर करता है। विशेषज्ञ सलाह और लेबल निर्देशों का अनुपालन करें।",
+    "suitable_crops": "सरसों, धान, कपास, सब्जियाँ, आम",
+    "image": "",
+    "availability_status": "in_stock",
+    "is_featured": true,
+    "price_label": "आज का भाव पूछें",
+    "price": null,
+    "safety_precaution": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर कृषि विशेषज्ञ से सलाह लें।",
+    "display_order": 0,
+    "created_at": "2026-09-21T17:34:31.672Z",
+    "updated_at": "2026-09-21T17:34:31.672Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 7,
+  "fields": {
+    "category": 2,
+    "name": "साफ फफूंदनाशक (SAAF Fungicide)",
+    "slug": "upl-saaf-fungicide",
+    "brand": "UPL",
+    "pack_size": "250 gm / 500 gm / 1 kg",
+    "short_description": "कार्बेन्डाजिम 12% + मैंकोजेब 63% WP युक्त दोहरा असरदार फफूंदनाशक, जो झुलसा व फफूंद रोगों को रोकता है।",
+    "detailed_description": "बीज शोधन और पत्तियों पर छिड़काव दोनों के लिए उपयुक्त व्यापक फफूंदनाशक।",
+    "suitable_crops": "आलू, धान, मूंगफली, सब्जियाँ",
+    "image": "products/Saaf.jpeg",
+    "availability_status": "in_stock",
+    "is_featured": true,
+    "price_label": "आज का भाव पूछें",
+    "price": null,
+    "safety_precaution": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर कृषि विशेषज्ञ से सलाह लें।",
+    "display_order": 0,
+    "created_at": "2026-09-21T17:34:31.682Z",
+    "updated_at": "2026-09-22T19:51:49.527Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 8,
+  "fields": {
+    "category": 3,
+    "name": "गोदरेज पशु आहार - दूध धारा (Doodh Dhara)",
+    "slug": "godrej-doodh-dhara-cattle-feed",
+    "brand": "Godrej Agrovet",
+    "pack_size": "50 kg बोरी (Pellet)",
+    "short_description": "20% प्रोटीन, मिनरल्स व विटामिन युक्त संतुलित पेलेट दाना जो गाय-भैंस में दूध व फैट की मात्रा बढ़ाता है।",
+    "detailed_description": "गोदरेज दूध धारा दुधारू पशुओं के पाचन और स्वास्थ्य के लिए विशेष रूप से तैयार किया गया है।\n- दूध की मात्रा में स्वाभाविक वृद्धि।\n- फैट और एसएनएफ (SNF) में सुधार।\n- पशु के गर्भाधान चक्र को नियमित रखने में सहायक।",
+    "suitable_crops": "गाय, भैंस, दुधारू एवं गाभिन पशु",
+    "image": "",
+    "availability_status": "in_stock",
+    "is_featured": false,
+    "price_label": "आज का भाव पूछें",
+    "price": null,
+    "safety_precaution": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर कृषि विशेषज्ञ से सलाह लें।",
+    "display_order": 0,
+    "created_at": "2026-09-21T17:34:31.691Z",
+    "updated_at": "2026-09-22T19:52:29.220Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 9,
+  "fields": {
+    "category": 3,
+    "name": "Apna Pashu Aahar Super",
+    "slug": "kapila-super-gold-cattle-feed",
+    "brand": "Apna Pashu Aahar",
+    "pack_size": "50 kg / 25 kg",
+    "short_description": "उच्च ऊर्जा व पाचक तत्वों से भरपूर लोकप्रिय पशु आहार, दुधारू पशुओं के लिए अत्यंत लाभकारी।",
+    "detailed_description": "पशुओं की सेहत बनाए रखता है और मौसम के बदलाव के समय पशुओं को तनावमुक्त रखता है।",
+    "suitable_crops": "गाय, भैंस, डेयरी पशु",
+    "image": "products/Super.jpeg",
+    "availability_status": "in_stock",
+    "is_featured": true,
+    "price_label": "आज का भाव पूछें",
+    "price": null,
+    "safety_precaution": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर कृषि विशेषज्ञ से सलाह लें।",
+    "display_order": 0,
+    "created_at": "2026-09-21T17:34:31.701Z",
+    "updated_at": "2026-09-22T18:55:10.364Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 10,
+  "fields": {
+    "category": 3,
+    "name": "Double Talwaar Chowker",
+    "slug": "agrimin-forte-mineral-mixture",
+    "brand": "Agra Mills",
+    "pack_size": "50 kg / 25 kg",
+    "short_description": "Double Talwaar Mota Chowker 50 kg /26kg",
+    "detailed_description": "",
+    "suitable_crops": "गाय, भैंस, बछड़े",
+    "image": "products/TALWAAR.jpeg",
+    "availability_status": "in_stock",
+    "is_featured": false,
+    "price_label": "आज का भाव पूछें",
+    "price": null,
+    "safety_precaution": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर कृषि विशेषज्ञ से सलाह लें।",
+    "display_order": 0,
+    "created_at": "2026-09-21T17:34:31.712Z",
+    "updated_at": "2026-09-22T18:54:17.089Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 11,
+  "fields": {
+    "category": 4,
+    "name": "पायनियर 45S46",
+    "slug": "pioneer-mustard-seeds-45s46",
+    "brand": "Pioneer",
+    "pack_size": "1 kg",
+    "short_description": "अधिक तेल प्रतिशत और मजबूत तने वाली उच्च पैदावार हाइब्रिड सरसों।",
+    "detailed_description": "चमकदार और वजनदार।",
+    "suitable_crops": "सरसों रबी सीजन",
+    "image": "products/4546.jpeg",
+    "availability_status": "in_stock",
+    "is_featured": true,
+    "price_label": "आज का भाव पूछें",
+    "price": null,
+    "safety_precaution": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर कृषि विशेषज्ञ से सलाह लें।",
+    "display_order": 0,
+    "created_at": "2026-09-21T17:34:31.723Z",
+    "updated_at": "2026-09-22T19:47:45.045Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 12,
+  "fields": {
+    "category": 4,
+    "name": "ShriRamn1666",
+    "slug": "wheat-seeds-hd-2967",
+    "brand": "प्रमाणित राष्ट्रीय बीज निगम (NSC / UP Seeds)",
+    "pack_size": "1 kg",
+    "short_description": "अधिक तेल प्रतिशत और मजबूत तने वाली उच्च पैदावार हाइब्रिड सरसों।",
+    "detailed_description": "",
+    "suitable_crops": "सरसों रबी सीजन",
+    "image": "products/1666.jpeg",
+    "availability_status": "in_stock",
+    "is_featured": true,
+    "price_label": "आज का भाव पूछें",
+    "price": null,
+    "safety_precaution": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर कृषि विशेषज्ञ से सलाह लें।",
+    "display_order": 0,
+    "created_at": "2026-09-21T17:34:31.734Z",
+    "updated_at": "2026-09-22T19:50:09.255Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 13,
+  "fields": {
+    "category": 3,
+    "name": "Apna Pashu Aahar Supreme Plus",
+    "slug": "2026",
+    "brand": "Apna Pashu Aahar",
+    "pack_size": "50 kg / 25 kg",
+    "short_description": "Apna Pashu Aahar Supreme Plus + 50kg/25 kg",
+    "detailed_description": "विवरण...",
+    "suitable_crops": "Cattle Feed",
+    "image": "products/Supremeplus.jpeg",
+    "availability_status": "in_stock",
+    "is_featured": true,
+    "price_label": "आज का भाव पूछें",
+    "price": null,
+    "safety_precaution": "सावधानी रखें...",
+    "display_order": 0,
+    "created_at": "2026-09-22T17:24:36.365Z",
+    "updated_at": "2026-09-22T18:47:50.129Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 14,
+  "fields": {
+    "category": 3,
+    "name": "Dairy Power",
+    "slug": "test-product-name",
+    "brand": "Apna Pashu Aahar",
+    "pack_size": "50 kg/25 kg",
+    "short_description": "Apna Pashu Aahar Dairy Power 50kg/25kg",
+    "detailed_description": "Details here",
+    "suitable_crops": "Cattle Feed",
+    "image": "products/DairyPower_tmWQ4dw.jpg",
+    "availability_status": "in_stock",
+    "is_featured": true,
+    "price_label": "आज का भाव पूछें",
+    "price": null,
+    "safety_precaution": "Follow label instructions",
+    "display_order": 0,
+    "created_at": "2026-09-22T17:27:31.373Z",
+    "updated_at": "2026-09-22T18:48:38.719Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 15,
+  "fields": {
+    "category": 1,
+    "name": "श्रीराम सुपर 303 गेहूँ बीज",
+    "slug": "शररम-सपर-303-गह-बज",
+    "brand": "Shriram Bioseed",
+    "pack_size": "40 kg",
+    "short_description": "उच्च उपज देने वाला बीज",
+    "detailed_description": "",
+    "suitable_crops": "गेहूँ, धान, गन्ना, मक्का, आलू, सरसों एवं अन्य फसलें",
+    "image": "",
+    "availability_status": "in_stock",
+    "is_featured": false,
+    "price_label": "आज का भाव पूछें",
+    "price": null,
+    "safety_precaution": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर कृषि विशेषज्ञ से सलाह लें।",
+    "display_order": 0,
+    "created_at": "2026-09-22T17:35:05.646Z",
+    "updated_at": "2026-09-22T17:35:05.646Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 16,
+  "fields": {
+    "category": 1,
+    "name": "श्रीराम सुपर 303 गेहूँ बीज",
+    "slug": "शररम-सपर-303-गह-बज-1",
+    "brand": "Shriram Bioseed",
+    "pack_size": "20 kg",
+    "short_description": "20 किलो की पैकिंग",
+    "detailed_description": "",
+    "suitable_crops": "गेहूँ, धान, गन्ना, मक्का, आलू, सरसों एवं अन्य फसलें",
+    "image": "",
+    "availability_status": "limited_stock",
+    "is_featured": false,
+    "price_label": "आज का भाव पूछें",
+    "price": null,
+    "safety_precaution": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर कृषि विशेषज्ञ से सलाह लें।",
+    "display_order": 1,
+    "created_at": "2026-09-22T17:35:05.718Z",
+    "updated_at": "2026-09-22T17:35:05.718Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 17,
+  "fields": {
+    "category": 1,
+    "name": "डीएपी खाद उत्तम गोल्ड",
+    "slug": "डएप-खद-उततम-गलड",
+    "brand": "उत्तम",
+    "pack_size": "50 किग्रा बोरी",
+    "short_description": "फास्फेटिक खाद",
+    "detailed_description": "",
+    "suitable_crops": "गेहूँ, धान, गन्ना, मक्का, आलू, सरसों एवं अन्य फसलें",
+    "image": "",
+    "availability_status": "in_stock",
+    "is_featured": false,
+    "price_label": "आज का भाव पूछें",
+    "price": null,
+    "safety_precaution": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर कृषि विशेषज्ञ से सलाह लें।",
+    "display_order": 2,
+    "created_at": "2026-09-22T17:35:05.753Z",
+    "updated_at": "2026-09-22T17:35:05.753Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 18,
+  "fields": {
+    "category": 3,
+    "name": "Apna Pashu Aahar 8000",
+    "slug": "dairy-power",
+    "brand": "Apna Pashu Aahar",
+    "pack_size": "50 kg / 25 kg",
+    "short_description": "Apna Pashu Aahar 8000 50 kg only",
+    "detailed_description": "",
+    "suitable_crops": "Cattle Feed",
+    "image": "products/8000.webp",
+    "availability_status": "in_stock",
+    "is_featured": true,
+    "price_label": "आज का भाव पूछें",
+    "price": null,
+    "safety_precaution": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर कृषि विशेषज्ञ से सलाह लें।",
+    "display_order": 0,
+    "created_at": "2026-09-22T17:40:44.683Z",
+    "updated_at": "2026-09-22T18:44:11.523Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 19,
+  "fields": {
+    "category": 3,
+    "name": "Apna Pashu Aahar Supreme",
+    "slug": "apna-pashu-aahar-supreme",
+    "brand": "Apna Pashu Aahar",
+    "pack_size": "50 kg / 25 kg",
+    "short_description": "Apna Pashu Aahar SUPREME 50kg/25kg",
+    "detailed_description": "",
+    "suitable_crops": "Cattle Feed",
+    "image": "products/Supreme.jpeg",
+    "availability_status": "in_stock",
+    "is_featured": true,
+    "price_label": "आज का भाव पूछें",
+    "price": null,
+    "safety_precaution": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर कृषि विशेषज्ञ से सलाह लें।",
+    "display_order": 0,
+    "created_at": "2026-09-22T18:25:44.076Z",
+    "updated_at": "2026-09-22T18:27:58.729Z"
+  }
+},
+{
+  "model": "farmers.cropguide",
+  "pk": 1,
+  "fields": {
+    "crop_name_hi": "गेहूँ (Wheat)",
+    "crop_name_en": "Wheat",
+    "slug": "wheat-gehun",
+    "icon": "🌾",
+    "season": "रबी सीजन (Rabi)",
+    "sowing_time": "25 अक्टूबर से 25 नवंबर (सर्वोत्तम)",
+    "summary": "गेहूँ उत्तर भारत की मुख्य खाद्यान्न फसल है। संतुलित पोषण और समय पर पहली सिंचाई (CRI स्टेज पर) करने से कल्ले अधिक फूटते हैं और उपज भरपूर मिलती है।",
+    "soil_preparation": "2-3 बार गहरी जुताई कर खेत को भुरभुरा और समतल बनाएं। अंतिम जुताई के समय प्रति एकड़ 50 किलो डीएपी और 25 किलो पोटाश डालें।",
+    "fertilizer_schedule": "1. बुवाई के समय: डीएपी 1 बोरी (50 किग्रा) + पोटाश (MOP) 25 किग्रा प्रति एकड़।\n2. पहली सिंचाई (21 दिन पर): यूरिया 45 किग्रा + जिंक सल्फेट 33% 4 किग्रा प्रति एकड़।\n3. दूसरी सिंचाई (40-45 दिन पर): यूरिया 35 किग्रा प्रति एकड़।",
+    "irrigation_info": "पहली सिंचाई 21 दिन (मुकुट जड़ अवस्था - CRI) पर अत्यंत आवश्यक है। इसके बाद कल्ले फूटते समय, गाभा अवस्था और दाना भरते समय हल्की सिंचाई करें।",
+    "pest_management_tips": "चौड़ी व संकरी पत्ती वाले खरपतवारों के लिए उपयुक्त खरपतवारनाशक का प्रयोग 30-35 दिन पर करें। पीला रतुआ दिखाई देने पर विशेषज्ञ से सलाह लें।",
+    "image": "",
+    "is_featured": true,
+    "is_active": true,
+    "display_order": 0
+  }
+},
+{
+  "model": "farmers.cropguide",
+  "pk": 2,
+  "fields": {
+    "crop_name_hi": "धान (Paddy / Rice)",
+    "crop_name_en": "Paddy",
+    "slug": "paddy-dhaan",
+    "icon": "🌱",
+    "season": "खरीफ सीजन (Kharif)",
+    "sowing_time": "जून - जुलाई (रोपणी)",
+    "summary": "धान की रोपाई के लिए 21-25 दिन की पौध का चयन करें। लेहयुक्त खेत में जिंक और संतुलित नाइट्रोजन देने से पौधों की वृद्धि तेज होती है।",
+    "soil_preparation": "खेत को अच्छी तरह पडलिंग (कदा करना) करें ताकि पानी रोकने की क्षमता बढ़ सके।",
+    "fertilizer_schedule": "रोपाई के समय डीएपी 1 बोरी + पोटाश 20 किग्रा। रोपाई के 20 दिन बाद यूरिया के साथ जिंक का प्रयोग करें।",
+    "irrigation_info": "रोपाई के बाद 15-20 दिनों तक खेत में 2-3 सेमी पानी बना रहे। कल्ले फूटते समय और बाली निकलते समय पानी की कमी न होने दें।",
+    "pest_management_tips": "तना छेदक और पत्ती लपेटक की रोकथाम के लिए समय पर उचित कीटनाशक का छिड़काव करें।",
+    "image": "",
+    "is_featured": true,
+    "is_active": true,
+    "display_order": 0
+  }
+},
+{
+  "model": "farmers.cropguide",
+  "pk": 3,
+  "fields": {
+    "crop_name_hi": "गन्ना (Sugarcane)",
+    "crop_name_en": "Sugarcane",
+    "slug": "sugarcane-ganna",
+    "icon": "🎋",
+    "season": "शरदकालीन / वसंतकालीन",
+    "sowing_time": "अक्टूबर-नवंबर अथवा फरवरी-मार्च",
+    "summary": "गन्ना लंबी अवधि की नकदी फसल है। ट्रेंच विधि से बुवाई और संतुलित पोषण से प्रति एकड़ 400 से 500 क्विंटल तक पैदावार संभव है।",
+    "soil_preparation": "गहरी जुताई कर ट्रेंच या कूड़ बनाएं। ट्राइकोडर्मा या फफूंदनाशक से बीज शोधन अवश्य करें।",
+    "fertilizer_schedule": "बुवाई के समय डीएपी 1.5 बोरी + पोटाश 1 बोरी प्रति एकड़। पहले व दूसरे पानी पर यूरिया का प्रयोग करें।",
+    "irrigation_info": "गर्मी के मौसम में 10-12 दिन के अंतराल पर सिंचाई करते रहें।",
+    "pest_management_tips": "कंसुआ (Top Borer) और दीमक की रोकथाम हेतु बुवाई के समय अथवा पहली सिंचाई पर उचित कीटनाशक का प्रयोग करें।",
+    "image": "",
+    "is_featured": true,
+    "is_active": true,
+    "display_order": 0
+  }
+},
+{
+  "model": "farmers.cropguide",
+  "pk": 4,
+  "fields": {
+    "crop_name_hi": "सरसों (Mustard)",
+    "crop_name_en": "Mustard",
+    "slug": "mustard-sarson",
+    "icon": "🌻",
+    "season": "रबी सीजन (Rabi)",
+    "sowing_time": "अक्टूबर का प्रथम पखवाड़ा",
+    "summary": "सरसों में सल्फर का प्रयोग तेल की मात्रा और दानों की चमक बढ़ाने के लिए अनिवार्य है। समय पर बुवाई से माहू कीट का प्रकोप कम होता है।",
+    "soil_preparation": "बारीक और नमीयुक्त खेत में 1.5 से 2 किलो प्रति एकड़ बीज दर रखें।",
+    "fertilizer_schedule": "डीएपी 35-40 किग्रा + सल्फर 90% (बेंटोनाइट) 10 किग्रा प्रति एकड़ बुवाई के समय डालें।",
+    "irrigation_info": "पहली सिंचाई बुवाई के 30-35 दिन बाद (फूल आने से ठीक पहले) और दूसरी सिंचाई फली बनते समय करें।",
+    "pest_management_tips": "माहू (चेपा) दिखने पर मौसम साफ होने पर अनुशंसित कीटनाशक का छिड़काव करें।",
+    "image": "",
+    "is_featured": true,
+    "is_active": true,
+    "display_order": 0
+  }
+},
+{
+  "model": "farmers.cropguide",
+  "pk": 5,
+  "fields": {
+    "crop_name_hi": "आलू (Potato)",
+    "crop_name_en": "Potato",
+    "slug": "potato-aloo",
+    "icon": "🥔",
+    "season": "रबी सीजन",
+    "sowing_time": "15 अक्टूबर से 10 नवंबर",
+    "summary": "आलू की बेहतर कंद वृद्धि के लिए पोटाश और फास्फोरस की उचित मात्रा तथा अगेती-पिछेती झुलसा से बचाव जरूरी है।",
+    "soil_preparation": "खेत में गोबर की सड़ी खाद मिलाकर भुरभुरा बनाएं।",
+    "fertilizer_schedule": "एनपीके 12:32:16 दो बोरी + जिंक व सल्फर बुवाई के समय कूड़ों में डालें।",
+    "irrigation_info": "हल्की और नियमित सिंचाई करें ताकि मेड़ें न डूबें और कंदों का विकास अच्छा हो।",
+    "pest_management_tips": "झुलसा रोग से बचाव के लिए मौसम में कोहरा या बादल छाने पर फफूंदनाशक का छिड़काव करें।",
+    "image": "",
+    "is_featured": true,
+    "is_active": true,
+    "display_order": 0
+  }
+},
+{
+  "model": "farmers.cropguide",
+  "pk": 6,
+  "fields": {
+    "crop_name_hi": "मक्का (Maize)",
+    "crop_name_en": "Maize",
+    "slug": "maize-makka",
+    "icon": "🌽",
+    "season": "खरीफ / जायद / रबी",
+    "sowing_time": "जून-जुलाई अथवा फरवरी-मार्च",
+    "summary": "मक्का कम समय में तैयार होने वाली बहुउपयोगी फसल है। फॉल आर्मीवर्म कीट की निगरानी और समय पर नियंत्रण महत्वपूर्ण है।",
+    "soil_preparation": "जल निकासी वाली दोमट मिट्टी में 2-3 जुताई कर तैयार करें।",
+    "fertilizer_schedule": "डीएपी 1 बोरी + पोटाश 20 किग्रा + यूरिया को 3 भागों में बांटकर दें।",
+    "irrigation_info": "नरमंजरी निकलते समय और भुट्टे में दाना भरते समय पानी की कमी न होने दें।",
+    "pest_management_tips": "फॉल आर्मीवर्म के प्रकोप पर अनुमोदित कीटनाशक का शाम के समय छिड़काव करें।",
+    "image": "",
+    "is_featured": true,
+    "is_active": true,
+    "display_order": 0
+  }
+},
+{
+  "model": "farmers.farmertip",
+  "pk": 1,
+  "fields": {
+    "title": "गेहूँ की फसल में कल्ले फूटते समय खाद और पानी का सही तालमेल",
+    "slug": "wheat-tillering-fertilizer-irrigation",
+    "category": "soil_fertilizer",
+    "summary": "बुवाई के 21 से 25 दिन बाद पहली सिंचाई और यूरिया+जिंक का संतुलित प्रयोग गेहूँ में अधिक कल्ले और बंपर पैदावार की नींव रखता है।",
+    "content": "गेहूँ की बुवाई के 21 दिन बाद मुकुट जड़ (Crown Root Initiation - CRI) निकलती है। यदि इस समय पानी और पोषण की कमी हो जाए तो कल्ले कम बनते हैं।\n\nमुख्य सुझाव:\n1. सिंचाई हल्की करें, खेत में पानी भरा न रहने दें।\n2. प्रति एकड़ 40-45 किलो यूरिया के साथ 4 किलो जिंक सल्फेट 33% मिलाकर ओट आने पर छिड़काव करें।\n3. खरपतवार नाशक का प्रयोग पहली सिंचाई के 7-10 दिन बाद नमी में करें।",
+    "safety_note": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर नजदीकी कृषि विशेषज्ञ से संपर्क करें।",
+    "featured_image": "",
+    "published_date": "2026-09-21",
+    "is_published": true,
+    "is_featured": true,
+    "display_order": 0,
+    "created_at": "2026-09-21T17:34:31.808Z"
+  }
+},
+{
+  "model": "farmers.farmertip",
+  "pk": 2,
+  "fields": {
+    "title": "फसल में रस चूसक कीट व माहू दिखने पर क्या करें?",
+    "slug": "pest-control-aphids-management",
+    "category": "crop_protection",
+    "summary": "मौसम में नमी और बादल होने पर फसलों में माहू और रस चूसक कीटों का खतरा बढ़ जाता है। समय पर पहचान और उचित छिड़काव से फसल सुरक्षित रखें।",
+    "content": "सरसों, सब्जियों और दलहन में अक्सर माहू (Aphids) पत्तियों और फूलों का रस चूसकर पौधे को कमजोर कर देते हैं।\n\nरोकथाम के उपाय:\n1. खेत की नियमित निगरानी करें।\n2. प्रारंभिक अवस्था में प्रभावित टहनियों को तोड़कर नष्ट कर दें।\n3. प्रकोप बढ़ने पर बायर कॉन्फिडोर या अनुशंसित कीटनाशक का सही नाप के साथ छिड़काव करें।\n4. छिड़काव हमेशा मौसम साफ होने पर और दोपहर के बाद करें।",
+    "safety_note": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर नजदीकी कृषि विशेषज्ञ से संपर्क करें।",
+    "featured_image": "",
+    "published_date": "2026-09-18",
+    "is_published": true,
+    "is_featured": true,
+    "display_order": 0,
+    "created_at": "2026-09-21T17:34:31.818Z"
+  }
+},
+{
+  "model": "farmers.farmertip",
+  "pk": 3,
+  "fields": {
+    "title": "दुधारू पशुओं के लिए संतुलित पशु आहार का महत्व एवं सही खुराक",
+    "slug": "cattle-feed-milk-yield-nutrition",
+    "category": "cattle_care",
+    "summary": "केवल सूखा या हरा चारा खिलाने से पशु की पोषण आवश्यकता पूरी नहीं होती। पेलेट दाना और मिनरल मिक्सचर से दूध और फैट दोनों में वृद्धि होती है।",
+    "content": "दुधारू गाय-भैंस को प्रतिदिन शरीर के रख-रखाव के लिए 1.5 से 2 किलो तथा प्रति 2.5 से 3 लीटर दूध उत्पादन पर 1 किलो संतुलित पशु आहार (दाना) देना चाहिए।\n\nफायदे:\n- दूध उत्पादन में 15-20% की बढ़ोतरी।\n- दूध में फैट और एसएनएफ (SNF) का स्तर सुधरता है।\n- पशु समय पर गर्मी (हीट) में आता है और बार-बार नहीं पलटता।\n- प्रतिदिन 40-50 ग्राम मिनरल मिक्सचर चारे में जरूर मिलाएं।",
+    "safety_note": "उत्पाद के पैकेट/लेबल पर दिए निर्देशों का पालन करें और आवश्यकता होने पर नजदीकी कृषि विशेषज्ञ से संपर्क करें।",
+    "featured_image": "",
+    "published_date": "2026-09-14",
+    "is_published": true,
+    "is_featured": true,
+    "display_order": 0,
+    "created_at": "2026-09-21T17:34:31.828Z"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2026-09-22T09:37:28.833Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "core",
+      "businessprofile"
+    ],
+    "object_id": "1",
+    "object_repr": "Rastogi Traders | रस्तोगी ट्रेडर्स",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u092a\\u094d\\u0930\\u093e\\u0925\\u092e\\u093f\\u0915 \\u092b\\u094b\\u0928 \\u0928\\u0902\\u092c\\u0930 (Primary Call Number)\", \"\\u0905\\u0924\\u093f\\u0930\\u093f\\u0915\\u094d\\u0924 \\u092b\\u094b\\u0928 \\u0928\\u0902\\u092c\\u0930 (Secondary Phone - Optional)\", \"\\u0935\\u094d\\u0939\\u093e\\u091f\\u094d\\u0938\\u0910\\u092a \\u0928\\u0902\\u092c\\u0930 (WhatsApp Number with Country Code)\", \"\\u0908\\u092e\\u0947\\u0932 (Email Address - Optional)\", \"\\u0926\\u0941\\u0915\\u093e\\u0928 \\u0915\\u093e \\u092a\\u0942\\u0930\\u093e \\u092a\\u0924\\u093e (Shop Address)\", \"\\u0932\\u0948\\u0902\\u0921\\u092e\\u093e\\u0930\\u094d\\u0915 / \\u092a\\u0939\\u091a\\u093e\\u0928 (Landmark)\", \"\\u0936\\u0939\\u0930 / \\u091c\\u093f\\u0932\\u093e (City / District)\", \"\\u0930\\u093e\\u091c\\u094d\\u092f / \\u092a\\u093f\\u0928 \\u0915\\u094b\\u0921 (State / PIN)\", \"\\u0916\\u0941\\u0932\\u0928\\u0947 \\u0915\\u093e \\u0938\\u092e\\u092f (Opening Hours)\", \"\\u0930\\u0935\\u093f\\u0935\\u093e\\u0930 \\u0915\\u093e \\u0938\\u092e\\u092f (Sunday Hours)\", \"\\u0917\\u0942\\u0917\\u0932 \\u092e\\u0948\\u092a\\u094d\\u0938 \\u0926\\u093f\\u0936\\u093e-\\u0928\\u093f\\u0930\\u094d\\u0926\\u0947\\u0936 \\u0932\\u093f\\u0902\\u0915 (Google Maps Directions Link)\", \"\\u0917\\u0942\\u0917\\u0932 \\u092e\\u0948\\u092a\\u094d\\u0938 \\u090f\\u092e\\u094d\\u092c\\u0947\\u0921 URL (Google Maps Embed Iframe Src)\", \"\\u0939\\u092e\\u093e\\u0930\\u0947 \\u092c\\u093e\\u0930\\u0947 \\u092e\\u0947\\u0902 \\u092a\\u0942\\u0930\\u0940 \\u0915\\u0939\\u093e\\u0928\\u0940 (About Business Story)\", \"\\u0938\\u094d\\u0935\\u093e\\u092e\\u0940 / \\u092e\\u0941\\u0916\\u094d\\u092f \\u0938\\u0902\\u091a\\u093e\\u0932\\u0915 \\u0915\\u093e \\u0928\\u093e\\u092e (Owner 1 Name)\", \"\\u0938\\u0902\\u0915\\u094d\\u0937\\u093f\\u092a\\u094d\\u0924 \\u092a\\u0930\\u093f\\u091a\\u092f (Owner 1 Bio / Description)\", \"\\u0938\\u094d\\u0935\\u093e\\u092e\\u0940 \\u0915\\u0940 \\u092b\\u094b\\u091f\\u094b (Owner 1 Photo)\", \"\\u092a\\u094d\\u0930\\u092c\\u0902\\u0927\\u0915 / \\u0938\\u0939-\\u0938\\u0902\\u091a\\u093e\\u0932\\u0915 \\u0915\\u093e \\u0928\\u093e\\u092e (Owner 2 / Manager Name)\", \"\\u092a\\u094d\\u0930\\u092c\\u0902\\u0927\\u0915 \\u0915\\u0940 \\u092b\\u094b\\u091f\\u094b (Owner 2 / Manager Photo)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2026-09-22T10:18:13.147Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "core",
+      "businessprofile"
+    ],
+    "object_id": "1",
+    "object_repr": "Rastogi Traders | रस्तोगी ट्रेडर्स",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0938\\u094d\\u0935\\u093e\\u092e\\u0940 \\u0915\\u0940 \\u092b\\u094b\\u091f\\u094b (Owner 1 Photo)\", \"\\u092a\\u094d\\u0930\\u092c\\u0902\\u0927\\u0915 \\u0915\\u0940 \\u092b\\u094b\\u091f\\u094b (Owner 2 / Manager Photo)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2026-09-22T17:14:31.490Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "core",
+      "businessprofile"
+    ],
+    "object_id": "1",
+    "object_repr": "Rastogi Traders | रस्तोगी ट्रेडर्स",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0938\\u0902\\u0915\\u094d\\u0937\\u093f\\u092a\\u094d\\u0924 \\u092a\\u0930\\u093f\\u091a\\u092f (Owner 1 Bio / Description)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2026-09-22T17:24:36.369Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "13",
+    "object_repr": "नया खाद उत्पाद 2026 (पतंजलि / इफको) - दुकान पर उपलब्ध (In Stock)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2026-09-22T17:27:31.379Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "14",
+    "object_repr": "Test Product Name (Test Brand) - दुकान पर उपलब्ध (In Stock)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2026-09-22T17:35:05.653Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "15",
+    "object_repr": "श्रीराम सुपर 303 गेहूँ बीज (Shriram Bioseed) - दुकान पर उपलब्ध (In Stock)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2026-09-22T17:35:05.722Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "16",
+    "object_repr": "श्रीराम सुपर 303 गेहूँ बीज (Shriram Bioseed) - सीमित स्टॉक (Limited Stock)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2026-09-22T17:35:05.759Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "17",
+    "object_repr": "डीएपी खाद उत्तम गोल्ड (उत्तम) - दुकान पर उपलब्ध (In Stock)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2026-09-22T17:40:44.687Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "18",
+    "object_repr": "Dairy Power (Apna Pashu Aahar) - दुकान पर उपलब्ध (In Stock)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2026-09-22T17:54:42.434Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "14",
+    "object_repr": "Dairy Power (Apna Pashu Aahar) - दुकान पर उपलब्ध (In Stock)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0909\\u0924\\u094d\\u092a\\u093e\\u0926 \\u0915\\u093e \\u0928\\u093e\\u092e (Product Name)\", \"\\u0936\\u094d\\u0930\\u0947\\u0923\\u0940 (Category)\", \"\\u0915\\u0902\\u092a\\u0928\\u0940 / \\u092c\\u094d\\u0930\\u093e\\u0902\\u0921 (Brand / Manufacturer)\", \"\\u092a\\u0948\\u0915\\u093f\\u0902\\u0917 \\u0938\\u093e\\u0907\\u091c (Pack Size / Unit)\", \"\\u0909\\u0924\\u094d\\u092a\\u093e\\u0926 \\u092b\\u094b\\u091f\\u094b (Product Image)\", \"\\u0909\\u092a\\u092f\\u0941\\u0915\\u094d\\u0924 \\u092b\\u0938\\u0932\\u0947\\u0902 (Suitable Crops)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2026-09-22T18:25:44.082Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "19",
+    "object_repr": "Apna Pashu Aahar Supreme (Apna Pashu Aahar) - दुकान पर उपलब्ध (In Stock)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2026-09-22T18:27:58.734Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "19",
+    "object_repr": "Apna Pashu Aahar Supreme (Apna Pashu Aahar) - दुकान पर उपलब्ध (In Stock)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u092e\\u0941\\u0916\\u094d\\u092f \\u092a\\u0943\\u0937\\u094d\\u0920 \\u092a\\u0930 \\u0926\\u093f\\u0916\\u093e\\u090f\\u0901 (Featured on Homepage)\", \"\\u0915\\u094d\\u0930\\u092e \\u0938\\u0902\\u0916\\u094d\\u092f\\u093e (Display Order)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2026-09-22T18:27:58.737Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "18",
+    "object_repr": "Dairy Power (Apna Pashu Aahar) - दुकान पर उपलब्ध (In Stock)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0915\\u094d\\u0930\\u092e \\u0938\\u0902\\u0916\\u094d\\u092f\\u093e (Display Order)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2026-09-22T18:44:11.529Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "18",
+    "object_repr": "Apna Pashu Aahar 8000 (Apna Pashu Aahar) - दुकान पर उपलब्ध (In Stock)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0909\\u0924\\u094d\\u092a\\u093e\\u0926 \\u0915\\u093e \\u0928\\u093e\\u092e (Product Name)\", \"\\u092a\\u0948\\u0915\\u093f\\u0902\\u0917 \\u0938\\u093e\\u0907\\u091c (Pack Size / Unit)\", \"\\u0909\\u0924\\u094d\\u092a\\u093e\\u0926 \\u092b\\u094b\\u091f\\u094b (Product Image)\", \"\\u0938\\u0902\\u0915\\u094d\\u0937\\u093f\\u092a\\u094d\\u0924 \\u092a\\u0930\\u093f\\u091a\\u092f (Short Description in Hindi)\", \"\\u0909\\u092a\\u092f\\u0941\\u0915\\u094d\\u0924 \\u092b\\u0938\\u0932\\u0947\\u0902 (Suitable Crops)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2026-09-22T18:44:46.613Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "14",
+    "object_repr": "Dairy Power (Apna Pashu Aahar) - दुकान पर उपलब्ध (In Stock)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u092e\\u0941\\u0916\\u094d\\u092f \\u092a\\u0943\\u0937\\u094d\\u0920 \\u092a\\u0930 \\u0926\\u093f\\u0916\\u093e\\u090f\\u0901 (Featured on Homepage)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2026-09-22T18:47:50.135Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "13",
+    "object_repr": "Apna Pashu Aahar Supreme Plus (Apna Pashu Aahar) - दुकान पर उपलब्ध (In Stock)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0909\\u0924\\u094d\\u092a\\u093e\\u0926 \\u0915\\u093e \\u0928\\u093e\\u092e (Product Name)\", \"\\u0936\\u094d\\u0930\\u0947\\u0923\\u0940 (Category)\", \"\\u0915\\u0902\\u092a\\u0928\\u0940 / \\u092c\\u094d\\u0930\\u093e\\u0902\\u0921 (Brand / Manufacturer)\", \"\\u092a\\u0948\\u0915\\u093f\\u0902\\u0917 \\u0938\\u093e\\u0907\\u091c (Pack Size / Unit)\", \"\\u0909\\u0924\\u094d\\u092a\\u093e\\u0926 \\u092b\\u094b\\u091f\\u094b (Product Image)\", \"\\u0938\\u0902\\u0915\\u094d\\u0937\\u093f\\u092a\\u094d\\u0924 \\u092a\\u0930\\u093f\\u091a\\u092f (Short Description in Hindi)\", \"\\u0909\\u092a\\u092f\\u0941\\u0915\\u094d\\u0924 \\u092b\\u0938\\u0932\\u0947\\u0902 (Suitable Crops)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2026-09-22T18:48:38.723Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "14",
+    "object_repr": "Dairy Power (Apna Pashu Aahar) - दुकान पर उपलब्ध (In Stock)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0938\\u0902\\u0915\\u094d\\u0937\\u093f\\u092a\\u094d\\u0924 \\u092a\\u0930\\u093f\\u091a\\u092f (Short Description in Hindi)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2026-09-22T18:54:17.094Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "10",
+    "object_repr": "Double Talwaar Chowker (Agra Mills) - दुकान पर उपलब्ध (In Stock)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0909\\u0924\\u094d\\u092a\\u093e\\u0926 \\u0915\\u093e \\u0928\\u093e\\u092e (Product Name)\", \"\\u0915\\u0902\\u092a\\u0928\\u0940 / \\u092c\\u094d\\u0930\\u093e\\u0902\\u0921 (Brand / Manufacturer)\", \"\\u092a\\u0948\\u0915\\u093f\\u0902\\u0917 \\u0938\\u093e\\u0907\\u091c (Pack Size / Unit)\", \"\\u0909\\u0924\\u094d\\u092a\\u093e\\u0926 \\u092b\\u094b\\u091f\\u094b (Product Image)\", \"\\u0938\\u0902\\u0915\\u094d\\u0937\\u093f\\u092a\\u094d\\u0924 \\u092a\\u0930\\u093f\\u091a\\u092f (Short Description in Hindi)\", \"\\u0935\\u093f\\u0938\\u094d\\u0924\\u0943\\u0924 \\u0935\\u093f\\u0935\\u0930\\u0923 \\u090f\\u0935\\u0902 \\u0909\\u092a\\u092f\\u094b\\u0917 (Detailed Information)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2026-09-22T18:55:10.369Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "9",
+    "object_repr": "Apna Pashu Aahar Super (Apna Pashu Aahar) - दुकान पर उपलब्ध (In Stock)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0909\\u0924\\u094d\\u092a\\u093e\\u0926 \\u0915\\u093e \\u0928\\u093e\\u092e (Product Name)\", \"\\u0915\\u0902\\u092a\\u0928\\u0940 / \\u092c\\u094d\\u0930\\u093e\\u0902\\u0921 (Brand / Manufacturer)\", \"\\u092a\\u0948\\u0915\\u093f\\u0902\\u0917 \\u0938\\u093e\\u0907\\u091c (Pack Size / Unit)\", \"\\u0909\\u0924\\u094d\\u092a\\u093e\\u0926 \\u092b\\u094b\\u091f\\u094b (Product Image)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2026-09-22T19:47:45.053Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "11",
+    "object_repr": "पायनियर 45S46 (Pioneer) - दुकान पर उपलब्ध (In Stock)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0909\\u0924\\u094d\\u092a\\u093e\\u0926 \\u0915\\u093e \\u0928\\u093e\\u092e (Product Name)\", \"\\u0915\\u0902\\u092a\\u0928\\u0940 / \\u092c\\u094d\\u0930\\u093e\\u0902\\u0921 (Brand / Manufacturer)\", \"\\u092a\\u0948\\u0915\\u093f\\u0902\\u0917 \\u0938\\u093e\\u0907\\u091c (Pack Size / Unit)\", \"\\u0909\\u0924\\u094d\\u092a\\u093e\\u0926 \\u092b\\u094b\\u091f\\u094b (Product Image)\", \"\\u0938\\u0902\\u0915\\u094d\\u0937\\u093f\\u092a\\u094d\\u0924 \\u092a\\u0930\\u093f\\u091a\\u092f (Short Description in Hindi)\", \"\\u0935\\u093f\\u0938\\u094d\\u0924\\u0943\\u0924 \\u0935\\u093f\\u0935\\u0930\\u0923 \\u090f\\u0935\\u0902 \\u0909\\u092a\\u092f\\u094b\\u0917 (Detailed Information)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2026-09-22T19:50:09.262Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "12",
+    "object_repr": "ShriRamn1666 (प्रमाणित राष्ट्रीय बीज निगम (NSC / UP Seeds)) - दुकान पर उपलब्ध (In Stock)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0909\\u0924\\u094d\\u092a\\u093e\\u0926 \\u0915\\u093e \\u0928\\u093e\\u092e (Product Name)\", \"\\u092a\\u0948\\u0915\\u093f\\u0902\\u0917 \\u0938\\u093e\\u0907\\u091c (Pack Size / Unit)\", \"\\u0909\\u0924\\u094d\\u092a\\u093e\\u0926 \\u092b\\u094b\\u091f\\u094b (Product Image)\", \"\\u092e\\u0941\\u0916\\u094d\\u092f \\u092a\\u0943\\u0937\\u094d\\u0920 \\u092a\\u0930 \\u0926\\u093f\\u0916\\u093e\\u090f\\u0901 (Featured on Homepage)\", \"\\u0938\\u0902\\u0915\\u094d\\u0937\\u093f\\u092a\\u094d\\u0924 \\u092a\\u0930\\u093f\\u091a\\u092f (Short Description in Hindi)\", \"\\u0909\\u092a\\u092f\\u0941\\u0915\\u094d\\u0924 \\u092b\\u0938\\u0932\\u0947\\u0902 (Suitable Crops)\", \"\\u0935\\u093f\\u0938\\u094d\\u0924\\u0943\\u0924 \\u0935\\u093f\\u0935\\u0930\\u0923 \\u090f\\u0935\\u0902 \\u0909\\u092a\\u092f\\u094b\\u0917 (Detailed Information)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2026-09-22T19:51:49.535Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "7",
+    "object_repr": "साफ फफूंदनाशक (SAAF Fungicide) (UPL) - दुकान पर उपलब्ध (In Stock)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0909\\u0924\\u094d\\u092a\\u093e\\u0926 \\u092b\\u094b\\u091f\\u094b (Product Image)\", \"\\u092e\\u0941\\u0916\\u094d\\u092f \\u092a\\u0943\\u0937\\u094d\\u0920 \\u092a\\u0930 \\u0926\\u093f\\u0916\\u093e\\u090f\\u0901 (Featured on Homepage)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2026-09-22T19:52:29.226Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "products",
+      "product"
+    ],
+    "object_id": "8",
+    "object_repr": "गोदरेज पशु आहार - दूध धारा (Doodh Dhara) (Godrej Agrovet) - दुकान पर उपलब्ध (In Stock)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u092e\\u0941\\u0916\\u094d\\u092f \\u092a\\u0943\\u0937\\u094d\\u0920 \\u092a\\u0930 \\u0926\\u093f\\u0916\\u093e\\u090f\\u0901 (Featured on Homepage)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2026-09-22T19:54:05.902Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "core",
+      "offer"
+    ],
+    "object_id": "2",
+    "object_repr": "पशु आहार 5 बोरी खरीद पर विशेष छूट व उपहार",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0911\\u092b\\u0930 \\u0915\\u093e \\u0935\\u093f\\u0935\\u0930\\u0923 (Description)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2026-09-22T19:55:01.492Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "core",
+      "review"
+    ],
+    "object_id": "2",
+    "object_repr": "वीरेंद्र यादव (डेयरी संचालक) (गाँव: पिपरिया, लखीमपुर रोड) - 5★",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2026-09-22T19:59:32.560Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "core",
+      "review"
+    ],
+    "object_id": "3",
+    "object_repr": "हिमांशु सक्सेना (किसान) (गाँव: खुनक) - 5★",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0915\\u093f\\u0938\\u093e\\u0928 / \\u0917\\u094d\\u0930\\u093e\\u0939\\u0915 \\u0915\\u093e \\u0928\\u093e\\u092e (Customer Name)\", \"\\u0917\\u093e\\u0901\\u0935 / \\u0915\\u0938\\u094d\\u092c\\u093e (Village / Town)\", \"\\u092b\\u094b\\u091f\\u094b (Photo - Optional)\", \"\\u0915\\u094d\\u0930\\u092e (Display Order)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2026-09-22T20:00:16.849Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "core",
+      "review"
+    ],
+    "object_id": "3",
+    "object_repr": "हिमांशु सक्सेना (किसान) (गाँव: खुनक) - 5★",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2026-09-22T20:10:56.171Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "core",
+      "galleryimage"
+    ],
+    "object_id": "1",
+    "object_repr": "Team of experts",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u092b\\u094b\\u091f\\u094b \\u0915\\u093e \\u0936\\u0940\\u0930\\u094d\\u0937\\u0915 (Title)\", \"\\u0917\\u0948\\u0932\\u0930\\u0940 \\u0936\\u094d\\u0930\\u0947\\u0923\\u0940 (Category)\", \"\\u0924\\u0938\\u094d\\u0935\\u0940\\u0930 (Image File)\", \"\\u092e\\u0941\\u0916\\u094d\\u092f \\u092a\\u0943\\u0937\\u094d\\u0920 \\u092a\\u0930 \\u0926\\u093f\\u0916\\u093e\\u090f\\u0901 (Show on Homepage)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2026-09-23T07:23:29.749Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "core",
+      "galleryimage"
+    ],
+    "object_id": "1",
+    "object_repr": "Team of experts",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0924\\u0938\\u094d\\u0935\\u0940\\u0930 (Image File)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2026-09-23T07:23:29.787Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "core",
+      "galleryimage"
+    ],
+    "object_id": "1",
+    "object_repr": "Team of experts",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0924\\u0938\\u094d\\u0935\\u0940\\u0930 (Image File)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2026-09-23T07:24:04.312Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "core",
+      "galleryimage"
+    ],
+    "object_id": "1",
+    "object_repr": "Team of experts",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"\\u0915\\u0948\\u092a\\u094d\\u0936\\u0928 (Caption - Optional)\", \"\\u092e\\u0941\\u0916\\u094d\\u092f \\u092a\\u0943\\u0937\\u094d\\u0920 \\u092a\\u0930 \\u0926\\u093f\\u0916\\u093e\\u090f\\u0901 (Show on Homepage)\"]}}]"
+  }
+}
+]
