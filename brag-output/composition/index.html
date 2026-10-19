@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rastogi Traders — Official Launch Video & Exporter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Inter:wght@400;600;700;800&family=Noto+Sans+Devanagari:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --color-primary: #1b5e20;
+      --color-primary-dark: #0f3e13;
+      --color-primary-light: #2e7d32;
+      --color-accent-gold: #d97706;
+      --color-whatsapp: #25d366;
+      --font-hindi: 'Noto Sans Devanagari', 'Hind', sans-serif;
+      --font-en: 'Inter', sans-serif;
+    }
+    body {
+      background: #07150a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: var(--font-en);
+      color: #ffffff;
+      padding: 24px;
+    }
+    .header-bar {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header-bar h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #86efac;
+      font-family: var(--font-hindi);
+    }
+    .header-bar p {
+      font-size: 14px;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+    #video-wrapper {
+      position: relative;
+      width: 960px;
+      height: 540px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255,255,255,0.1);
+      background: #000;
+    }
+    #renderCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .controls-panel {
+      width: 960px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      margin-top: 16px;
+      padding: 16px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .timeline-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .time-label {
+      font-size: 13px;
+      font-family: monospace;
+      color: #86efac;
+      min-width: 90px;
+    }
+    .progress-track {
+      flex: 1;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 5px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #22c55e, #eab308);
+      border-radius: 5px;
+      transition: width 0.05s linear;
+    }
+    .btn-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .btn-group-left {
+      display: flex;
+      gap: 12px;
+    }
+    button {
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .btn-play {
+      background: #15803d;
+      color: #ffffff;
+    }
+    .btn-play:hover {
+      background: #16a34a;
+      transform: translateY(-1px);
+    }
+    .btn-download {
+      background: linear-gradient(135deg, #d97706, #b45309);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.4);
+    }
+    .btn-download:hover {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(217, 119, 6, 0.6);
+    }
+    .record-status {
+      font-size: 13px;
+      color: #fbbf24;
+      font-weight: 600;
+      display: none;
+      align-items: center;
+      gap: 6px;
+    }
+    .record-status.active {
+      display: inline-flex;
+    }
+    .record-dot {
+      width: 10px;
+      height: 10px;
+      background: #ef4444;
+      border-radius: 50%;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.2); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-bar">
+    <h1>रस्तोगी ट्रेडर्स (Rastogi Traders) — Launch Video</h1>
+    <p>1920x1080 Full HD Render • Authentic Hindi-First Agricultural Platform • 1-Tap WhatsApp Quotes</p>
+  </div>
+
+  <div id="video-wrapper">
+    <canvas id="renderCanvas" width="1920" height="1080"></canvas>
+  </div>
+
+  <div class="controls-panel">
+    <div class="timeline-row">
+      <span class="time-label" id="timeDisplay">0.0s / 20.0s</span>
+      <div class="progress-track" id="progressTrack">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <div class="btn-group-left">
+        <button class="btn-play" id="playBtn">▶ Play Video</button>
+        <button class="btn-play" style="background: #374151;" id="restartBtn">↻ Restart</button>
+      </div>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <span class="record-status" id="recordStatus">
+          <span class="record-dot"></span> <span id="recordText">Recording 1080p Video...</span>
+        </span>
+        <button class="btn-download" id="downloadBtn">⬇️ Download Video (MP4 / WebM)</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="bgAudio" src="assets/music/track.mp3" preload="auto"></audio>
+
+  <script>
+    const canvas = document.getElementById('renderCanvas');
+    const ctx = canvas.getContext('2d');
+    const playBtn = document.getElementById('playBtn');
+    const restartBtn = document.getElementById('restartBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const progressTrack = document.getElementById('progressTrack');
+    const progressFill = document.getElementById('progressFill');
+    const timeDisplay = document.getElementById('timeDisplay');
+    const recordStatus = document.getElementById('recordStatus');
+    const recordText = document.getElementById('recordText');
+    const audio = document.getElementById('bgAudio');
+
+    const DURATION = 20.0;
+    let currentTime = 0;
+    let isPlaying = false;
+    let isRecording = false;
+    let mediaRecorder = null;
+    let recordedChunks = [];
+    let lastTime = null;
+    let animId = null;
+
+    // Load poster image for backgrounds & branding
+    const posterImg = new Image();
+    posterImg.src = '../brag.jpg';
+
+    // Draw Function: Renders exact frame at time t
+    function renderFrame(t) {
+      const W = 1920;
+      const H = 1080;
+
+      // Base Background: Deep Agricultural Forest Green with gradient
+      ctx.fillStyle = '#061709';
+      ctx.fillRect(0, 0, W, H);
+
+      const bgGrad = ctx.createRadialGradient(W / 2, H * 0.35, 100, W / 2, H / 2, W * 0.7);
+      bgGrad.addColorStop(0, '#164e1c');
+      bgGrad.addColorStop(0.6, '#0c2e11');
+      bgGrad.addColorStop(1, '#051408');
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, W, H);
+
+      // Subtle atmospheric golden particle dots
+      ctx.fillStyle = 'rgba(234, 179, 8, 0.15)';
+      for (let i = 0; i < 30; i++) {
+        const px = (Math.sin(i * 99 + t * 0.5) * 0.5 + 0.5) * W;
+        const py = (Math.cos(i * 33 + t * 0.3) * 0.5 + 0.5) * H;
+        ctx.beginPath();
+        ctx.arc(px, py, 3 + (i % 4), 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // ----------------------------------------------------
+      // SCENE 1: 0.0s - 4.5s (The Hook & Brand Motto)
+      // ----------------------------------------------------
+      if (t >= 0.0 && t < 4.5) {
+        const sceneT = t - 0.0;
+        const alpha = Math.min(1, sceneT * 2.5);
+
+        ctx.save();
+        ctx.globalAlpha = alpha;
+
+        // Badge pill
+        ctx.fillStyle = 'rgba(217, 119, 6, 0.25)';
+        ctx.strokeStyle = '#f59e0b';
+        ctx.lineWidth = 3;
+        roundRect(ctx, W / 2 - 300, 160, 600, 64, 32, true, true);
+
+        ctx.font = 'bold 28px "Noto Sans Devanagari", sans-serif';
+        ctx.fillStyle = '#fef08a';
+        ctx.textAlign = 'center';
+        ctx.fillText('🌾 कृषि और पशु आहार का भरोसेमंद साथी', W / 2, 204);
+
+        // Main Title
+        ctx.font = '900 84px "Noto Sans Devanagari", sans-serif';
+        ctx.fillStyle = '#ffffff';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.6)';
+        ctx.shadowBlur = 25;
+        ctx.shadowOffsetY = 8;
+        ctx.fillText('रस्तोगी ट्रेडर्स (Rastogi Traders)', W / 2, 330);
+        ctx.shadowColor = 'transparent';
+
+        // Tagline box
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.35)';
+        ctx.strokeStyle = 'rgba(134, 239, 172, 0.4)';
+        ctx.lineWidth = 2;
+        roundRect(ctx, W / 2 - 440, 390, 880, 80, 20, true, true);
+
+        ctx.font = 'bold 36px "Noto Sans Devanagari", sans-serif';
+        ctx.fillStyle = '#86efac';
+        ctx.fillText('"स्थानीय दुकान + आधुनिक सुविधा + भरोसेमंद सेवा"', W / 2, 444);
+
+        // Trust Cards Row
+        const cards = [
+          { icon: '✅', text: '100% असली व प्रमाणित उत्पाद' },
+          { icon: '📲', text: '1-क्लिक WhatsApp इन्क्वायरी' },
+          { icon: '👨‍🌾', text: 'किसान कॉर्नर फसल सलाह' }
+        ];
+
+        cards.forEach((c, idx) => {
+          const cardX = W / 2 - 540 + idx * 370;
+          const cardY = 530 + Math.sin(sceneT * 3 + idx) * 4;
+
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.09)';
+          ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+          ctx.lineWidth = 2;
+          roundRect(ctx, cardX, cardY, 340, 140, 18, true, true);
+
+          ctx.font = '40px sans-serif';
+          ctx.fillText(c.icon, cardX + 170, cardY + 60);
+
+          ctx.font = '600 22px "Noto Sans Devanagari", sans-serif';
+          ctx.fillStyle = '#ffffff';
+          ctx.fillText(c.text, cardX + 170, cardY + 106);
+        });
+
+        ctx.restore();
+      }
+
+      // ----------------------------------------------------
+      // SCENE 2: 4.5s - 10.0s (Agricultural Catalog & Live Stock)
+      // ----------------------------------------------------
+      else if (t >= 4.5 && t < 10.0) {
+        const sceneT = t - 4.5;
+        const alpha = Math.min(1, sceneT * 2.0);
+
+        ctx.save();
+        ctx.globalAlpha = alpha;
+
+        // Section Title
+        ctx.font = 'bold 32px "Noto Sans Devanagari", sans-serif';
+        ctx.fillStyle = '#86efac';
+        ctx.textAlign = 'center';
+        ctx.fillText('🛒 प्रामाणिक कृषि उत्पाद कैटलॉग — लाइव स्टॉक उपलब्धता', W / 2, 120);
+
+        // Catalog Container
+        ctx.fillStyle = '#ffffff';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
+        ctx.shadowBlur = 30;
+        ctx.shadowOffsetY = 15;
+        roundRect(ctx, 160, 170, W - 320, 780, 24, true, false);
+        ctx.shadowColor = 'transparent';
+
+        // Filter Pills
+        const pills = ['उर्वरक (Fertilizers)', 'कीटनाशक (Pesticides)', 'पशु आहार (Cattle Feed)', 'उन्नत बीज (Seeds)'];
+        let pillX = 210;
+        pills.forEach((p, idx) => {
+          const isAct = idx === 0;
+          ctx.fillStyle = isAct ? '#1b5e20' : '#f3f4f6';
+          roundRect(ctx, pillX, 210, 260, 52, 26, true, false);
+
+          ctx.font = 'bold 20px "Noto Sans Devanagari", sans-serif';
+          ctx.fillStyle = isAct ? '#ffffff' : '#4b5563';
+          ctx.textAlign = 'center';
+          ctx.fillText(p, pillX + 130, 243);
+          pillX += 280;
+        });
+
+        // 3 Product Cards
+        const products = [
+          { title: 'IFFCO D.A.P. खाद (50kg)', brand: 'ब्रांड: IFFCO (18:46:0)', tag: '🟢 दुकान पर उपलब्ध', highlight: true },
+          { title: 'Coragen कीटनाशक (FMC)', brand: 'फसल सुरक्षा • तना छेदक नियंत्रण', tag: '🟢 दुकान पर उपलब्ध', highlight: false },
+          { title: 'दूध शक्ति पशु आहार (50kg)', brand: 'Godrej Agrovet • दुग्ध वृद्धि', tag: '🟢 दुकान पर उपलब्ध', highlight: false }
+        ];
+
+        products.forEach((prod, idx) => {
+          const px = 210 + idx * 500;
+          const py = 295;
+
+          ctx.fillStyle = prod.highlight ? '#f0fdf4' : '#fafafa';
+          ctx.strokeStyle = prod.highlight ? '#16a34a' : '#e5e7eb';
+          ctx.lineWidth = prod.highlight ? 4 : 2;
+          roundRect(ctx, px, py, 470, 580, 20, true, true);
+
+          // Stock Badge
+          ctx.fillStyle = '#dcfce7';
+          roundRect(ctx, px + 24, py + 24, 210, 38, 10, true, false);
+          ctx.font = 'bold 18px "Noto Sans Devanagari", sans-serif';
+          ctx.fillStyle = '#15803d';
+          ctx.textAlign = 'left';
+          ctx.fillText(prod.tag, px + 40, py + 49);
+
+          // Product Title
+          ctx.font = 'bold 28px "Noto Sans Devanagari", sans-serif';
+          ctx.fillStyle = '#111827';
+          ctx.fillText(prod.title, px + 24, py + 120);
+
+          // Brand Subtitle
+          ctx.font = '500 20px "Noto Sans Devanagari", sans-serif';
+          ctx.fillStyle = '#6b7280';
+          ctx.fillText(prod.brand, px + 24, py + 165);
+
+          // Mock Visual Badge in Card
+          ctx.fillStyle = prod.highlight ? '#dcfce7' : '#f3f4f6';
+          roundRect(ctx, px + 24, py + 200, 422, 230, 16, true, false);
+          ctx.font = 'bold 64px sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText(idx === 0 ? '🌾' : (idx === 1 ? '🛡️' : '🥛'), px + 235, py + 335);
+
+          // WhatsApp Button
+          ctx.fillStyle = '#25d366';
+          roundRect(ctx, px + 24, py + 470, 422, 70, 16, true, false);
+          ctx.font = 'bold 24px "Noto Sans Devanagari", sans-serif';
+          ctx.fillStyle = '#ffffff';
+          ctx.fillText('💬 WhatsApp पर भाव पूछें', px + 235, py + 514);
+        });
+
+        ctx.restore();
+      }
+
+      // ----------------------------------------------------
+      // SCENE 3: 10.0s - 15.5s (1-Tap WhatsApp & Kisan Corner)
+      // ----------------------------------------------------
+      else if (t >= 10.0 && t < 15.5) {
+        const sceneT = t - 10.0;
+        const alpha = Math.min(1, sceneT * 2.0);
+
+        ctx.save();
+        ctx.globalAlpha = alpha;
+
+        ctx.font = 'bold 34px "Noto Sans Devanagari", sans-serif';
+        ctx.fillStyle = '#86efac';
+        ctx.textAlign = 'center';
+        ctx.fillText('⚡ 1-क्लिक WhatsApp इन्क्वायरी एवं किसान कॉर्नर सलाह', W / 2, 120);
+
+        // Left Container: Simulated WhatsApp Chat Window
+        const wx = 160;
+        const wy = 180;
+        const ww = 740;
+        const wh = 760;
+
+        ctx.fillStyle = '#efeae2';
+        roundRect(ctx, wx, wy, ww, wh, 24, true, false);
+
+        // WhatsApp Header
+        ctx.fillStyle = '#075e54';
+        roundRect(ctx, wx, wy, ww, 90, { tl: 24, tr: 24, bl: 0, br: 0 }, true, false);
+        ctx.font = 'bold 26px "Noto Sans Devanagari", sans-serif';
+        ctx.fillStyle = '#ffffff';
+        ctx.textAlign = 'left';
+        ctx.fillText('💬 Rastogi Traders (रस्तोगी ट्रेडर्स - बिज़नेस)', wx + 30, wy + 55);
+
+        // Chat Bubble
+        ctx.fillStyle = '#ffffff';
+        roundRect(ctx, wx + 40, wy + 140, 660, 240, 18, true, false);
+
+        ctx.font = '24px "Noto Sans Devanagari", sans-serif';
+        ctx.fillStyle = '#1f2937';
+        ctx.fillText('नमस्ते, मुझे Rastogi Traders से', wx + 70, wy + 200);
+        ctx.font = 'bold 28px "Noto Sans Devanagari", sans-serif';
+        ctx.fillStyle = '#15803d';
+        ctx.fillText("'IFFCO D.A.P. खाद (50kg)'", wx + 70, wy + 245);
+        ctx.font = '24px "Noto Sans Devanagari", sans-serif';
+        ctx.fillStyle = '#1f2937';
+        ctx.fillText('की कीमत और आज की उपलब्धता की जानकारी चाहिए।', wx + 70, wy + 290);
+
+        ctx.font = '16px monospace';
+        ctx.fillStyle = '#9ca3af';
+        ctx.textAlign = 'right';
+        ctx.fillText('10:45 AM • तुरंत भेजा गया ✓✓', wx + 670, wy + 355);
+
+        // Right Container: Kisan Corner Advisory
+        const kx = 940;
+        const ky = 180;
+        const kw = 820;
+        const kh = 760;
+
+        ctx.fillStyle = '#ffffff';
+        roundRect(ctx, kx, ky, kw, kh, 24, true, false);
+
+        ctx.fillStyle = '#1b5e20';
+        roundRect(ctx, kx, ky, kw, 90, { tl: 24, tr: 24, bl: 0, br: 0 }, true, false);
+        ctx.font = 'bold 28px "Noto Sans Devanagari", sans-serif';
+        ctx.fillStyle = '#ffffff';
+        ctx.textAlign = 'left';
+        ctx.fillText('👨‍🌾 किसान कॉर्नर — फसल सुरक्षा व पैदावार गाइड', kx + 30, ky + 55);
+
+        // Crop Badges
+        const crops = ['🌾 गेहूँ (Wheat)', '🌱 धान (Paddy)', '🌽 मक्का (Maize)', '🥔 आलू (Potato)'];
+        let cx = kx + 40;
+        crops.forEach(crop => {
+          ctx.fillStyle = '#fef3c7';
+          roundRect(ctx, cx, ky + 130, 165, 48, 12, true, false);
+          ctx.font = 'bold 18px "Noto Sans Devanagari", sans-serif';
+          ctx.fillStyle = '#92400e';
+          ctx.textAlign = 'center';
+          ctx.fillText(crop, cx + 82, ky + 160);
+          cx += 185;
+        });
+
+        // Advice Bullet Cards
+        const tips = [
+          '• बुवाई के समय सही बेसल डोज (DAP + पोटाश) की मात्रा',
+          '• पहली सिंचाई पर यूरिया व जिंक का संतुलित मिश्रण',
+          '• दीमक, खरपतवार व तना छेदक कीटों के प्रभावी समाधान'
+        ];
+
+        tips.forEach((tip, idx) => {
+          ctx.fillStyle = '#f8fafc';
+          ctx.strokeStyle = '#e2e8f0';
+          ctx.lineWidth = 2;
+          roundRect(ctx, kx + 40, ky + 210 + idx * 150, 740, 120, 16, true, true);
+
+          ctx.font = '600 24px "Noto Sans Devanagari", sans-serif';
+          ctx.fillStyle = '#1e293b';
+          ctx.textAlign = 'left';
+          ctx.fillText(tip, kx + 65, ky + 280 + idx * 150);
+        });
+
+        ctx.restore();
+      }
+
+      // ----------------------------------------------------
+      // SCENE 4: 15.5s - 20.0s (Outro & 1-Tap Connect)
+      // ----------------------------------------------------
+      else if (t >= 15.5) {
+        const sceneT = t - 15.5;
+        const alpha = Math.min(1, sceneT * 2.0);
+
+        ctx.save();
+        ctx.globalAlpha = alpha;
+
+        // Central Outro Card
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.98)';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+        ctx.shadowBlur = 40;
+        roundRect(ctx, W / 2 - 500, 200, 1000, 680, 28, true, false);
+        ctx.shadowColor = 'transparent';
+
+        // Logo & Title
+        ctx.font = '900 68px "Noto Sans Devanagari", sans-serif';
+        ctx.fillStyle = '#0f3e13';
+        ctx.textAlign = 'center';
+        ctx.fillText('रस्तोगी ट्रेडर्स (Rastogi Traders)', W / 2, 330);
+
+        ctx.font = '600 32px "Noto Sans Devanagari", sans-serif';
+        ctx.fillStyle = '#4b5563';
+        ctx.fillText('स्थानीय भरोसा + आधुनिक सुविधा • देश के किसानों का सच्चा साथी', W / 2, 400);
+
+        // Big Action Buttons
+        // WhatsApp Button
+        ctx.fillStyle = '#25d366';
+        roundRect(ctx, W / 2 - 420, 480, 400, 110, 20, true, false);
+        ctx.font = 'bold 30px "Noto Sans Devanagari", sans-serif';
+        ctx.fillStyle = '#ffffff';
+        ctx.fillText('💬 WhatsApp कनेक्ट', W / 2 - 220, 548);
+
+        // Call Button
+        ctx.fillStyle = '#0284c7';
+        roundRect(ctx, W / 2 + 20, 480, 400, 110, 20, true, false);
+        ctx.font = 'bold 30px "Noto Sans Devanagari", sans-serif';
+        ctx.fillStyle = '#ffffff';
+        ctx.fillText('📞 98765-43210 कॉल करें', W / 2 + 220, 548);
+
+        // Bottom web & location line
+        ctx.fillStyle = '#1b5e20';
+        roundRect(ctx, W / 2 - 420, 640, 840, 80, 16, true, false);
+        ctx.font = 'bold 24px "Noto Sans Devanagari", sans-serif';
+        ctx.fillStyle = '#ffffff';
+        ctx.fillText('🌐 www.rastogitraders.com • 📍 दुकान तक पहुँचने हेतु मैप देखें', W / 2, 690);
+
+        ctx.restore();
+      }
+    }
+
+    // Helper: Rounded Rectangle
+    function roundRect(ctx, x, y, width, height, radius, fill, stroke) {
+      if (typeof radius === 'number') {
+        radius = { tl: radius, tr: radius, br: radius, bl: radius };
+      }
+      ctx.beginPath();
+      ctx.moveTo(x + radius.tl, y);
+      ctx.lineTo(x + width - radius.tr, y);
+      ctx.quadraticCurveTo(x + width, y, x + width, y + radius.tr);
+      ctx.lineTo(x + width, y + height - radius.br);
+      ctx.quadraticCurveTo(x + width, y + height, x + width - radius.br, y + height);
+      ctx.lineTo(x + radius.bl, y + height);
+      ctx.quadraticCurveTo(x, y + height, x, y + height - radius.bl);
+      ctx.lineTo(x, y + radius.tl);
+      ctx.quadraticCurveTo(x, y, x + radius.tl, y);
+      ctx.closePath();
+      if (fill) ctx.fill();
+      if (stroke) ctx.stroke();
+    }
+
+    function animate(timestamp) {
+      if (!lastTime) lastTime = timestamp;
+      const delta = (timestamp - lastTime) / 1000;
+      lastTime = timestamp;
+
+      currentTime += delta;
+      if (currentTime >= DURATION) {
+        currentTime = 0;
+        lastTime = null;
+        isPlaying = false;
+        playBtn.textContent = '▶ Play Video';
+        audio.pause();
+        audio.currentTime = 0;
+        if (isRecording && mediaRecorder && mediaRecorder.state !== 'inactive') {
+          mediaRecorder.stop();
+        }
+        renderFrame(0);
+        updateUI();
+        return;
+      }
+
+      renderFrame(currentTime);
+      updateUI();
+
+      if (isPlaying || isRecording) {
+        animId = requestAnimationFrame(animate);
+      }
+    }
+
+    function updateUI() {
+      const pct = (currentTime / DURATION) * 100;
+      progressFill.style.width = pct + '%';
+      timeDisplay.textContent = `${currentTime.toFixed(1)}s / 20.0s`;
+    }
+
+    playBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        isPlaying = false;
+        playBtn.textContent = '▶ Play Video';
+        audio.pause();
+        cancelAnimationFrame(animId);
+      } else {
+        isPlaying = true;
+        playBtn.textContent = '❚❚ Pause';
+        lastTime = null;
+        audio.volume = 0.35;
+        audio.currentTime = currentTime;
+        audio.play().catch(() => {});
+        animId = requestAnimationFrame(animate);
+      }
+    });
+
+    restartBtn.addEventListener('click', () => {
+      currentTime = 0;
+      lastTime = null;
+      audio.currentTime = 0;
+      renderFrame(0);
+      updateUI();
+    });
+
+    progressTrack.addEventListener('click', (e) => {
+      const rect = progressTrack.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const ratio = Math.max(0, Math.min(1, clickX / rect.width));
+      currentTime = ratio * DURATION;
+      audio.currentTime = currentTime;
+      renderFrame(currentTime);
+      updateUI();
+    });
+
+    // High-Quality Video Exporter using MediaRecorder
+    downloadBtn.addEventListener('click', async () => {
+      if (isRecording) return;
+      isRecording = true;
+      recordedChunks = [];
+      recordStatus.classList.add('active');
+      recordText.textContent = 'Generating 1080p Video with Audio...';
+      downloadBtn.disabled = true;
+      downloadBtn.style.opacity = '0.5';
+
+      currentTime = 0;
+      lastTime = null;
+      audio.currentTime = 0;
+      audio.volume = 0.4;
+      await audio.play().catch(() => {});
+
+      // Create stream from Canvas and Audio
+      const canvasStream = canvas.captureStream(30);
+      let combinedStream = canvasStream;
+
+      try {
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const audioSource = audioCtx.createMediaElementSource(audio);
+        const dest = audioCtx.createMediaStreamDestination();
+        audioSource.connect(dest);
+        audioSource.connect(audioCtx.destination);
+        
+        dest.stream.getAudioTracks().forEach(track => {
+          canvasStream.addTrack(track);
+        });
+      } catch (err) {
+        console.warn('AudioContext routing:', err);
+      }
+
+      let mimeType = 'video/webm;codecs=vp9,opus';
+      if (!MediaRecorder.isTypeSupported(mimeType)) {
+        mimeType = 'video/webm';
+      }
+
+      mediaRecorder = new MediaRecorder(canvasStream, {
+        mimeType: mimeType,
+        videoBitsPerSecond: 6000000 // 6 Mbps high bitrate
+      });
+
+      mediaRecorder.ondataavailable = (e) => {
+        if (e.data.size > 0) {
+          recordedChunks.push(e.data);
+        }
+      };
+
+      mediaRecorder.onstop = () => {
+        const blob = new Blob(recordedChunks, { type: mimeType });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.style.display = 'none';
+        a.href = url;
+        a.download = 'Rastogi_Traders_Launch_Video.webm';
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(() => {
+          document.body.removeChild(a);
+          window.URL.revokeObjectURL(url);
+        }, 200);
+
+        isRecording = false;
+        recordStatus.classList.remove('active');
+        downloadBtn.disabled = false;
+        downloadBtn.style.opacity = '1';
+        alert('🎉 Launch video successfully rendered and downloaded!');
+      };
+
+      mediaRecorder.start();
+      animId = requestAnimationFrame(animate);
+    });
+
+    // Initial render
+    setTimeout(() => {
+      renderFrame(0);
+      updateUI();
+    }, 200);
+  </script>
+</body>
+</html>

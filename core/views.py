@@ -165,3 +165,13 @@ def custom_404_view(request, exception=None):
 
 def custom_500_view(request):
     return render(request, '500.html', status=500)
+
+
+def health_check(request):
+    """
+    Lightweight health check endpoint for uptime monitors (e.g. UptimeRobot, Render).
+    Returns HTTP 200 without querying the database, preventing serverless databases
+    (like Neon) from exhausting their monthly compute hour allowances.
+    """
+    return HttpResponse("OK", content_type="text/plain", status=200)
+

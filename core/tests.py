@@ -55,3 +55,13 @@ class CoreViewsTestCase(TestCase):
         response = self.client.get('/sitemap.xml')
         self.assertEqual(response.status_code, 200)
         self.assertIn("urlset", response.content.decode())
+
+    def test_health_check_endpoint(self):
+        response = self.client.get('/healthz/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.content.decode(), "OK")
+
+        response_ping = self.client.get('/ping/')
+        self.assertEqual(response_ping.status_code, 200)
+        self.assertEqual(response_ping.content.decode(), "OK")
+

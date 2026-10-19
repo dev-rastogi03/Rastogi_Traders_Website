@@ -13,4 +13,6 @@ urlpatterns = [
     path('terms-and-conditions/', views.TermsConditionsView.as_view(), name='terms'),
     path('cookies-policy/', views.CookiesPolicyView.as_view(), name='cookies'),
     path('robots.txt', views.robots_txt, name='robots_txt'),
+    path('healthz/', views.health_check, name='health_check'),
+    path('ping/', views.health_check, name='ping'),
 ]

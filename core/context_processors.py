@@ -14,7 +14,10 @@ def global_site_context(request):
     except Exception:
         profile = None
 
-    categories = Category.objects.filter(is_active=True).order_by('display_order', 'id')
+    try:
+        categories = list(Category.objects.filter(is_active=True).order_by('display_order', 'id'))
+    except Exception:
+        categories = []
 
     # Pre-generate general WhatsApp URL
     whatsapp_number = profile.clean_whatsapp_number if profile else settings.DEFAULT_WHATSAPP_NUMBER.replace('+', '').replace(' ', '')

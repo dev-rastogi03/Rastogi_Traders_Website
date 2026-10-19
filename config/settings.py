@@ -91,9 +91,15 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database configuration (SQLite local, PostgreSQL compatible via dj-database-url)
 DATABASE_URL = os.getenv('DATABASE_URL')
 if DATABASE_URL:
+    db_conn_max_age = int(os.getenv('DB_CONN_MAX_AGE', '0'))
     DATABASES = {
-        'default': dj_database_url.parse(DATABASE_URL, conn_max_age=600)
+        'default': dj_database_url.parse(
+            DATABASE_URL, 
+            conn_max_age=db_conn_max_age, 
+            conn_health_checks=True
+        )
     }
+
 else:
     DATABASES = {
         'default': {
