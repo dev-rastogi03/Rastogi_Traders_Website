@@ -99,7 +99,9 @@ if DATABASE_URL:
             conn_health_checks=True
         )
     }
-
+    # Automatically support connection poolers (Supabase Supavisor, PgBouncer)
+    if 'pooler' in DATABASE_URL or ':6543' in DATABASE_URL:
+        DATABASES['default']['DISABLE_SERVER_SIDE_CURSORS'] = True
 else:
     DATABASES = {
         'default': {
