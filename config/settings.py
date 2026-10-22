@@ -91,16 +91,30 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database configuration (SQLite local, PostgreSQL compatible via dj-database-url)
 DATABASE_URL = os.getenv('DATABASE_URL')
 if DATABASE_URL:
+    import re
+    # Clean up quotes and strip Prisma/Supabase specific params that break psycopg2 libpq
+    clean_db_url = DATABASE_URL.strip().strip('"').strip("'")
+    clean_db_url = re.sub(r'[\?&]pgbouncer=[^&]*', '', clean_db_url)
+    clean_db_url = re.sub(r'[\?&]connection_limit=[^&]*', '', clean_db_url)
+    clean_db_url = clean_db_url.replace('?&', '?').rstrip('?&')
+    if '?' not in clean_db_url and '&' in clean_db_url:
+        clean_db_url = clean_db_url.replace('&', '?', 1)
+
     db_conn_max_age = int(os.getenv('DB_CONN_MAX_AGE', '0'))
+    parsed_db = dj_database_url.parse(
+        clean_db_url, 
+        conn_max_age=db_conn_max_age, 
+        conn_health_checks=True
+    )
+    if 'OPTIONS' in parsed_db:
+        parsed_db['OPTIONS'].pop('pgbouncer', None)
+        parsed_db['OPTIONS'].pop('connection_limit', None)
+
     DATABASES = {
-        'default': dj_database_url.parse(
-            DATABASE_URL, 
-            conn_max_age=db_conn_max_age, 
-            conn_health_checks=True
-        )
+        'default': parsed_db
     }
     # Automatically support connection poolers (Supabase Supavisor, PgBouncer)
-    if 'pooler' in DATABASE_URL or ':6543' in DATABASE_URL:
+    if 'pooler' in clean_db_url or ':6543' in clean_db_url:
         DATABASES['default']['DISABLE_SERVER_SIDE_CURSORS'] = True
 else:
     DATABASES = {
